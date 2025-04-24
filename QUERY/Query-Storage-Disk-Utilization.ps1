@@ -55,6 +55,6 @@ Return $NewSize
  Get-WmiObject win32_logicaldisk | Where-Object {$_.DeviceID -ne "A:" -and $_.DeviceID -ne "B:"} |  
                                   Select-Object @{expression={$_.__Server};Label="Computer"}, 
                                   @{Expression={$_.DeviceID};Label="Drive"}, 
-                                  @{Expression={Convert-BytesToSize $_.Size};Label="Size"}, 
+                                  @{Expression={Convert-BytesToSize $_.Size};Label="Capacity"}, 
                                   @{Expression={Convert-BytesToSize $_.freespace};Label="FreeSpace"}, 
                                   @{Expression={[Math]::round((($_.freespace/$_.size) * 100),2)};Label="(%)Free"} | Out-GridView 
