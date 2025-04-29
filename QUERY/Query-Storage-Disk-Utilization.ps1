@@ -21,15 +21,13 @@ Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} |
 
 #-------------------------------------------------------------------------------------------------------------                                        
 # QUERY ALL DISK TYPES
-
 $DiskType = @{
     2 = "USB"
     3 = "HDD"
     4 = "NETWORK"
     5 = "CD-ROM"}
  
- Get-WmiObject -Class Win32_LogicalDisk  | 
-                                          Select-Object @{expression={$_.__Server};Label="Hostname"},
+ Get-WmiObject -Class Win32_LogicalDisk  | Select-Object @{expression={$_.__Server};Label="Hostname"},
                                           @{Label="Drive";Expression={$_.DeviceID}}, 
                                           @{Label='Type';Expression={$DiskType.item([int]$_.DriveType)}},
                                           @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
