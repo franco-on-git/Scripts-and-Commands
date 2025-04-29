@@ -1,11 +1,18 @@
-<# 
 
-Disk Type 2: USB
-Disk Type 3: HDD
-Disk Type 4: Network
-Disk Type 5: CD-ROM
+<#
+    .NOTES
+        Author: Roboute Guilliman
+        Created: 04/2025
+
+    .SYNOPSIS
+        Disk Types:
+            -Type 2: USB
+            -Type 3: HDD
+            -Type 4: Network
+            -Type 5: CD-ROM
 
 #>
+
 
 #-------------------------------------------------------------------------------------------------------------
 # QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3)
