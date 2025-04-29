@@ -24,6 +24,8 @@ Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} |
                                          @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
                                          Out-GridView
 
+
+
 #-------------------------------------------------------------------------------------------------------------                                        
 # QUERY ALL DISKS ON HOST
 $DiskType = @{
@@ -43,9 +45,9 @@ $DiskType = @{
                                           Out-GridView
                                         
 
+
 #-------------------------------------------------------------------------------------------------------------
-# CONVERT AND LABEL DISK SIZES TO KB/MB/GB 
-# ======================================== 
+# CONVERT AND LABEL DISK SIZES TO KB/MB/GB (OLD DEPRECATED)
 FUNCTION Convert-BytesToSize 
 { 
 [CmdletBinding()] 
