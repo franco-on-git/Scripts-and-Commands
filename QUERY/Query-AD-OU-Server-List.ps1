@@ -8,6 +8,6 @@
 $OUPath = "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" 
 $ExportPath = "C:\temp\OU_Export.csv" 
 
-Get-ADObject -SearchBase $OUPath -Filter * -Properties *| Select-Object CN | Export-Csv $ExportPath -NoTypeInformation -Force
+Get-ADObject -SearchBase $OUPath -Filter * -Properties * | Select-Object CN | Export-Csv $ExportPath -NoTypeInformation -Force
 
 Invoke-Item $ExportPath
