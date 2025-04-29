@@ -13,7 +13,7 @@ Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} |
                                          Select-Object @{expression={$_.__Server};Label="Hostname"},
                                          @{Label="Drive";Expression={$_.DeviceID}}, 
                                          @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
-                                         @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB)}},                                          
+                                         @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB,2)}},                                          
                                          @{Label ="(%)Used";Expression= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
                                          @{Label="Free(GB)"; Expression={[math]::round($_.FreeSpace/1GB,2)}}, 
                                          @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
