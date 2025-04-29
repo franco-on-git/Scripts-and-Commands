@@ -31,7 +31,7 @@ $DiskType = @{
                                           @{Label="Drive";Expression={$_.DeviceID}}, 
                                           @{Label='Type';Expression={$DiskType.item([int]$_.DriveType)}},
                                           @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
-                                          @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB)}},                                          
+                                          @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB,2)}},                                          
                                           @{Label ="(%)Used";Expression= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
                                           @{Label="Free(GB)"; Expression={[math]::round($_.FreeSpace/1GB,2)}}, 
                                           @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
