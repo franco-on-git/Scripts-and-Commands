@@ -1,4 +1,46 @@
+<# 
 
+Disk Type 2: USB
+Disk Type 3: HDD
+Disk Type 4: Network
+Disk Type 5: CD-ROM
+
+#>
+
+#-------------------------------------------------------------------------------------------------------------
+# QUERY LOCALLY ATTACHED DISKS (Type 3 Only)
+Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} | 
+                                         Select-Object @{expression={$_.__Server};Label="Hostname"},
+                                         @{Label="Drive";Expression={$_.DeviceID}}, 
+                                         @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
+                                         @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB)}},                                          
+                                         @{Label ="(%)Used";Expression= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
+                                         @{Label="Free(GB)"; Expression={[math]::round($_.FreeSpace/1GB,2)}}, 
+                                         @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
+                                         Out-GridView
+
+#-------------------------------------------------------------------------------------------------------------                                        
+# QUERY ALL DISK TYPES
+
+$DiskType = @{
+    2 = "USB"
+    3 = "HDD"
+    4 = "NETWORK"
+    5 = "CD-ROM"}
+ 
+ Get-WmiObject -Class Win32_LogicalDisk  | 
+                                          Select-Object @{expression={$_.__Server};Label="Hostname"},
+                                          @{Label="Drive";Expression={$_.DeviceID}}, 
+                                          @{Label='Type';Expression={$DiskType.item([int]$_.DriveType)}},
+                                          @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
+                                          @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB)}},                                          
+                                          @{Label ="(%)Used";Expression= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
+                                          @{Label="Free(GB)"; Expression={[math]::round($_.FreeSpace/1GB,2)}}, 
+                                          @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
+                                          Out-GridView
+                                        
+
+#-------------------------------------------------------------------------------------------------------------
 # CONVERT AND LABEL DISK SIZES TO KB/MB/GB 
 # ======================================== 
 FUNCTION Convert-BytesToSize 
@@ -58,3 +100,6 @@ Return $NewSize
                                   @{Expression={Convert-BytesToSize $_.Size};Label="Capacity"}, 
                                   @{Expression={Convert-BytesToSize $_.freespace};Label="FreeSpace"}, 
                                   @{Expression={[Math]::round((($_.freespace/$_.size) * 100),2)};Label="(%)Free"} | Out-GridView 
+
+
+                                  
