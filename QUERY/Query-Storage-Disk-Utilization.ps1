@@ -47,7 +47,8 @@ $DiskType = @{
 
 
 #-------------------------------------------------------------------------------------------------------------
-# CONVERT AND LABEL DISK SIZES TO KB/MB/GB (OLD DEPRECATED)
+# ====(OLD DEPRECATED)====
+# CONVERT AND LABEL DISK SIZES TO KB/MB/GB 
 FUNCTION Convert-BytesToSize 
 { 
 [CmdletBinding()] 
