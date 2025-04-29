@@ -8,7 +8,7 @@ Disk Type 5: CD-ROM
 #>
 
 #-------------------------------------------------------------------------------------------------------------
-# QUERY LOCALLY ATTACHED DISKS (Type 3 Only)
+# QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3)
 Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} | 
                                          Select-Object @{expression={$_.__Server};Label="Hostname"},
                                          @{Label="Drive";Expression={$_.DeviceID}}, 
@@ -20,7 +20,7 @@ Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} |
                                          Out-GridView
 
 #-------------------------------------------------------------------------------------------------------------                                        
-# QUERY ALL DISK TYPES
+# QUERY ALL DISKS ON HOST
 $DiskType = @{
     2 = "USB"
     3 = "HDD"
