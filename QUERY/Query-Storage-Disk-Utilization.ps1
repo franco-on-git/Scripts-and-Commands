@@ -12,21 +12,21 @@
             -Type 5: CD-ROM
 #>
 
-#-------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------
 # QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3)
 Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} | 
-                                         Select-Object @{expression={$_.__Server};Label="Hostname"},
-                                         @{Label="Drive";Expression={$_.DeviceID}}, 
-                                         @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
-                                         @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB,2)}},                                          
-                                         @{Label ="(%)Used";Expression= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
-                                         @{Label="Free(GB)"; Expression={[math]::round($_.FreeSpace/1GB,2)}}, 
-                                         @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
+                                         Select-Object @{E={$_.__Server};L="Hostname"},
+                                         @{L="Drive";E={$_.DeviceID}}, 
+                                         @{L="Capacity(GB)";E={[math]::round($_.Size/1GB,2)}}, 
+                                         @{L="Used(GB)";E={[math]::round($_.Size/1GB - $_.FreeSpace/1GB,2)}},                                          
+                                         @{L="(%)Used";E={[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
+                                         @{L="Free(GB)";E={[math]::round($_.FreeSpace/1GB,2)}}, 
+                                         @{L="(%)Free";E={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
                                          Out-GridView
 
 
 
-#-------------------------------------------------------------------------------------------------------------                                        
+# -------------------------------------------------------------------------------------------------------------                                        
 # QUERY ALL DISKS ON HOST
 $DiskType = @{
     2 = "USB"
@@ -34,21 +34,23 @@ $DiskType = @{
     4 = "NETWORK"
     5 = "CD-ROM"}
  
- Get-WmiObject -Class Win32_LogicalDisk  | Select-Object @{expression={$_.__Server};Label="Hostname"},
-                                          @{Label="Drive";Expression={$_.DeviceID}}, 
-                                          @{Label='Type';Expression={$DiskType.item([int]$_.DriveType)}},
-                                          @{Label="Capacity(GB)"; Expression={[math]::round($_.Size/1GB,2)}}, 
-                                          @{Label="Used(GB)"; Expression={[math]::round($_.Size/1GB - $_.FreeSpace/1GB,2)}},                                          
-                                          @{Label ="(%)Used";Expression= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
-                                          @{Label="Free(GB)"; Expression={[math]::round($_.FreeSpace/1GB,2)}}, 
-                                          @{Label="(%)Free";Expression={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
+ Get-WmiObject -Class Win32_LogicalDisk  | Select-Object @{E={$_.__Server};L="Hostname"},
+                                          @{L="Drive";E={$_.DeviceID}}, 
+                                          @{L='Type';E={$DiskType.item([int]$_.DriveType)}},
+                                          @{L="Capacity(GB)"; E={[math]::round($_.Size/1GB,2)}}, 
+                                          @{L="Used(GB)"; E={[math]::round($_.Size/1GB - $_.FreeSpace/1GB,2)}},                                          
+                                          @{L="(%)Used";E= {[Math]::Round(((($_.Size - $_.FreeSpace) / $_.Size) * 100),2)}},
+                                          @{L="Free(GB)"; E={[math]::round($_.FreeSpace/1GB,2)}}, 
+                                          @{L="(%)Free";E={[Math]::round((($_.freespace/$_.size) * 100),2)}} | 
                                           Out-GridView
                                         
 
 
-#-------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------
+
 # ====(OLD DEPRECATED)====
-# CONVERT AND LABEL DISK SIZES TO KB/MB/GB 
+
+# CONVERT AND L DISK SIZES TO KB/MB/GB 
 FUNCTION Convert-BytesToSize 
 { 
 [CmdletBinding()] 
@@ -101,11 +103,11 @@ Return $NewSize
 } 
 
  Get-WmiObject win32_logicaldisk | Where-Object {$_.DeviceID -ne "A:" -and $_.DeviceID -ne "B:"} |  
-                                  Select-Object @{expression={$_.__Server};Label="Computer"}, 
-                                  @{Expression={$_.DeviceID};Label="Drive"}, 
-                                  @{Expression={Convert-BytesToSize $_.Size};Label="Capacity"}, 
-                                  @{Expression={Convert-BytesToSize $_.freespace};Label="FreeSpace"}, 
-                                  @{Expression={[Math]::round((($_.freespace/$_.size) * 100),2)};Label="(%)Free"} | Out-GridView 
+                                  Select-Object @{E={$_.__Server};L="Computer"}, 
+                                  @{E={$_.DeviceID};L="Drive"}, 
+                                  @{E={Convert-BytesToSize $_.Size};L="Capacity"}, 
+                                  @{E={Convert-BytesToSize $_.freespace};L="FreeSpace"}, 
+                                  @{E={[Math]::round((($_.freespace/$_.size) * 100),2)};L="(%)Free"} | Out-GridView 
 
 
                                   
