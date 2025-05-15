@@ -1,6 +1,6 @@
 
 # QUICK QUERY FOR ON-SCREEN COPY
-(Get-ADObject -Server domain.com -SearchBase "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" -Filter * -Properties *).CN
+(Get-ADObject -Server domain.com -SearchBase "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" -Filter * -Properties *).CN | Sort-Object | out-file C:\Users\Username\Desktop\AD_Results.txt
 
 #-------------------------------------------------------------------------------------------------------------
 
