@@ -11,8 +11,7 @@
         -Make sure to enter "$server" variable when referencing the object you're targeting within the array.
 #>
 
-
-# Function for pop-up box to select a file
+# ----------------------------------------------------------------------------------
 Function Get-File($initialDirectory) 
 {    
  [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |  Out-Null 

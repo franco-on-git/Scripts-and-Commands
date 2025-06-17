@@ -15,12 +15,12 @@
         Source: https://stackoverflow.com/questions/4967496/check-if-a-windows-service-exists-and-delete-in-powershell      
 #>
 
-
-
+# ----------------------------------------------------------------------------------
 # Clears all recycle bins (CMD Admin required)
 rm /s c:\$Recycle.Bin 
 
 
+# ----------------------------------------------------------------------------------
 # Clears recycle bin for current user (Powershell 7)
 Clear-RecycleBin -force
 

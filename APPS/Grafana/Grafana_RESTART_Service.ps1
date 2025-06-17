@@ -3,9 +3,9 @@
 if (!($GrafanaService)) {write-host "Grafana Agent Missing"} 
 
 else {Stop-Service -Name grafana-agent
-      sleep 5
+      Start-Sleep 5
       Start-Service -Name  grafana-agent
-      sleep 5
+      Start-Sleep 5
 
       $GrafanaState = ($GrafanaService).State
 

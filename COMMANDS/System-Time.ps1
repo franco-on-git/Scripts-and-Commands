@@ -3,7 +3,7 @@
         Make sure "Windows Time" service is in "running"state
 #>
 
-
+# ----------------------------------------------------------------------------------
 # Start/stop  time service 
 net stop w32time 
 net start w32time 
@@ -14,8 +14,8 @@ w32tm /resync
 # Verify your sync status: 
 w32tm /query /status 
 
-# ------------------------------- 
 
+# ----------------------------------------------------------------------------------
 # List Peers
 w32tm /query /peers 
 

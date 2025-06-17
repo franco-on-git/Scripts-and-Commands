@@ -5,7 +5,7 @@
 @{Expression={Convert-BytesToSize $_.Size};Label="Size"}
 
 
-# FUNCTION=====================================================
+# ----------------------------------------------------------------------------------
 Function Convert-BytesToSize
 {
 [CmdletBinding()]

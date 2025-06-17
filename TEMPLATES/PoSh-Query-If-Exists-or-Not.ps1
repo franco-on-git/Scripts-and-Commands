@@ -13,6 +13,7 @@
 
 
 # IF EXISTS
+# ----------------------------------------------------------------------------------
 $processname = Get-Process [processname] -ErrorAction SilentlyContinue
 
 if ($processname) {write-host "Process Exists"}
@@ -21,6 +22,7 @@ else {Write-Host "Process doesn't exist"}
 
 
 # DOES NOT EXIST
+# ----------------------------------------------------------------------------------
 $processname = Get-Process [processname] -ErrorAction SilentlyContinue
 
 if (!$processname) {Write-Host "Does not exist"}
