@@ -10,7 +10,8 @@ logman start _LOGMAN_ALL_5SEC
 logman stop  _LOGMAN_ALL_5SEC
 
 
-# COLLECT PROCESS/CPU ONLY ----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
+# COLLECT PROCESS/CPU ONLY
 # 5 Second Interval sampling
 # 1GB max file size
 # !!! Run as Administrator in CMD !!!
