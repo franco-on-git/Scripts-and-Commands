@@ -3,8 +3,13 @@
 Get-HotFix | Sort-Object InstalledOn -Descending 
 
 # ----------------------------------------------------------------------------------
-# Search for SPECIFIC patch\kb 
-Get-HotFix | Where-Object {$_.hotfixid -eq "KB2919355"} | Select-Object @{E={$_.csname};L="Server"},Description,HotFixID,Installedby,InstalledOn 
-
 # Search for any (LIKE) patch\KB matching string
-Get-HotFix | Where-Object {$_.hotfixid -like "*1577*"} | Select-Object @{E={$_.csname};L="Server"},Description,HotFixID,Installedby,InstalledOn 
+$hotfixID = "KB5060526" # ..Change me
+
+$HotFixQuery = Get-HotFix | Where-Object {$_.hotfixid -like "*$hotfixID*"}
+
+If ($HotFixQuery) {Get-HotFix | 
+                   Where-Object {$_.hotfixid -like "*$hotfixID*"} | 
+                   Select-Object @{E={$_.csname};L="Server"},HotFixID,Installedby,InstalledOn}
+
+Else {write-host "$hotfixID Not Found" -ForegroundColor Yellow}
