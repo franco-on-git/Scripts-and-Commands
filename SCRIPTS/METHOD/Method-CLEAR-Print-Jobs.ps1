@@ -1,3 +1,6 @@
+# !!! Must run Powershell ISE as ADMINISTRATOR !!!
+
+
 $spooldirectory = "C:\Windows\System32\spool\PRINTERS"
 
 # stop print spooler
