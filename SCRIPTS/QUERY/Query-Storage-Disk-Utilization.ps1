@@ -1,11 +1,12 @@
 
 <#
     .NOTES
-        Author: Roboute Guilliman
+        Author: Franco-hq
         Created: 04/2025
 
-    .SYNOPSIS
-        Disk Types:
+    .DESCRIPTION
+        -Scirpt queries local storage to display key details such as total size, used space, and free space.
+        -Disk Types:
             -Type 2: USB
             -Type 3: HDD
             -Type 4: Network
