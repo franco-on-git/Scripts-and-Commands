@@ -1,16 +1,15 @@
-
 <#
-    .NOTES
-        Author: Franco-hq
-        Created: 04/2025
+.NOTES
+    Author: Franco-hq
+    Created: 04/2025
 
-    .DESCRIPTION
-        -Scirpt queries local storage to display key details such as total size, used space, and free space.
-        -Disk Types:
-            -Type 2: USB
-            -Type 3: HDD
-            -Type 4: Network
-            -Type 5: CD-ROM
+.DESCRIPTION
+    -Scirpt queries local storage to display key details such as total size, used space, and free space.
+    -Disk Types:
+        -Type 2: USB
+        -Type 3: HDD
+        -Type 4: Network
+        -Type 5: CD-ROM
 #>
 
 # ---------------------------------------------------------------------------------
