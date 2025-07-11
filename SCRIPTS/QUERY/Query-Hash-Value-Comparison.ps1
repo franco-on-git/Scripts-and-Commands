@@ -28,6 +28,7 @@ Write-Host "$AlgorithmOption" -ForegroundColor White
 write-host ""
 Start-Sleep 1
 
+# Verify algorithm option value is not $null
 if ($null -eq $AlgorithmOption ) {write-host "No option selected, exiting script..." -ForegroundColor Yellow
                                  Start-Sleep 3
                                  exit}
@@ -72,7 +73,7 @@ Write-Host ""
 $Yourhash = Read-Host "Enter Compariosn Hash"
 Write-Host ""
 
-
+# Hash value comparison and results
 if ($hash -eq $Yourhash) {
     Write-Host "Hash Values Match!" -ForegroundColor Green
 }
