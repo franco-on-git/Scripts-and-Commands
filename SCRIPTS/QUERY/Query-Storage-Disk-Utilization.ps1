@@ -12,7 +12,7 @@
             -Type 5: CD-ROM
 #>
 
-# ----------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
 # QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3 - SSD\HDD ONLY!)
 
 Get-WmiObject -Class Win32_LogicalDisk |
@@ -29,9 +29,8 @@ Get-WmiObject -Class Win32_LogicalDisk |
     Out-GridView
 
 
-
 # ----------------------------------------------------------------------------------
-# QUERY ALL DISKS ON HOST
+# QUERY ALL DISKS ATTACHED TO THE HOST
 
 $DiskType = @{
     2 = "USB"
@@ -52,5 +51,3 @@ Get-WmiObject -Class Win32_LogicalDisk |
         @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }} 
         ) |
     Out-GridView
-
-# ----------------------------------------------------------------------------------
