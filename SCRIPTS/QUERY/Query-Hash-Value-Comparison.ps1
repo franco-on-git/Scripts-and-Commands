@@ -1,7 +1,8 @@
 # Algorithm Selection box
 Add-Type -AssemblyName System.Windows.Forms
 
-$choices = @("MD5", "SHA1", "SHA256","SHA512")
+$choices = @("MD5", "SHA1", "SHA256", "SHA512")
+
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Choose an Algorithm"
 $form.Size = New-Object System.Drawing.Size(300,150)
@@ -23,45 +24,44 @@ $form.Controls.Add($okButton)
 $form.ShowDialog() | Out-Null
 
 $AlgorithmOption = $listbox.SelectedItem
-Write-Host "Algorithm selected:" -ForegroundColor yellow
+
+Write-Host "Algorithm selected:" -ForegroundColor Yellow
 Write-Host "$AlgorithmOption" -ForegroundColor White
-write-host ""
+Write-Host ""
 Start-Sleep 1
 
-# Verify algorithm option value is not $null
-if ($null -eq $AlgorithmOption ) {write-host "No option selected, exiting script..." -ForegroundColor Yellow
-                                 Start-Sleep 3
-                                 exit}
+# Verify algorithm selection value is not $null
+if ($null -eq $AlgorithmOption) {
+    Write-Host "No option selected, exiting script..." -ForegroundColor Yellow
+    Start-Sleep 3
+    exit
+}
 
-
-# Fuction to select file for hash value
+# FUNCTION to select target file to check for hash value
 Write-Host "Select a file..." -ForegroundColor Yellow
 Write-Host ""
 Start-Sleep 3
 
-Function Get-File($initialDirectory) 
-{    
- [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |  Out-Null 
- $OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog 
- $OpenFileDialog.initialDirectory = $initialDirectory 
- $OpenFileDialog.filter = "All files (*.*)| *.*" 
- $OpenFileDialog.ShowDialog() | Out-Null 
- $OpenFileDialog.filename 
-} 
+Function Get-File($initialDirectory) {
+    [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") | Out-Null 
+    $OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog 
+    $OpenFileDialog.initialDirectory = $initialDirectory 
+    $OpenFileDialog.filter = "All files (*.*)| *.*" 
+    $OpenFileDialog.ShowDialog() | Out-Null 
+    $OpenFileDialog.filename 
+}
 
-
-# File path selection and verbose output of directory
+# Verbose output of target file's directory
 $filePath = Get-File
-
 
 Write-Host "File selected:" -ForegroundColor Yellow
 Write-Host "$filePath" -ForegroundColor White
-Write-Host " "
-
-# Get the file's checksum
-$hash = (Get-FileHash -Path $filePath -Algorithm $AlgorithmOption).hash
 Write-Host ""
 
+# Get target file's checksum
+$hash = (Get-FileHash -Path $filePath -Algorithm $AlgorithmOption).hash
+
+Write-Host ""
 Write-Host "Hash Value:" -ForegroundColor Yellow
 Write-Host "$hash"
 Write-Host ""
@@ -69,14 +69,16 @@ Write-Host ""
 Write-Host "*****************************" -ForegroundColor Yellow
 Write-Host ""
 
-
-$Yourhash = Read-Host "Enter Compariosn Hash"
+# Enter the hash value provided by vendor or website for verification
+$Yourhash = Read-Host "Enter Comparison Hash"
 Write-Host ""
 
 # Hash value comparison and results
 if ($hash -eq $Yourhash) {
     Write-Host "Hash Values Match!" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "== $hash ==" -ForegroundColor Cyan
+    Write-Host "== $Yourhash ==" -ForegroundColor Cyan
+} else {
+    Write-Host "Hash Values DO NOT MATCH!" -ForegroundColor Red
 }
-
-else {Write-Host "Hash Values DO NOT MATCH!" -ForegroundColor Red}
-
