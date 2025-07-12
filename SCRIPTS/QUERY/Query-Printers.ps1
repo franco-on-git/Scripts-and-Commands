@@ -8,7 +8,7 @@
 
     .DESCRIPTION
         1. Creates a variable that queries for all locally installed printers excluding "XPS" and "PDF".
-        2. Checks if any printers are installed or if the result is $null, and shows an appropriate message.
+        2. Checks if any printers are installed or if the result is $null, and display the appropriate resutl.
 #>
 
 
