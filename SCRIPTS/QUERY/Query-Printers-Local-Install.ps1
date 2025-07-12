@@ -7,10 +7,10 @@
         Query local system for installed printers.
 
     .DESCRIPTION
-        1. Creates a variable that queries for all locally installed printers, excluding "XPS" and "PDF".
-        2. Checks if any printers are installed and displays the appropriate result.
+        - Creates a variable that queries for all locally installed printers, excluding "XPS" and "PDF".
+        - Checks if any printers are installed and displays the appropriate result.
+        - Omit pipe command from line 16 and 17 if you want all printers displayed, including "XPS" and "PDF".
 #>
-
 
 # Save all printers to a variable, excluding XPS and PDF ones.
 $Printers = Get-Printer | Where-Object {
