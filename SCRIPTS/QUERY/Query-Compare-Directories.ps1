@@ -15,8 +15,8 @@
 
 
 clear-host
-$dir1 = "C:\Users\fpere47-ba\Desktop\Client"
-$dir2 = "C:\Install\PkgSrc\Radia\Client"
+$dir1 = "<directory1>"
+$dir2 = "<directory2>"
 
 # Get relative paths of subdirectories
 $subs1 = Get-ChildItem -Path $dir1 -Recurse -Directory | ForEach-Object {
