@@ -12,6 +12,7 @@
         - Omit pipe command from line 16 and 17 if you want all printers displayed, including "XPS" and "PDF".
 #>
 
+# ----------------------------------------------------------------------------------
 # Save all printers to a variable, excluding XPS and PDF ones.
 $Printers = Get-Printer | Where-Object {
     $_.Name -notlike "*xps*" -and $_.Name -notlike "*pdf*"

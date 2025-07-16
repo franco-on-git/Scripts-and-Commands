@@ -13,6 +13,7 @@
         
 #>
 
+# ----------------------------------------------------------------------------------
 # Save all printers to a variable, excluding XPS and PDF ones.
 $Printers = Get-Printer | Where-Object {
     $_.Name -notlike "*xps*" -and $_.Name -notlike "*pdf*"

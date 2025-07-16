@@ -14,8 +14,9 @@
 #>
 
 
-# NO SCRIPT BLOCK - External Commands 
+
 # ----------------------------------------------------------------------------------
+# NO SCRIPT BLOCK - External Commands 
 Function Get-File($initialDirectory) {    
  [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") | 
  Out-Null 
