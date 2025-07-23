@@ -1,4 +1,4 @@
-
+clear-host
 
 # ----------------------------------------------------------------------------------
 # Algorithm Selection box
@@ -41,9 +41,9 @@ if ($null -eq $AlgorithmOption) {
 }
 
 # FUNCTION to select target file to check for hash value
-Write-Host "Select a file..." -ForegroundColor Yellow
+Write-Host "Select a file..." -ForegroundColor cyan
 Write-Host ""
-Start-Sleep 3
+Start-Sleep 2
 
 Function Get-File($initialDirectory) {
     [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") | Out-Null 
@@ -60,14 +60,17 @@ $filePath = Get-File
 Write-Host "File selected:" -ForegroundColor Yellow
 Write-Host "$filePath" -ForegroundColor White
 Write-Host ""
+sleep 1
 
 # Get target file's checksum
+Write-Host "Checking file, could take a bit..." -foregroundcolor cyan
 $hash = (Get-FileHash -Path $filePath -Algorithm $AlgorithmOption).hash
 
 Write-Host ""
-Write-Host "Hash Value:" -ForegroundColor Yellow
+Write-Host "File hash value:" -ForegroundColor Yellow
 Write-Host "$hash"
 Write-Host ""
+sleep 1
 
 Write-Host "*****************************" -ForegroundColor Yellow
 Write-Host ""
@@ -78,10 +81,10 @@ Write-Host ""
 
 # Hash value comparison and results
 if ($hash -eq $Yourhash) {
-    Write-Host "Hash Values Match!" -ForegroundColor Green
+    Write-Host "Hash Values Match!" -ForegroundColor yellow
     Write-Host ""
-    Write-Host "== $hash ==" -ForegroundColor Cyan
-    Write-Host "== $Yourhash ==" -ForegroundColor Cyan
+    Write-Host "== $hash ==" -ForegroundColor green
+    Write-Host "== $Yourhash ==" -ForegroundColor green
 } else {
     Write-Host "Hash Values DO NOT MATCH!" -ForegroundColor Red
 }
