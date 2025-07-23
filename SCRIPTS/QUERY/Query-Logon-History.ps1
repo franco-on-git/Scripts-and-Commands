@@ -39,7 +39,7 @@ $uniqueUsers = $events | Sort-Object TimeCreated -Descending |
 Write-Host "User Logon History (20 Max):" -ForegroundColor Yellow
 $uniqueUsers | Sort-Object TimeCreated -Descending | Select-Object -First 20 | Format-Table -AutoSize
 
-sleep 3
+Start-Sleep 3
 
 Write-Host "------------------------------------------------------------------------"
 Write-Host ""
