@@ -33,6 +33,8 @@ Write-Host "$AlgorithmOption" -ForegroundColor White
 Write-Host ""
 Start-Sleep 1
 
+
+# ----------------------------------------------------------------------------------
 # Verify algorithm selection value is not $null
 if ($null -eq $AlgorithmOption) {
     Write-Host "No option selected, exiting script..." -ForegroundColor Yellow
@@ -40,6 +42,8 @@ if ($null -eq $AlgorithmOption) {
     exit
 }
 
+
+# ----------------------------------------------------------------------------------
 # FUNCTION to select target file to check for hash value
 Write-Host "Select a file..." -ForegroundColor cyan
 Write-Host ""
@@ -54,14 +58,18 @@ Function Get-File($initialDirectory) {
     $OpenFileDialog.filename 
 }
 
+
+# ----------------------------------------------------------------------------------
 # Verbose output of target file's directory
 $filePath = Get-File
 
 Write-Host "File selected:" -ForegroundColor Yellow
 Write-Host "$filePath" -ForegroundColor White
 Write-Host ""
-sleep 1
+Start-Sleep 1
 
+
+# ----------------------------------------------------------------------------------
 # Get target file's checksum
 Write-Host "Checking file, could take a bit..." -foregroundcolor cyan
 $hash = (Get-FileHash -Path $filePath -Algorithm $AlgorithmOption).hash
@@ -70,15 +78,19 @@ Write-Host ""
 Write-Host "File hash value:" -ForegroundColor Yellow
 Write-Host "$hash"
 Write-Host ""
-sleep 1
+Start-Sleep 1
 
 Write-Host "*****************************" -ForegroundColor Yellow
 Write-Host ""
 
+
+# ----------------------------------------------------------------------------------
 # Enter the hash value provided by vendor or website for verification
 $Yourhash = Read-Host "Enter Comparison Hash"
 Write-Host ""
 
+
+# ----------------------------------------------------------------------------------
 # Hash value comparison and results
 if ($hash -eq $Yourhash) {
     Write-Host "Hash Values Match!" -ForegroundColor yellow
