@@ -2,7 +2,7 @@
 
 👋 Hello and welcome to my repository!
 
-Here, you'll find a collection of scripts, tools, and resources that I’ve put together to help solve real-world problems, automate tasks, and streamline workflows. Whether you’re a fellow developer, curious learner, or just passing through, feel free to:
+Here, you'll find a collection of scripts and resources that I’ve put together to help solve real-world problems and automate tasks. Whether you’re a fellow developer, curious learner, or just passing through, feel free to:
 
 ✅ Browse the code  
 📄 Copy anything useful  
