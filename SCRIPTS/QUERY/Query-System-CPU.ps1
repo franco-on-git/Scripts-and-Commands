@@ -12,7 +12,6 @@
 Clear-Host
 
 # Title
-# ========
 Write-Host "`nPROCESSORS" -ForegroundColor Yellow
 Write-Host "-----------"
 Write-Host "** Virtual platforms will only show Cores\Threads assigned to them **" -ForegroundColor Cyan
