@@ -9,3 +9,8 @@ Here, you'll find a collection of scripts and resources that I’ve put together
 ⬇️ Download what you need  
 
 I’m always refining and adding new content, so feel free to star ⭐ the repo to stay updated. Thanks for stopping by!
+
+<p align="center">
+  <img src="VISUALS/google-dino.png">
+  <br/>
+</p>
