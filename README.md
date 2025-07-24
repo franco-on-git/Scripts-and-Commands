@@ -1,4 +1,4 @@
-# powershell-scripts-commands
+# Powershell-Scripts-Commands
 
 👋 Hello and welcome to my repo!
 
