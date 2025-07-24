@@ -1,3 +1,13 @@
+<#
+    .NOTES
+        Author: Franco-hq
+        Created: 07/2025
+
+    .DESCRIPTION
+        -Compares hash value, from diffrent selectable algorithms, from a selected file to a manually input has value
+#>
+
+
 clear-host
 
 # ----------------------------------------------------------------------------------
