@@ -40,3 +40,32 @@ $cpuInfo = [PSCustomObject]@{
 
 # Output results
 Write-Output $cpuInfo
+
+
+# ---------------------------------------------------------------------------------
+# modify me to include Platform and CPU name
+
+
+# Try CIM first
+$cpus = Get-CimInstance Win32_Processor
+
+# Fallback to WMI if CIM returns nothing
+if (-not $cpus) {
+    $cpus = Get-WmiObject Win32_Processor
+}
+
+# Guard against empty results
+if ($cpus) {
+    $totalSockets = ($cpus | Select-Object -ExpandProperty SocketDesignation | Get-Unique).Count
+    $totalCores = ($cpus | Measure-Object -Property NumberOfCores -Sum).Sum
+    $totalThreads = ($cpus | Measure-Object -Property NumberOfLogicalProcessors -Sum).Sum
+
+    [PSCustomObject]@{
+        Sockets = $totalSockets
+        Cores   = $totalCores
+        Threads = $totalThreads
+    }
+}
+else {
+    Write-Warning "Unable to retrieve CPU information. Check system permissions or WMI availability."
+}
