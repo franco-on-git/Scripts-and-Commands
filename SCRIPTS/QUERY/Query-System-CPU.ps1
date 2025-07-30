@@ -7,10 +7,8 @@
         -Simple query of CPU name, sockets, and threads
 #>
 
-
 # --------------------------------------------------------------------------------
 Clear-Host
-
 
 # Title
 # ---------------------------------------------------------------------------------
@@ -18,7 +16,6 @@ Write-Host "`nPROCESSORS" -ForegroundColor Yellow
 Write-Host "-----------"
 Write-Host "** Virtual platforms will only show processor resources assigned to them **" -ForegroundColor Cyan
 Write-Host "** Physical servers will show actual host Sockets, Cores, and thread count **" -ForegroundColor cyan
-
 
 # Try CIM first, fallback to WMI if CIM returns nothing
 # ---------------------------------------------------------------------------------
@@ -28,7 +25,6 @@ if (-not $cpus) {
     $cpus = Get-WmiObject Win32_Processor
 }
 
-
 # Determine if virtual or physical
 # ---------------------------------------------------------------------------------
 $model = (Get-CimInstance -ClassName Win32_ComputerSystem).Model
@@ -37,7 +33,6 @@ $platform = if ($model -match "Virtual|VMware|Hyper-V|VirtualBox") {
 } else {
     "Physical "
 }
-
 
 # Guard against empty results
 # ---------------------------------------------------------------------------------
