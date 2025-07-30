@@ -8,62 +8,52 @@
 #>
 
 
-# ---------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 Clear-Host
 
+
 # Title
+# ---------------------------------------------------------------------------------
 Write-Host "`nPROCESSORS" -ForegroundColor Yellow
 Write-Host "-----------"
-Write-Host "** Virtual platforms will only show Cores\Threads assigned to them **" -ForegroundColor Cyan
-Write-Host "** Physical servers will show actual hardware Core\Thread count **" -ForegroundColor cyan
+Write-Host "** Virtual platforms will only show processor resources assigned to them **" -ForegroundColor Cyan
+Write-Host "** Physical servers will show actual host Sockets, Cores, and thread count **" -ForegroundColor cyan
+
+
+# Try CIM first, fallback to WMI if CIM returns nothing
+# ---------------------------------------------------------------------------------
+$cpus = Get-CimInstance Win32_Processor
+
+if (-not $cpus) {
+    $cpus = Get-WmiObject Win32_Processor
+}
+
 
 # Determine if virtual or physical
-$platform = Get-CimInstance -ClassName Win32_ComputerSystem
-$result = if ($platform.Model -match "Virtual|VMware|Hyper-V|VirtualBox") {
+# ---------------------------------------------------------------------------------
+$model = (Get-CimInstance -ClassName Win32_ComputerSystem).Model
+$platform = if ($model -match "Virtual|VMware|Hyper-V|VirtualBox") {
     "Virtual "
 } else {
     "Physical "
 }
 
-# Fetch processor details
-$cpuName = (Get-CimInstance -ClassName Win32_Processor | Where-Object { $_.DeviceID -eq "CPU0" }).Name
-$coreCount = (Get-WmiObject -Class Win32_ComputerSystem).NumberOfProcessors
-$threadCount = (Get-CimInstance -ClassName Win32_Processor | Measure-Object NumberOfLogicalProcessors -Sum).Sum
-
-# Build custom object for output
-$cpuInfo = [PSCustomObject]@{
-    Platform  = $result
-    Processor = $cpuName
-    Cores     = $coreCount
-    Threads   = $threadCount
-}
-
-# Output results
-Write-Output $cpuInfo
-
-
-# ---------------------------------------------------------------------------------
-# modify me to include Platform and CPU name
-
-
-# Try CIM first
-$cpus = Get-CimInstance Win32_Processor
-
-# Fallback to WMI if CIM returns nothing
-if (-not $cpus) {
-    $cpus = Get-WmiObject Win32_Processor
-}
 
 # Guard against empty results
+# ---------------------------------------------------------------------------------
 if ($cpus) {
+    $CPUname      = (Get-CimInstance -ClassName Win32_Processor | Where-Object { $_.DeviceID -eq "CPU0" }).Name
     $totalSockets = ($cpus | Select-Object -ExpandProperty SocketDesignation | Get-Unique).Count
-    $totalCores = ($cpus | Measure-Object -Property NumberOfCores -Sum).Sum
+    $totalCores   = ($cpus | Measure-Object -Property NumberOfCores -Sum).Sum
     $totalThreads = ($cpus | Measure-Object -Property NumberOfLogicalProcessors -Sum).Sum
 
     [PSCustomObject]@{
-        Sockets = $totalSockets
-        Cores   = $totalCores
-        Threads = $totalThreads
+        Environment = $Platform
+        Model       = $model
+        CPU         = $cpuName
+        Sockets     = $totalSockets
+        Cores       = $totalCores
+        Threads     = $totalThreads
     }
 }
 else {
