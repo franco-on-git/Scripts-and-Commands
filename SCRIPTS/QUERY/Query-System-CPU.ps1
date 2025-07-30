@@ -27,7 +27,7 @@ if (-not $cpus) {
 
 # Determine if virtual or physical
 # ---------------------------------------------------------------------------------
-$model = (Get-CimInstance -ClassName Win32_ComputerSystem).Model
+$model = (Get-CimInstance Win32_ComputerSystem).Model
 $platform = if ($model -match "Virtual|VMware|Hyper-V|VirtualBox") {
     "Virtual "
 } else {
@@ -37,7 +37,7 @@ $platform = if ($model -match "Virtual|VMware|Hyper-V|VirtualBox") {
 # Guard against empty results
 # ---------------------------------------------------------------------------------
 if ($cpus) {
-    $CPUname      = (Get-CimInstance -ClassName Win32_Processor | Where-Object { $_.DeviceID -eq "CPU0" }).Name
+    $CPUname      = (Get-CimInstance Win32_Processor | Where-Object { $_.DeviceID -eq "CPU0" }).Name
     $totalSockets = ($cpus | Select-Object -ExpandProperty SocketDesignation | Get-Unique).Count
     $totalCores   = ($cpus | Measure-Object -Property NumberOfCores -Sum).Sum
     $totalThreads = ($cpus | Measure-Object -Property NumberOfLogicalProcessors -Sum).Sum
