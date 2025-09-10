@@ -1,7 +1,7 @@
 # PSExec Elevated Terminal
 
 ```diff
-- Running commands as  can be risky! You’re essentially bypassing user-level restrictions
+- WARNING: Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
 ```
 
 <span style="background-color: #FFFF00">Marked text</span>
