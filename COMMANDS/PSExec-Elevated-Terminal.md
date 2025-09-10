@@ -17,7 +17,7 @@
 ## Installation
 1. Download PSExec from [Sysinternals Website](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec).
 2. Copy executable to any environment variable directory 
-    **C:\Windows\System32\psexec.exe**
+```C:\Windows\System32\psexec.exe```
 3. Start \_ADMIN\_ Terminal
 4. Ran command to start system-level CMD shell: 
 ```
