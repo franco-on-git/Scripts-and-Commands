@@ -4,6 +4,7 @@
 - Running commands as  can be risky! You’re essentially bypassing user-level restrictions
 ```
 
+<span style="background-color: #FFFF00">Marked text</span>
 
 - The command  launches a Command Prompt interactively under the Local System account. 
 - This is a powerful way to run commands with elevated privileges on the local machine.
