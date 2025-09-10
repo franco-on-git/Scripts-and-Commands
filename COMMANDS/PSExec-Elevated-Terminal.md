@@ -5,7 +5,7 @@
 ```
 
 - The command  launches a interactive dhell under the Local **SYSTEM** account. 
-- This is a powerful way to run commands with elevated privileges on the local machine.
+- This is a powerful way to run commands with super-elevated privileges on the local machine.
 
 | Switch        | Description
 | ------------- | ------------- |
