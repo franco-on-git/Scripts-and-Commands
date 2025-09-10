@@ -4,7 +4,7 @@
 - WARNING: Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
 ```
 
-##Informational
+## Informational
 - The command  launches a interactive shell under the Local **SYSTEM** account. 
 - This is a powerful way to run commands with super-elevated privileges on the local machine.
 
