@@ -24,3 +24,15 @@
 - System-Level Access: Running as  gives you access beyond even Administrator privileges.
 - Interactive Session: Useful for debugging, testing elevated permissions, or accessing protected resources.
 - Local Execution: Although PsExec is often used for remote execution, this command runs locally.
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
+
+
+
+
