@@ -4,7 +4,7 @@
 - WARNING: Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
 ```
 
-- The command  launches a Command Prompt interactively under the Local System account. 
+- The command  launches a interactive dhell under the Local **SYSTEM** account. 
 - This is a powerful way to run commands with elevated privileges on the local machine.
 
 | Switch        | Description
