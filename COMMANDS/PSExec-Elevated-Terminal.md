@@ -6,9 +6,9 @@
 - This is a powerful way to run commands with elevated privileges on the local machine.
 
 | Switch        | Description
-| ------------- |:-------------:| -----:|
-| -i  | right-aligned |  (Interactive) Used for debugging, elevated permissions, or access to protected resources |
-| -s  | centered      |  (System-level Access) runs local system account, not current user; gives access beyond Admin privileges (non-user level restrictions) |
+| ------------- |:-------------:|
+| -i  |  (Interactive) Used for debugging, elevated permissions, or access to protected resources |
+| -s  |  (System-level Access) runs local system account, not current user; gives access beyond Admin privileges (non-user level restrictions) |
 
 
 ## Installation
