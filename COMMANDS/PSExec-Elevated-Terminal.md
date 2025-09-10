@@ -5,11 +5,14 @@
 - The command  launches a Command Prompt interactively under the Local System account. 
 - This is a powerful way to run commands with elevated privileges on the local machine.
 
--i (Interactive) Used for debugging, elevated permissions, or access to protected resources
--s (System-level Access) runs local system account, not current user; gives access beyond Admin privileges (non-user level restrictions)
+| Switch        | Description
+| ------------- |:-------------:| -----:|
+| -i  | right-aligned |  (Interactive) Used for debugging, elevated permissions, or access to protected resources |
+| -s  | centered      |  (System-level Access) runs local system account, not current user; gives access beyond Admin privileges (non-user level restrictions) |
+
 
 ## Installation
-1. Download PSExe from [Sysinternal](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) site
+1. Download PSExe from [Sysinternals Website](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec).
 2. Copy executable to any environment variable directory 
     **C:\Windows\System32\psexec.exe**
 3. Start \_ADMIN\_ Terminal
