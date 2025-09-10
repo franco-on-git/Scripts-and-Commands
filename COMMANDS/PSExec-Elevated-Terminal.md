@@ -20,8 +20,7 @@
 ```
 C:\Windows\System32\psexec.exe
 ```
-3. Start \_ADMIN\_ Terminal
-4. Ran command to start system-level CMD shell: 
+3. Start **ADMIN** Terminal and run command to start SYSTEM shell: 
 ```
 psxec.exe -i -s cmd.exe
 ```
