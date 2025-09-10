@@ -9,7 +9,7 @@
 
 | Switch        | Description
 | ------------- | ------------- |
-| -i  |  (Interactive) Used for debugging, elevated permissions, or access to protected resources |
+| **-i**  |  (Interactive) Used for debugging, elevated permissions, or access to protected resources |
 | -s  |  (System-level Access) runs local system account, not current user; gives access beyond Admin privileges (non-user level restrictions) |
 
 
