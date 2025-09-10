@@ -25,7 +25,7 @@ C:\Windows\System32\psexec.exe
 ```
 psxec.exe -i -s cmd.exe
 ```
-5. In shell, run this command to verify its using SYSTEM
+5. In shell, run command to verify its using SYSTEM:
 ```
 whoami
 ```
