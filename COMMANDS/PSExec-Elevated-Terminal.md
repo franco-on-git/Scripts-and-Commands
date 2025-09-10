@@ -1,6 +1,9 @@
 # PSExec Elevated Terminal
 
-====
+```diff
+- Running commands as  can be risky! You’re essentially bypassing user-level restrictions
+```
+
 
 - The command  launches a Command Prompt interactively under the Local System account. 
 - This is a powerful way to run commands with elevated privileges on the local machine.
@@ -25,9 +28,6 @@
 - Interactive Session: Useful for debugging, testing elevated permissions, or accessing protected resources.
 - Local Execution: Although PsExec is often used for remote execution, this command runs locally.
 
-```diff
-- Running commands as  can be risky! You’re essentially bypassing user-level restrictions
-```
 
 
 
