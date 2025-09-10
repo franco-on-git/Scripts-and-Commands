@@ -20,7 +20,9 @@
     **C:\Windows\System32\psexec.exe**
 3. Start \_ADMIN\_ Terminal
 4. Ran command to start system-level CMD shell: 
-`psxec.exe -i -s cmd.exe`
+```
+psxec.exe -i -s cmd.exe
+```
 5. In shell, run this command to verify its using SYSTEM
 ```
 whoami
