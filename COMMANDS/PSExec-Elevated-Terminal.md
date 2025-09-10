@@ -16,7 +16,7 @@
 
 ## Installation
 1. Download PSExec from [Sysinternals Website](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec).
-2. Copy executable to any environment variable directory 
+2. Copy executable to any PATH environment variable directory:
 ```
 C:\Windows\System32\psexec.exe
 ```
