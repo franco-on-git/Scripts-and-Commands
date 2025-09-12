@@ -18,15 +18,12 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 
 # Useful Stuff
 
-### Links
+## Links
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-### Headings
-# A first-level heading
-## A second-level heading
-### A third-level heading
 
-### Alerts
+
+## Alerts
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
