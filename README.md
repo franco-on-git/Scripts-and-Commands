@@ -18,7 +18,7 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 
 # Useful Stuff
 
-## Links
+## LINKS
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
@@ -32,7 +32,7 @@ This is a <sub>subscript</sub> text<br>
 This is a <sup>superscript</sup> text<br>
 This is an <ins>underlined</ins> text<br>
 
-## Alerts
+## ALERTS
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
@@ -47,3 +47,5 @@ This is an <ins>underlined</ins> text<br>
 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
+
+## TABLE FORMATTING
