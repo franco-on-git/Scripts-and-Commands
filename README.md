@@ -40,21 +40,7 @@ This is a <sub>subscript</sub> text<br>
 This is a <sup>superscript</sup> text<br>
 This is an <ins>underlined</ins> text<br>
 
-## ALERTS
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
 
-> [!TIP]
-> Helpful advice for doing things better or more easily.
-
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
-
-> [!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
-
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
 
 ## TABLE FORMATTING
 - You can create tables with pipes `|` and hyphens `-`.
@@ -74,3 +60,19 @@ This is an <ins>underlined</ins> text<br>
 | Left-aligned | Center-aligned | Right-aligned |
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
+
+## ALERTS
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
