@@ -20,7 +20,17 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
-## Styling Text<br>
+## CODE BLOCKS
+- You can create fenced code blocks by placing triple backticks ``` before and after the code block.
+- We recommend placing a blank line before and after code blocks to make the raw formatting easier to read.
+  
+```
+write-host "This is a code block"
+write-host "triple backticks only visible on edit"
+```
+
+
+## STYLING TEXT<br>
 **This is bold text**<br>
 _This text is italicized_<br>
 ~~This was mistaken text~~<br>
