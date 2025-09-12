@@ -22,7 +22,7 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
-## Styling Text
+## Styling Text  
 **This is bold text**
 _This text is italicized_
 ~~This was mistaken text~~
