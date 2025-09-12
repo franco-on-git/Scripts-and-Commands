@@ -23,14 +23,14 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 
 
 ## Styling Text<br>
-**This is bold text**
-_This text is italicized_
-~~This was mistaken text~~
-**This text is _extremely_ important**
-***All this text is important***
-This is a <sub>subscript</sub> text
-This is a <sup>superscript</sup> text
-This is an <ins>underlined</ins> text
+**This is bold text**<br>
+_This text is italicized_<br>
+~~This was mistaken text~~<br>
+**This text is _extremely_ important**<br>
+***All this text is important***<br>
+This is a <sub>subscript</sub> text<br>
+This is a <sup>superscript</sup> text<br>
+This is an <ins>underlined</ins> text<br>
 
 ## Alerts
 > [!NOTE]
