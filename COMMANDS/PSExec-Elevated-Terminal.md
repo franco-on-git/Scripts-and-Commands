@@ -27,7 +27,7 @@
 ```
 C:\Windows\System32\psexec.exe
 ```
-3. Start terminal as **ADMIN** and run command to start a shell as SYSTEM: 
+3. Start terminal as <ins>ADMIN</ins> and run command to start a shell as SYSTEM: 
 ```
 psxec.exe -i -s cmd.exe
 ```
