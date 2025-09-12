@@ -1,7 +1,8 @@
 # PSExec Elevated Terminal
 
 > [!CAUTION]
-> Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
+> Running commands as SYSTEM essentially bypasses user-level restrictions and grants almost unfettered access.
+> Mistakes like `rm`-style deletions, registry edits, or driver installs can easily brick a machine.
 
 
 ## Informational
@@ -17,7 +18,7 @@
 | Switch        | Description
 | ------------- | ------------- |
 | **-i**  |  **Interactive:** Used for debugging, elevated permissions, or access to protected resources |
-| **-s** |  **System-Level Access:** runs as local system account, not current user; gives access beyond Admin privileges |
+| **-s** |  **System-Level Access:** Runs as local system account, not current user; gives access beyond Admin privileges |
 
 
 
