@@ -5,7 +5,7 @@
 ```
 
 ## Informational
-- The command  launches a interactive shell under the Local **SYSTEM** account. 
+- Command starts a new interactive Command Prompt running under the Windows **NT AUTHORITY\SYSTEM** account. **The highest local system privilege!!**
 - This is a powerful way to run commands with super-elevated privileges on the local machine.
 
 | Switch        | Description
