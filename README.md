@@ -16,9 +16,7 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 </p>
 
 
-# Useful Stuff
-
-## LINKS
+# LINKS
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
@@ -32,7 +30,7 @@ This is a <sub>subscript</sub> text<br>
 This is a <sup>superscript</sup> text<br>
 This is an <ins>underlined</ins> text<br>
 
-## ALERTS
+# ALERTS
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
@@ -48,7 +46,7 @@ This is an <ins>underlined</ins> text<br>
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
-## TABLE FORMATTING
+# TABLE FORMATTING
 - You can create tables with pipes `|` and hyphens `-`.
 - Hyphens are used to create each column's header, while pipes separate each column.
 - You must include a blank line before your table in order for it to correctly render.
