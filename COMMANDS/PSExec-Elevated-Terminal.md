@@ -1,4 +1,4 @@
-# PSExec Elevated Terminal
+# PxExec - Elevated Terminal
 
 > [!CAUTION]
 > Running commands as SYSTEM essentially bypasses user-level restrictions and grants almost unfettered access.
