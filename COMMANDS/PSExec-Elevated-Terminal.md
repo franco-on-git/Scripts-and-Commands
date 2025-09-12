@@ -8,7 +8,7 @@
 - Command starts a new interactive Command Prompt running under the Windows **NT AUTHORITY\SYSTEM** account.
 - This is the highest local system privilege and the most powerful way to run commands with super-elevated privileges on the local machine.
 
-| Switch        | Description |
+| Switch        | Description
 | ------------- | ------------- |
 | **-i**  |  (Interactive) Used for debugging, elevated permissions, or access to protected resources |
 | **-s** |  (System-level Access) runs local system account, not current user; gives access beyond Admin privileges (non-user level restrictions) |
