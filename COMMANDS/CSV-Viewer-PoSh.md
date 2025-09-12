@@ -1,9 +1,10 @@
 ## CSV Viewer using PowerShell
-GUI Display; supports sorting, filtering:
+- GUI Display using grid view. 
+- Supports sorting, filtering:
 ```
 Import-Csv yourfile.csv | Out-GridView
 ```
-Console Display:
+- Console Display:
 ```
 Import-Csv yourfile.csv | Format-Table -AutoSize
 ```
