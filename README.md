@@ -49,3 +49,14 @@ This is an <ins>underlined</ins> text<br>
 > Advises about risks or negative outcomes of certain actions.
 
 ## TABLE FORMATTING
+- You can create tables with pipes `|` and hyphens `-`.
+- Hyphens are used to create each column's header, while pipes separate each column.
+- You must include a blank line before your table in order for it to correctly render.
+- The pipes on either end of the table are optional.
+- Cells can vary in width and do not need to be perfectly aligned within columns.
+- There must be at least three hyphens in each column of the header row.
+
+| Command | Description |
+| --- | --- |
+| Command 1 | Command 1 description |
+| Command 2 | Command 2 description |
