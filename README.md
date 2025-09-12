@@ -16,11 +16,11 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 </p>
 
 
-## Useful Stuff
+# Useful Stuff
 
 
 
-# Alerts
+## Alerts
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
