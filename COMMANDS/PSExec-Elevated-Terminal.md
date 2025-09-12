@@ -35,7 +35,7 @@ psxec.exe -i -s cmd.exe
 ```
 whoami
 ```
-It should return:
+  It should return:
 ```
 NT AUTHORITY\SYSTEM
 ```
