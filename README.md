@@ -60,3 +60,8 @@ This is an <ins>underlined</ins> text<br>
 | --- | --- |
 | Command 1 | Command 1 description |
 | Command 2 | Command 2 description |
+
+-You can align text to the left, right, or center of a column by including colons `:` to the left, right, or on both sides of the hyphens within the header row.
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
