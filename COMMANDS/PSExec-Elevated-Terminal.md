@@ -1,5 +1,8 @@
 # PSExec Elevated Terminal
 
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
 ```diff
 - WARNING: Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
 ```
