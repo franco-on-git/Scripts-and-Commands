@@ -1,22 +1,8 @@
 # PSExec Elevated Terminal
 
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
-
-> [!TIP]
-> Helpful advice for doing things better or more easily.
-
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
-
-> [!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
-
 > [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
-```diff
-- WARNING: Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
-```
+> Running commands as SYSTEM can be risky! You’re essentially bypassing user-level restrictions
+
 
 ## Informational
 - Command starts a new interactive Command Prompt running under the Windows **NT AUTHORITY\SYSTEM** account.
