@@ -8,7 +8,7 @@
 
 # Command Prompt (CMD)
 > [!IMPORTANT]
-> **Run CMD as <ins>ADMIN</ins>!**
+> **Run CMD as <ins>Administrator</ins>!**
 
 Clears C: drive recycle bins
 ```
