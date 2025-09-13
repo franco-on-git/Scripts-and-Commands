@@ -1,10 +1,13 @@
+# Informational
+- ONLY WORKS WITH AN OBJECT THAT COINTAINS THE "SIZE" PROPERTY
+- COPY THE FUNCTION TO THE TOP OF THE SCRIPT
 
-# ONLY WORKS WITH AN OBJECT THAT COINTAINS THE "SIZE" PROPERTY
-# COPY THE FUNCTION TO THE TOP OF THE SCRIPT
-
+```
 @{Expression={Convert-BytesToSize $_.Size};Label="Size"}
+```
 
-
+### Copy Script:
+```
 # ----------------------------------------------------------------------------------
 Function Convert-BytesToSize
 {
@@ -55,4 +58,4 @@ Break
 }
 }
 Return $NewSize}
-
+```
