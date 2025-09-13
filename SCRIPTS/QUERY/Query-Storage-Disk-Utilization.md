@@ -1,4 +1,4 @@
-# QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3 - SSD\HDD ONLY!)
+# Query Locally Attached Disks Only (Type 3 - SSD\HDD Only)
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk |
