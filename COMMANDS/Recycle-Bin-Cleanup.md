@@ -8,13 +8,13 @@
 > - The Clear-RecycleBin cmdlet deletes the content of the current user's recycle bin. This action is like using Windows Empty Recycle Bin.
 > - Source | https://stackoverflow.com/questions/4967496/check-if-a-windows-service-exists-and-delete-in-powershell      
 
-# Command Prompt (CMD)
+## Command Prompt (CMD)
 Clears C: drive recycle bins
 ```
 rm /s c:\$Recycle.Bin 
 ```
 
-# PowerShell
+## PowerShell
 Clears recycle bin for all drives, no prompt.
 ```
 Clear-RecycleBin -Force
