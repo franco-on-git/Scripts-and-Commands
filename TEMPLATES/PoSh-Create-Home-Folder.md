@@ -22,5 +22,4 @@ $ScriptNameFull = "$ScriptName - $(Get-Date -f MM_dd_yyyy_hhmm)$AmPM"
 $ScriptFolder = "$env:userprofile\desktop\WINDOWS SUPPORT\$ScriptNameFull"
 
 New-Item -Path $ScriptFolder -ItemType directory | Out-Null
-
 ```
