@@ -19,17 +19,14 @@ rm /s c:\$Recycle.Bin
 > [!NOTE]
 > **PowerShell v7 and above only!**
 
-Clears recycle bin for current user (Powershell 7)
+Clears recycle bin for all drives, no prompt.
 ```
 Clear-RecycleBin -Force
 ```
 
-Clears recycle bing for system drive
+Clears recycle bing for system drive.
 ```
 Clear-RecycleBin -DriveLetter C
 ```
 
-Clears recycle bin for all drives, no prompt
-```
-Clear-RecycleBin -Force
-```
+
