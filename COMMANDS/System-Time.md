@@ -4,7 +4,7 @@
 # Service Status
 Verify the `w32time` service is up and running
 ```
-get-service -name w32time
+get-service -name w32time | select Status,Name,DisplayName,StartType
 ```
 
 # Stop time service 
