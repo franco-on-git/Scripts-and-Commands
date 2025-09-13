@@ -1,4 +1,4 @@
-# Collect Everything
+## Collect Everything
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
@@ -17,7 +17,7 @@ Stop Data Collector:
 logman stop  _LOGMAN_ALL_5SEC
 ```
 
-# Collect Process/CPU Only
+## Collect Process/CPU Only
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
