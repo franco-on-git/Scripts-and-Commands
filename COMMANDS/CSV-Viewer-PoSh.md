@@ -1,9 +1,8 @@
-## CSV Viewer using PowerShell
-- GridView Display:
+## GridView Display:
 ```
 Import-Csv yourfile.csv | Out-GridView
 ```
-- Console Display:
+## Console Display:
 ```
 Import-Csv yourfile.csv | Format-Table -AutoSize
 ```
