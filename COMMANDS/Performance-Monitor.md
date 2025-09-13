@@ -1,6 +1,6 @@
 # Collect Everything
 > [!IMPORTANT]
-> **Run CMD as <ins>Administrator</ins>!**
+> **Run Terminal as <ins>Administrator</ins>!**
 
 - 5 Second Interval sampling
 - 1GB max file size
