@@ -1,7 +1,9 @@
-<#
-    .NOTES
-        Make sure "Windows Time" service is in "running"state
-#>
+# Service
+Verify service is up and running
+```
+get-service -name w32time
+```
+
 
 # ----------------------------------------------------------------------------------
 # Start/stop  time service 
