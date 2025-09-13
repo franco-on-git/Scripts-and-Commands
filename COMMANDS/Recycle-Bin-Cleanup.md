@@ -8,7 +8,7 @@
 
 # Command Prompt (CMD)
 > [!IMPORTANT]
-> **Run TERMINAL as <ins>Administrator</ins>!**
+> **Run Terminal as <ins>Administrator</ins>!**
 
 Clears C: drive recycle bins
 ```
