@@ -1,7 +1,8 @@
-# Informational
-- ONLY WORKS WITH AN OBJECT THAT COINTAINS THE "SIZE" PROPERTY
-- COPY THE FUNCTION TO THE TOP OF THE SCRIPT
+> [!NOTE]
+> - Only works with an object that contain the `size` property.
+> - Copy the function to the top of the script.
 
+### Sample:
 ```
 @{Expression={Convert-BytesToSize $_.Size};Label="Size"}
 ```
