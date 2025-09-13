@@ -1,5 +1,5 @@
-# Service
-Verify service is up and running
+# Service Status
+Verify the `w32time` service is up and running
 ```
 get-service -name w32time
 ```
