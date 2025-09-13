@@ -16,7 +16,7 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 </p>
 
 
-## LINKS
+## Links
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
@@ -30,7 +30,7 @@ write-host "triple backticks only visible on edit"
 ```
 
 
-## STYLING TEXT<br>
+## Styling Text<br>
 **This is bold text**<br>
 _This text is italicized_<br>
 ~~This was mistaken text~~<br>
@@ -42,7 +42,7 @@ This is an <ins>underlined</ins> text<br>
 
 
 
-## TABLE FORMATTING
+## Table Formatting
 - You can create tables with pipes `|` and hyphens `-`.
 - Hyphens are used to create each column's header, while pipes separate each column.
 - You must include a blank line before your table in order for it to correctly render.
@@ -61,7 +61,7 @@ This is an <ins>underlined</ins> text<br>
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 
-## ALERTS
+## Alerts
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
