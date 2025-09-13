@@ -64,7 +64,7 @@ w32tm /query /source
 - Forces the Windows Time service to read the updated settings immediately instead of waiting until the next refresh.
 - Basically applies the changes right away.
 
-### Copy Command
+### Copy Command:
 ```
 w32tm /config /manualpeerlist:"ntp_server" /syncfromflags:manual /reliable:yes /update
 ```
