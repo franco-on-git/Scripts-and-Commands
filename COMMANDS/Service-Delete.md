@@ -1,6 +1,5 @@
-> [!IMPORTANT]
+> [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
-
  
 # Command-Line (CMD)
 
