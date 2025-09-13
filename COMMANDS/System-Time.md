@@ -43,40 +43,26 @@ w32tm /query /source
 
 `/manualpeerlist:"ntp_server"`
 - Defines the NTP server(s) the system will sync time from.
+- You can put multiple servers separated by spaces or commas, e.g. `"time.windows.com, pool.ntp.org"`
+- You can also append flags (like `,0x8`) to each server for behavior control (like forcing client-only mode).
 
-You can put multiple servers separated by spaces or commas, e.g. "time.windows.com, pool.ntp.org".
+`/syncfromflags:manual`
+- Tells Windows to only use the servers in `/manualpeerlist`.
+- Without this, Windows could still try to use domain hierarchy or other sources.
+- Flags you can use here:
+    - `DOMHIER`: Use domain hierarchy
+    - `MANUAL`: Use manual peer list
+    - `ALL`: Use all available
+    - `NO`: Use none
 
-You can also append flags (like ,0x8) to each server for behavior control (like forcing client-only mode).
+`/reliable`:yes
+- Marks this machine as a reliable time source for the network.
+- Typically set on a domain controller (usually the PDC emulator) so other machines can trust it.
+- If you set this on a regular workstation or server not intended to be a primary source, it can cause issues.
 
-/syncfromflags:manual
-
-Tells Windows to only use the servers in /manualpeerlist.
-
-Without this, Windows could still try to use domain hierarchy or other sources.
-
-Flags you can use here:
-
-DOMHIER: Use domain hierarchy
-
-MANUAL: Use manual peer list
-
-ALL: Use all available
-
-NO: Use none
-
-/reliable:yes
-
-Marks this machine as a reliable time source for the network.
-
-Typically set on a domain controller (usually the PDC emulator) so other machines can trust it.
-
-If you set this on a regular workstation or server not intended to be a primary source, it can cause issues.
-
-/update
-
-Forces the Windows Time service to read the updated settings immediately instead of waiting until the next refresh.
-
-Basically applies the changes right away.
+`/update`
+- Forces the Windows Time service to read the updated settings immediately instead of waiting until the next refresh.
+- Basically applies the changes right away.
 
 
 ```
