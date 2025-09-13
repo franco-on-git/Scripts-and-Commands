@@ -19,16 +19,25 @@ logman stop  _LOGMAN_ALL_5SEC
 ```
 
 ## COLLECT PROCESS/CPU ONLY
-# 5 Second Interval sampling
-# 1GB max file size
-# !!! Run as Administrator in CMD !!!
+> [!IMPORTANT]
+> Run CMD as <ins>Administrator</ins>!
+
+- 5 Second Interval sampling
+- 1GB max file size
+```
 Logman.exe create counter _CPU_PROCESS_ONLY_5SEC -f bincirc -v mmddhhmm -max 1000 -c "\Processor(*)\*" "\Process(*)\*" -si 00:00:05 
+```
 
-# Start\Stop Data Collector: 
+Start Data Collector:
+```
 logman start _CPU_PROCESS_ONLY_5SEC
+```
+
+Stop Data Collector:
+```
 logman stop  _CPU_PROCESS_ONLY_5SEC
+```
 
 
-# ----------------------------------------------------------------------------------
-# PAL2 PerfMon Capture Analyzer Tool: 
-https://github.com/clinthuffman/PAL 
+## PAL2 PERFMON CAPTURE ANALYSIS TOOL
+[PAL2 Tool Link](https://github.com/clinthuffman/PAL) 
