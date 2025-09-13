@@ -1,5 +1,6 @@
 # Query CPU name, sockets, and threads
-
+> [!IMPORTANT]
+> **Run Terminal as <ins>Administrator</ins>!**
 ```
 Clear-Host
 
