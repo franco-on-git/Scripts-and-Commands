@@ -1,13 +1,6 @@
-<#
-    .NOTES
-        Author: Franco-hq
-        Created: 07/2025
+# Query CPU name, sockets, and threads
 
-    .DESCRIPTION
-        -Simple query of CPU name, sockets, and threads
-#>
-
-# --------------------------------------------------------------------------------
+```
 Clear-Host
 
 # Title
@@ -54,3 +47,4 @@ if ($cpus) {
 else {
     Write-Warning "Unable to retrieve CPU information. Check system permissions or WMI availability."
 }
+```
