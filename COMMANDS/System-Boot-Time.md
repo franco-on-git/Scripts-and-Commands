@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> **Run CMD as <ins>Administrator</ins>!**
+> **- Run CMD as <ins>Administrator</ins>!**
 
 Start CMD and run command:
 ```
