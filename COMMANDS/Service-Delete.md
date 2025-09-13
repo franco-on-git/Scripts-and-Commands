@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> **Run Terminal as <ins>Administrator</ins>!**
+
+ 
 # Command-Line (CMD)
 > [!IMPORTANT]
 > **Run Terminal as <ins>Administrator</ins>!**
