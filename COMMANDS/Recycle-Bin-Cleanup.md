@@ -2,7 +2,6 @@
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
 > [!NOTE]
-> - Useful information that users should know, even when skimming content.
 > - Cleans up drive reycle bin
 > - The `$recycle.bin` directory is a hidden system directory
 > - Command empties the recycling bin for all users on a Windows computer
