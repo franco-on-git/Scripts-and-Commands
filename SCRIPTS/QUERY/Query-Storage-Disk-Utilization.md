@@ -11,7 +11,7 @@
 # QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3 - SSD\HDD ONLY!)
 # ---------------------------------------------------------------------------------
 
-
+```
 Get-WmiObject -Class Win32_LogicalDisk |
     Where-Object { $_.DriveType -eq 3 } |
     Select-Object @(
@@ -24,7 +24,7 @@ Get-WmiObject -Class Win32_LogicalDisk |
         @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }}
     ) |
     Out-GridView
-
+```
 
 # ----------------------------------------------------------------------------------
 # QUERY ALL DISKS ATTACHED TO THE HOST
