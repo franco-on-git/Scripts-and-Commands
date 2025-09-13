@@ -1,7 +1,7 @@
 
 > [!CAUTION]
-> **Running commands as SYSTEM essentially bypasses user-level restrictions and grants almost unfettered access.**
-> <br>**Mistakes like `rm`-style deletions, registry edits, or driver installs can easily brick a machine.**
+> - **Running commands as SYSTEM essentially bypasses user-level restrictions and grants almost unfettered access.**
+> - **Mistakes like `rm`-style deletions, registry edits, or driver installs can easily brick a machine.**
 
 
 ## Informational
