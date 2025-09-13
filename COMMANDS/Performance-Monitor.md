@@ -18,8 +18,8 @@ logman stop  _LOGMAN_ALL_5SEC
 ```
 
 # Collect Process/CPU Only
-> [!IMPORTANT]
-> **Run CMD as <ins>Administrator</ins>!**
+> [!WARNING]
+> **Always Run Terminal as <ins>Administrator</ins>!**
 
 - 5 Second Interval sampling
 - 1GB max file size
