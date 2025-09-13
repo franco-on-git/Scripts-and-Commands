@@ -1,4 +1,5 @@
-# Query Locally Attached Disks Only (Type 3 - SSD\HDD Only)
+# Query Locally Attached Disks  
+Only queires for Type 3 disks that are SSD\HDD Only.
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk |
@@ -15,7 +16,8 @@ Get-WmiObject -Class Win32_LogicalDisk |
     Out-GridView
 ```
 
-# Query <ins>ALL</ins> Disk Types Attached To The Host
+# Query <ins>All</ins> Locally Attached Disks
+Results will include all disk types like USB, Network Drives, and Media drives.
 
 ```
 $DiskType = @{
