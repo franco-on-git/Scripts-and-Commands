@@ -2,7 +2,7 @@
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
  
-# Switches
+## Switches
 | **Switch** | **Description** |
 | :---  | :--- | 
 | /e | Copies all subdirectories, including empty ones. | 
@@ -14,7 +14,7 @@
 | /eta | Displays the estimated time of arrival (completion) per file. |
 | /LOG: | Logs output to C:\temp\robocopy.txt. Overwrites if file exists. |
 
-### Copy Command:
+## Copy Command:
 ```
 robocopy source destination  /e /z /r:0 /w:0 /MT:16 /COPYALL /eta /LOG:C:\temp\robocopy.txt 
 ```
