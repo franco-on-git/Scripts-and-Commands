@@ -9,7 +9,7 @@
 | /COPYALL  | Copies all file info: data, attributes, timestamps, security (ACLs), owner, auditing. |
 | /eta | Displays the estimated time of arrival (completion) per file. |
 | /LOG:C:\temp\robocopy.txt | Logs output to C:\temp\robocopy.txt. Overwrites if file exists.# Robocopy command  |
-
+<br>
 ```
 robocopy source destination  /e /z /r:0 /w:0 /MT:16 /COPYALL /eta /LOG:C:\temp\robocopy.txt 
 ```
