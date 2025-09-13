@@ -5,7 +5,6 @@
 
 ```
 sc.exe delete ServiceName 
-sc.exe \\server delete "MyService" 
 ```
 
 # PowerShell <v5 (WMI) 
