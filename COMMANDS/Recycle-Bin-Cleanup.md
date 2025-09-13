@@ -8,7 +8,7 @@
 
 ## COMMAND PROMPT
 > [!IMPORTANT]
-> Run CMD as <ins>ADMIN</ins>!
+> ** Run CMD as <ins>ADMIN</ins> **
 
 Clears C: drive recycle bins
 ```
@@ -17,7 +17,7 @@ rm /s c:\$Recycle.Bin
 
 ## POWERSHELL
 > [!NOTE]
-> PowerShell v7 and above only!
+> ** PowerShell v7 and above only **
 
 Clears recycle bin for current user (Powershell 7)
 ```
