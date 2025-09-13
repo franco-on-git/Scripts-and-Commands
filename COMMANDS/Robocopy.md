@@ -1,3 +1,7 @@
+> [!WARNING]
+> **Always Run Terminal as <ins>Administrator</ins>!**
+
+ 
 # Switches
 | **Switch** | **Description** |
 | :---  | :--- | 
