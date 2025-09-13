@@ -17,7 +17,7 @@ rm /s c:\$Recycle.Bin
 
 ## POWERSHELL
 > [!NOTE]
-> **PowerShell v7 and above only!**<br>
+> **PowerShell v7 and above only!**
 
 Clears recycle bin for current user (Powershell 7)
 ```
