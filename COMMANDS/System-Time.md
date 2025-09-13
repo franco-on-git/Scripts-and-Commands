@@ -4,11 +4,17 @@ Verify service is up and running
 get-service -name w32time
 ```
 
-# Start/stop  time service 
+# Stop time service 
 > [!IMPORTANT]
 > **Run CMD as <ins>Administrator</ins>!**
 ```
 net stop w32time 
+```
+
+# Start time service 
+> [!IMPORTANT]
+> **Run CMD as <ins>Administrator</ins>!**
+``` 
 net start w32time 
 ```
 
