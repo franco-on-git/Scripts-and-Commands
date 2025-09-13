@@ -1,5 +1,4 @@
 ## Informational
-- Created: 10/2024
 - Starts RadiaConnect to get it's updates
 
 ```
