@@ -5,22 +5,30 @@ get-service -name w32time
 ```
 
 # Start/stop  time service 
+> [!IMPORTANT]
+> **Run CMD as <ins>Administrator</ins>!**
 ```
 net stop w32time 
 net start w32time 
 ```
 
 # Resync the time 
+> [!IMPORTANT]
+> **Run CMD as <ins>Administrator</ins>!**
 ```
 w32tm /resync 
 ```
 
 # Verify your sync status: 
+> [!IMPORTANT]
+> **Run CMD as <ins>Administrator</ins>!**
 ```
 w32tm /query /status 
 ```
 
 # List Peers
+> [!IMPORTANT]
+> **Run CMD as <ins>Administrator</ins>!**
 ```
 w32tm /query /peers 
 ```
