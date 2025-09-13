@@ -66,5 +66,5 @@ w32tm /query /source
 
 ### Copy Command:
 ```
-w32tm /config /manualpeerlist:"ntp_server" /syncfromflags:manual /reliable:yes /update
+w32tm /config /manualpeerlist:"ntp_server_1,ntp_server_2" /syncfromflags:manual /reliable:yes /update
 ```
