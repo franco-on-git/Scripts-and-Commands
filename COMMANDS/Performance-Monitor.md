@@ -1,9 +1,12 @@
 # Performance Monitor (PerfMon.exe)
 
 ## COLLECT EVERYTHING COLLECTOR SET
+> [!IMPORTANT]
+> Run CMD as Administrator!
+
 - 5 Second Interval sampling
 - 1GB max file size
-!!! Run as Administrator in CMD !!!
+
 ```
 Logman.exe create counter _LOGMAN_ALL_5SEC -f bincirc -v mmddhhmm -max 1000 -c "\LogicalDisk(*)\*" "\Memory\*" "\Cache\*" "\Network Interface(*)\*" "\Paging File(*)\*" "\PhysicalDisk(*)\*" "\Processor(*)\*" "\Processor Information(*)\*" "\Process(*)\*" "\Redirector\*" "\Server\*" "\System\*" "\Server Work Queues(*)\*" "\Terminal Services\*" -si 00:00:05 
 ```
