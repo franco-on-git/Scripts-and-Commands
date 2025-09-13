@@ -1,6 +1,6 @@
 # Collect Everything
 > [!WARNING]
-> **Run Terminal as <ins>Administrator</ins>!**
+> **Always Run Terminal as <ins>Administrator</ins>!**
 
 - 5 Second Interval sampling
 - 1GB max file size
