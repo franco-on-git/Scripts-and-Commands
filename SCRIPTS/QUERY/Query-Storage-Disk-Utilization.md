@@ -1,15 +1,4 @@
-<#
-    .NOTES
-        Author: Franco-hq
-        Created: 04/2025
-
-    .DESCRIPTION
-        -Scirpt queries local storage to display key details such as total size, used space, and free space.
-#>
-
-# ---------------------------------------------------------------------------------
 # QUERY LOCALLY ATTACHED DISKS ONLY (TYPE 3 - SSD\HDD ONLY!)
-# ---------------------------------------------------------------------------------
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk |
@@ -26,11 +15,9 @@ Get-WmiObject -Class Win32_LogicalDisk |
     Out-GridView
 ```
 
-# ----------------------------------------------------------------------------------
-# QUERY ALL DISKS ATTACHED TO THE HOST
-# ----------------------------------------------------------------------------------
+# QUERY <ins>ALL</ins> DISKS ATTACHED TO THE HOST
 
-
+```
 $DiskType = @{
     2 = "USB"
     3 = "HDD"
@@ -50,3 +37,4 @@ Get-WmiObject -Class Win32_LogicalDisk |
         @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }} 
         ) |
     Out-GridView
+```
