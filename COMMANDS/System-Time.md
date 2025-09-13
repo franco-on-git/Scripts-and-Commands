@@ -37,7 +37,48 @@ w32tm /query /peers
 w32tm /query /source 
 ```
 
-# To update, use the command below (2008 and 2012 server compatible): 
+# Manual Update:
+`w32tm /config`
+- This tells the Windows Time Service (W32Time) to change its configuration settings.
+
+`/manualpeerlist:"ntp_server"`
+- Defines the NTP server(s) the system will sync time from.
+
+You can put multiple servers separated by spaces or commas, e.g. "time.windows.com, pool.ntp.org".
+
+You can also append flags (like ,0x8) to each server for behavior control (like forcing client-only mode).
+
+/syncfromflags:manual
+
+Tells Windows to only use the servers in /manualpeerlist.
+
+Without this, Windows could still try to use domain hierarchy or other sources.
+
+Flags you can use here:
+
+DOMHIER: Use domain hierarchy
+
+MANUAL: Use manual peer list
+
+ALL: Use all available
+
+NO: Use none
+
+/reliable:yes
+
+Marks this machine as a reliable time source for the network.
+
+Typically set on a domain controller (usually the PDC emulator) so other machines can trust it.
+
+If you set this on a regular workstation or server not intended to be a primary source, it can cause issues.
+
+/update
+
+Forces the Windows Time service to read the updated settings immediately instead of waiting until the next refresh.
+
+Basically applies the changes right away.
+
+
 ```
 w32tm /config /manualpeerlist:"ntp_server" /syncfromflags:manual /reliable:yes /update
 ```
