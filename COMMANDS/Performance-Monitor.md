@@ -1,4 +1,4 @@
-## COLLECT EVERYTHING COLLECTOR SET
+# Collect Everything
 > [!IMPORTANT]
 > Run CMD as <ins>Administrator</ins>!
 
@@ -17,7 +17,7 @@ Stop Data Collector:
 logman stop  _LOGMAN_ALL_5SEC
 ```
 
-## COLLECT PROCESS/CPU ONLY
+# Collect Process/CPU Only
 > [!IMPORTANT]
 > Run CMD as <ins>Administrator</ins>!
 
@@ -38,5 +38,5 @@ logman stop  _CPU_PROCESS_ONLY_5SEC
 ```
 
 
-## PAL2 PERFMON CAPTURE ANALYSIS TOOL
+# PAL2 PerfMon Capture Analysis Tool
 [PAL2 Tool Link](https://github.com/clinthuffman/PAL) 
