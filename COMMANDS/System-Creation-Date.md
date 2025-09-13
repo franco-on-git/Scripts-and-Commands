@@ -1,9 +1,9 @@
-# System Info
+# Windows Native Command
 ```
 systeminfo | find /i "install date"
 ```
 
-# WMI class
+# PowerShell (WMI)
 ```
 ([WMI]'').ConvertToDateTime((Get-WmiObject Win32_OperatingSystem).InstallDate)
 ```
