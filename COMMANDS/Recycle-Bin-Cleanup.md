@@ -1,4 +1,4 @@
-## Informational
+## INFORMATIONAL
 - Created: 10/2024
 - Cleans up drive reycle bin
 - The $recycle.bin directory is a hidden system directory
