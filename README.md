@@ -20,7 +20,7 @@ I’m always refining and adding new content, so feel free to star ⭐ the repo 
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
-## CODE BLOCKS
+## Code Blocks
 - You can create fenced code blocks by placing triple backticks ``` before and after the code block.
 - We recommend placing a blank line before and after code blocks to make the raw formatting easier to read.
   
