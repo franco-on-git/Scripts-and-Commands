@@ -1,5 +1,3 @@
-# Performance Monitor (PerfMon.exe)
-
 ## COLLECT EVERYTHING COLLECTOR SET
 > [!IMPORTANT]
 > Run CMD as <ins>Administrator</ins>!
