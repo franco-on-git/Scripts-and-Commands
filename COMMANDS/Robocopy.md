@@ -1,5 +1,5 @@
 
-| Switch | Description |
+| **Switch** | **Description** |
 | :---  | :--- | 
 | /e | Copies all subdirectories, including empty ones. | 
 | /z | Enables restartable mode, useful for large files or network copies. |
