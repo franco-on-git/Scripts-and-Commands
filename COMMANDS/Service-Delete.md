@@ -1,20 +1,20 @@
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
  
-# Command-Line (CMD)
+## Command-Line (CMD)
 
 ```
 sc.exe delete ServiceName 
 ```
 
-# PowerShell <v5 (WMI) 
+## PowerShell <v5 (WMI) 
 
 ```
 $service = Get-WmiObject -Class Win32_Service -Filter "Name='servicename'" 
 $service.delete() 
 ```
 
-# PowerShell >v6 (Command-let)
+## PowerShell >v6 (Command-let)
 
 ```
 Remove-Service -Name ServiceName 
