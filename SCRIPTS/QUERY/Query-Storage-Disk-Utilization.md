@@ -1,4 +1,4 @@
-# Query Locally Attached Disks  
+# Query SSD/HDD Disks Only
 Only queries for Type 3 disks that are SSD\HDD Only.
 
 ```
