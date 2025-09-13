@@ -12,10 +12,10 @@ Clears all recycle bins (CMD Admin required)
 rm /s c:\$Recycle.Bin 
 ```
 
-## POWERSHELL
+## POWERSHELL (v7 and above)
 Clears recycle bin for current user (Powershell 7)
 ```
-Clear-RecycleBin -force
+Clear-RecycleBin -Force
 ```
 
 Clears recycle bing for system drive
@@ -25,5 +25,5 @@ Clear-RecycleBin -DriveLetter C
 
 Clears recycle bin for all drives, no prompt
 ```
-Clear-RecycleBin -Forcej
+Clear-RecycleBin -Force
 ```
