@@ -2,7 +2,7 @@
 
 ## COLLECT EVERYTHING COLLECTOR SET
 > [!IMPORTANT]
-> Run CMD as Administrator!
+> Run CMD as <ins>Administrator</ins>!
 
 - 5 Second Interval sampling
 - 1GB max file size
