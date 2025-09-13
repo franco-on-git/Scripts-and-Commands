@@ -15,7 +15,7 @@ Get-WmiObject -Class Win32_LogicalDisk |
     Out-GridView
 ```
 
-# Query <ins>ALL</ins> Disks Attached To The Host
+# Query <ins>ALL</ins> Disk Types Attached To The Host
 
 ```
 $DiskType = @{
