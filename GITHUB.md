@@ -59,3 +59,12 @@ This is an <ins>underlined</ins> text<br>
 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
+
+# Images
+```
+<p align="center">
+  <img src="VISUALS/google-dino.png">
+  <br/>
+</p>
+```
+
