@@ -73,8 +73,9 @@ This is an <ins>underlined</ins> text<br>
 > [!WARNING]
 > - Urgent info that needs immediate user attention to avoid problems.
 
+<span style="color:red">
 > [!CAUTION]
 > - Advises about risks or negative outcomes of certain actions.
-
+</span>
 
 
