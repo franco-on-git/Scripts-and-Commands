@@ -1,1 +1,61 @@
-#Commit
+
+# Links
+[GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+
+# Code Blocks
+- You can create fenced code blocks by placing triple backticks ``` before and after the code block.
+- We recommend placing a blank line before and after code blocks to make the raw formatting easier to read.
+  
+```
+write-host "This is a code block"
+write-host "triple backticks only visible on edit"
+```
+
+
+# Styling Text<br>
+**This is bold text**<br>
+_This text is italicized_<br>
+~~This was mistaken text~~<br>
+**This text is _extremely_ important**<br>
+***All this text is important***<br>
+This is a <sub>subscript</sub> text<br>
+This is a <sup>superscript</sup> text<br>
+This is an <ins>underlined</ins> text<br>
+
+
+
+# Table Formatting
+- You can create tables with pipes `|` and hyphens `-`.
+- Hyphens are used to create each column's header, while pipes separate each column.
+- You must include a blank line before your table in order for it to correctly render.
+- The pipes on either end of the table are optional.
+- Cells can vary in width and do not need to be perfectly aligned within columns.
+- There must be at least three hyphens in each column of the header row.
+
+| Command | Description |
+| --- | --- |
+| Command 1 | Command 1 description |
+| Command 2 | Command 2 description |
+
+- You can align text to the left, right, or center of a column by including colons `:` to the left, right, or on both sides of the hyphens within the header row.
+  
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+
+# Alerts
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
