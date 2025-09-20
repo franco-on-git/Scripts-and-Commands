@@ -37,7 +37,7 @@ w32tm /query /peers
 w32tm /query /source 
 ```
 
-# Manual Update:
+# Manual Sync and Source Update:
 ### Copy Command:
 ```
 w32tm /config /manualpeerlist:"ntp_server_1,ntp_server_2" /syncfromflags:manual /reliable:yes /update
