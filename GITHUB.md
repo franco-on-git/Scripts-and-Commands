@@ -13,6 +13,7 @@ write-host "triple backticks only visible on edit"
 ```
 
 
+
 # Styling Text<br>
 **This is bold text**<br>
 _This text is italicized_<br>
@@ -44,6 +45,18 @@ This is an <ins>underlined</ins> text<br>
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 
+
+
+# Images
+```
+<p align="center">
+  <img src="VISUALS/google-dino.png">
+  <br/>
+</p>
+```
+
+
+
 # Alerts
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -60,11 +73,5 @@ This is an <ins>underlined</ins> text<br>
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
-# Images
-```
-<p align="center">
-  <img src="VISUALS/google-dino.png">
-  <br/>
-</p>
-```
+
 
