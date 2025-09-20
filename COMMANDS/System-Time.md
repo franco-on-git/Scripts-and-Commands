@@ -38,6 +38,11 @@ w32tm /query /source
 ```
 
 # Manual Update:
+### Copy Command:
+```
+w32tm /config /manualpeerlist:"ntp_server_1,ntp_server_2" /syncfromflags:manual /reliable:yes /update
+```
+### Switch Breakdown:
 `w32tm /config`
 - This tells the Windows Time Service (W32Time) to change its configuration settings.
 
@@ -64,7 +69,4 @@ w32tm /query /source
 - Forces the Windows Time service to read the updated settings immediately instead of waiting until the next refresh.
 - Basically applies the changes right away.
 
-### Copy Command:
-```
-w32tm /config /manualpeerlist:"ntp_server_1,ntp_server_2" /syncfromflags:manual /reliable:yes /update
-```
+
