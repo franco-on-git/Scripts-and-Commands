@@ -31,10 +31,11 @@ This is an <ins>underlined</ins> text<br>
 - The specific number used for each item does not need to be sequential in the source Markdown; the rendering engine will automatically handle the numbering.
 - It is common practice to use "1." for every item to simplify reordering.
 - Ensure a __blank line__ separates the list from any preceding or following paragraphs. Without a blank line, the text may not be rendered as a list.
+```
 1. First item
 2. Second item
 3. Third item
-
+```
 
 # Table Formatting
 - You can create tables with pipes `|` and hyphens `-`.
