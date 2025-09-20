@@ -1,10 +1,10 @@
-## Command-Line
+# Command-Line
 ```
 wmic bios get serialnumber
 ```
 
 
-## Powershell
+# Powershell
 ```
 (Get-WmiObject -Class Win32_BIOS).SerialNumber
 ```
