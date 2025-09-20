@@ -49,7 +49,7 @@ This is an <ins>underlined</ins> text<br>
 
 # Images
 > [!IMPORTANT]
-> **25 MB**: for files added via the browser.
+> **25 MB**: for files added via the browser. </br>
 > **100 MB**: for files added via the command line. Pushing a file larger than 50MB will typically result in a warning, while files exceeding 100MB will be blocked.
 ```
 <p align="center">
