@@ -1,5 +1,5 @@
 > [!NOTE]
-> - Change the name of a property in results
+> - Change the name of a property in results.
 
 # PowerShell
 ```
