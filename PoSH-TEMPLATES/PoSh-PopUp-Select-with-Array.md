@@ -3,6 +3,8 @@
 > - Plug in your script in the "do something" brackets.
 > - Make sure to enter "$server" variable when referencing the object you're targeting within the array.
 
+
+# Copy Code:
 ```
 Function Get-File($initialDirectory) 
 {    
