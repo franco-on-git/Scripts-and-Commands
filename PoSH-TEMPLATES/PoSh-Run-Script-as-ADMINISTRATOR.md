@@ -3,25 +3,16 @@
 
 # Copy Code:
 ```
-# Check if currently session role is Administrator
-$isAdmin = [System.Security.Principal.WindowsPrincipal]::new(
-    [System.Security.Principal.WindowsIdentity]::GetCurrent()).
-        IsInRole('Administrators')
+# Check if elevated
+$IsAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()
+).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
-#If Current session no Administrator, switch
-if(-not $isAdmin) {
-    $params = @{
-        FilePath     = 'powershell' # or pwsh if Core
-        Verb         = 'RunAs'
-        ArgumentList = @(
-            '-NoExit'
-            '-ExecutionPolicy ByPass'
-            '-File "{0}"' -f $PSCommandPath
-        )
-    }
-    Start-Process @params
-    return
+if (-not $IsAdmin) {
+    Write-Host "Not elevated. Relaunching as Administrator..."
+    Start-Process powershell -Verb RunAs
+    exit
+} else {
+    Write-Host "Running with Administrator privileges"
 }
-#Write to host that the new session is Administrative
-write-host "ADMINISTRATOR POWERSHELL" -ForegroundColor Cyan
+
 ```
