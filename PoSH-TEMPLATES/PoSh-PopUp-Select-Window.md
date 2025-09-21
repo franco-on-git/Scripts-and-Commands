@@ -1,6 +1,6 @@
 > [!NOTE]
-> - Template that uses a popup box to select a file or folder
-> - Reference the "Get-File" as as source of the target
+> - Template that uses a popup box to select a file or folder.
+> - Reference the "Get-File" function name as as source of the target.
 
 # Copy Command:
 ```
