@@ -1,5 +1,8 @@
-# Paste at the top of the main script to automatically switch to elevated (privileged) terminal
+> [!Note]
+> Paste at the top of the main script to automatically switch to elevated (privileged) terminal.
 
+# Copy Code:
+```
 # Check if currently session role is Administrator
 $isAdmin = [System.Security.Principal.WindowsPrincipal]::new(
     [System.Security.Principal.WindowsIdentity]::GetCurrent()).
@@ -22,3 +25,4 @@ if(-not $isAdmin) {
 #Write to host that the new session is Administrative
 write-host "ADMINISTRATOR POWERSHELL" -ForegroundColor Cyan
 " "
+```
