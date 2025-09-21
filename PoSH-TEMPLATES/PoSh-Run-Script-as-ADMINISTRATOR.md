@@ -24,5 +24,4 @@ if(-not $isAdmin) {
 }
 #Write to host that the new session is Administrative
 write-host "ADMINISTRATOR POWERSHELL" -ForegroundColor Cyan
-" "
 ```
