@@ -1,16 +1,9 @@
-<#
-   .NOTES
-        Author: Franco-hq
-        Created: 07/25
+> [!NOTE]
+> - Template that uses a popup box to select a file or folder
+> - Reference the "Get-File" as as source of the target
 
-    .SYNOPSIS
-        Template that uses a popup box to select a file or folder
-
-    .DESCRIPTION
-        -Reference the "Get-File" as as source of the target
-#>
-
-# ----------------------------------------------------------------------------------
+# Copy Command:
+```
 Function Get-File($initialDirectory) 
 {    
  [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |  Out-Null 
@@ -20,3 +13,4 @@ Function Get-File($initialDirectory)
  $OpenFileDialog.ShowDialog() | Out-Null 
  $OpenFileDialog.filename 
 } 
+```
