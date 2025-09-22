@@ -1,21 +1,15 @@
-<#
-    .NOTES
-        Author: Franco-hq
-        Created: 07/2025
+> [!WARNING]
+> **Always Run Terminal as <ins>Administrator</ins>!**
 
-    .SYNOPSIS
-        Query local system for logon history
+> [!NOTE]
+> - Query local system for logon history
+> - Sifts through the past 1000 Security log events.
+> - Groups them by user.
+> - Bottom script shows all individual login events along with name and type.
 
-    .DESCRIPTION
-        - Sifts through the past 1000 Security log events.
-        - Groups them by user.
-        - Bottom script shows all individual login events along with name and type.
-        
-#>
 
-# ----------------------------------------------------------------------------------
-# !!! RUN AS ADMIN !!!
-
+### Copy Code:
+```
 Clear-Host
 
 # Define logon event ID and log source
@@ -58,3 +52,4 @@ Get-WinEvent -LogName Security -FilterXPath '*/System/EventID=4624' |
 Sort-Object -Property TimeCreated -Descending |
 Select-Object -First 500 -Property @{Name='User';Expression={$_.Properties[5].Value}}, TimeCreated, @{Name='LogonType';Expression={$_.Properties[8].Value}} |
 Format-Table -AutoSize
+```
