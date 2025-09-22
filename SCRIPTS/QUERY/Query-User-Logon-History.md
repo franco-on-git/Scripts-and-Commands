@@ -10,7 +10,7 @@
 > - Bottom script shows all individual login events along with name and type.
 
 
-### Recent 20 Logins:
+## Recent 20 Logins:
 ```
 Clear-Host
 
