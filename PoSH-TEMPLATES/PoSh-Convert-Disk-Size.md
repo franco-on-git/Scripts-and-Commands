@@ -2,12 +2,12 @@
 > - Only works with an object that contain the `size` property.
 > - Copy the function to the top of the script.
 
-# Sample Code:
+## Sample Code:
 ```
 @{Expression={Convert-BytesToSize $_.Size};Label="Size"}
 ```
 
-# Copy Script:
+## Copy Code:
 ```
 # ----------------------------------------------------------------------------------
 Function Convert-BytesToSize
