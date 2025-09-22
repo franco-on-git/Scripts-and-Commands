@@ -3,7 +3,7 @@
 > - Paste "PressAnyKeyToContinue" function name when something needs waiting confirmation before continuing.  
 > - Copy Function below to Top of scirpt first. 
 
-# Copy Command:
+# Copy Code:
 ```
 Function PressAnyKeyToContinue {
 Write-Host -NoNewLine 'Press any key to continue...';
