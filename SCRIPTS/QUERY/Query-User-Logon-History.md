@@ -51,7 +51,7 @@ $uniqueUsers | Sort-Object TimeCreated -Descending | Select-Object -First 20 | F
 
 ```
 
-### All Logins in Log:
+## All Logins in Log:
 ```
 clear-host
 Get-WinEvent -LogName Security -FilterXPath '*/System/EventID=4624' |
