@@ -1,4 +1,4 @@
-# Query CPU name, sockets, and threads
+# Query System CPU Info
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
