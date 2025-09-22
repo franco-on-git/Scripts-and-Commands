@@ -6,7 +6,7 @@
 > [!Note]
 > - Queries service for uptime and status information
 
-### Copy Code:
+## Copy Code:
 ```
 Clear-Host
 
