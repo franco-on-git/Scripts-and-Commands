@@ -4,7 +4,7 @@
 > - If used next to a variable, it would mean not $TRUE or existent
 
 
-# If Exists:
+## If Exists:
 ```
 $processname = Get-Process [processname] -ErrorAction SilentlyContinue
 
@@ -13,7 +13,7 @@ else {Write-Host "Process doesn't exist"}
 ```
 
 
-# If does NOT Exist:
+## If does NOT Exist:
 ```
 $processname = Get-Process [processname] -ErrorAction SilentlyContinue
 
