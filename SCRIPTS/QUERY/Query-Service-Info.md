@@ -21,13 +21,12 @@ $ProcessInfo = Get-CimInstance -ClassName Win32_Service -Filter "Name='$Process2
         "N/A"
     }
     [PSCustomObject]@{
-        Hostname    = $_.SystemName
-        PID         = $_.ProcessID
+        Hostname    = $_.SystemName.ToUpper()  # Capitalize all letters
+        PID         = $_.ProcessID.ToString("D")  # Removes comma formatting
         Name        = $_.Name
-        State       = $_.State
+        State       = $_.State.ToUpper() # Capitalize all letters
         Uptime      = $uptime
         Description = $_.Description
-
     }
 }
 
