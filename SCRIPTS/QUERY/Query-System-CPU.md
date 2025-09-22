@@ -1,8 +1,8 @@
-
+# Query CPU name, sockets, and threads
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
-## Query CPU name, sockets, and threads
+## Copy Command:
 ```
 Clear-Host
 
