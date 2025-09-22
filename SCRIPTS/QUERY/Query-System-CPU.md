@@ -2,7 +2,7 @@
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
-### Copy Command:
+## Copy Command:
 ```
 Clear-Host
 
