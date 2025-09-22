@@ -1,6 +1,7 @@
 # Query Disk Utilization
-## Query SSD/HDD Disks Only
-Only queries for Type 3 disks that are SSD\HDD Only.
+## Query SSD/HDD Disks Only:
+> [!Note]
+> - Only queries for Type 3 disks that are SSD\HDD Only.
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk |
@@ -17,8 +18,9 @@ Get-WmiObject -Class Win32_LogicalDisk |
     Out-GridView
 ```
 
-## Query <ins>All</ins> Locally Attached Disks
-Results will include all disk types like USB, Network Drives, and Media drives.
+## Query <ins>All</ins> Locally Attached Disks:
+> [!Note]
+> - Results will include all disk types like USB, Network Drives, and Media drives.
 
 ```
 $DiskType = @{
