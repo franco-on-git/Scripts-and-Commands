@@ -22,6 +22,7 @@ $ProcessInfo = Get-CimInstance -ClassName Win32_Service -Filter "Name='$Process2
     }
     [PSCustomObject]@{
         Hostname    = $_.SystemName
+        PID         = $_.ProcessID
         Name        = $_.Name
         State       = $_.State
         Uptime      = $uptime
