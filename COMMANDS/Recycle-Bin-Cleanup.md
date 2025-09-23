@@ -22,7 +22,7 @@ Clears recycle bin for all drives, no prompt.
 Clear-RecycleBin -Force
 ```
 
-Clears recycle bing for system drive.
+Clears recycle bin for `C:` drive.
 ```
 Clear-RecycleBin -DriveLetter C
 ```
