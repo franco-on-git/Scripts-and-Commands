@@ -1,15 +1,10 @@
 # Custom Object Template
-> [!Note]
-> 
-        Queries Active Directory for a user or computer's group membership
+> [!NOTE]
+> - Queries Active Directory for a user or computer's group membership
+> Source: https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names
 
-    .DESCRIPTION
-        -The Get-ADPrincipalGroupMembership cmdlet gets the Active Directory groups that have a specified user, computer, group, or service account as a member. 
-        -This cmdlet requires a global catalog to perform the group search. 
-#>
-
-
-# Source: https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names 
+## Copy Code:
+```
 # Define new object variable objects
 $os = Get-WmiObject –class Win32_OperatingSystem –comp localhost 
 
@@ -41,3 +36,4 @@ $obj = New-Object –TypeName PSObject –Property $objects
 
 # Output results from new object
 Write-Output $obj 
+```
