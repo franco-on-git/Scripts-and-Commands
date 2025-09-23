@@ -1,9 +1,6 @@
-<#
-    .NOTES
-        Author: Roboute Guilliman
-        Created: 09/2024
-
-    .SYNOPSIS
+# Custom Object Template
+> [!Notes]
+> 
         Queries Active Directory for a user or computer's group membership
 
     .DESCRIPTION
