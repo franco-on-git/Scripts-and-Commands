@@ -3,8 +3,8 @@
 > [!NOTE]
 > - Queries Active Directory for all server objects in Organizational Unit
 
-```
 ## QUICK QUERY FOR ON-SCREEN COPY
+```
 (Get-ADObject -Server domain.com -SearchBase "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" -Filter * -Properties *).CN | Sort-Object 
 ```
 
