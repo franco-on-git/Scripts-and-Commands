@@ -32,7 +32,7 @@ $platform = if ($model -match "Virtual|VMware|Hyper-V|VirtualBox") {
 
 # Guard against empty results
 # ---------------------------------------------------------------------------------
-if ($cpus) {
+$results = if ($cpus) {
     $CPUname      = (Get-CimInstance Win32_Processor | Where-Object { $_.DeviceID -eq "CPU0" }).Name
     $totalSockets = ($cpus | Select-Object -ExpandProperty SocketDesignation | Get-Unique).Count
     $totalCores   = ($cpus | Measure-Object -Property NumberOfCores -Sum).Sum
@@ -42,12 +42,14 @@ if ($cpus) {
         Environment = $Platform
         Model       = $model
         CPU         = $cpuName
-        Sockets     = $totalSockets
-        Cores       = $totalCores
-        Threads     = $totalThreads
+        Sockets     = [int]$totalSockets
+        Cores       = [int]$totalCores
+        Threads     = [int]$totalThreads
     }
 }
 else {
     Write-Warning "Unable to retrieve CPU information. Check system permissions or WMI availability."
 }
+
+$results | Out-GridView
 ```
