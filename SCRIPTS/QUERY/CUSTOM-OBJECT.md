@@ -1,6 +1,6 @@
 # Custom Object Template
 > [!NOTE]
-> - Creates custom object from diffrent objects
+> - Creates custom object from a combination of diffrent objects.
 > - [Source: StackOverflow](https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names)
 
 
