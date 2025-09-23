@@ -1,6 +1,6 @@
 # Query System CPU Info
 > [!WARNING]
-> **Always Run Terminal as <ins>Administrator</ins>!**
+> **Run Terminal as <ins>Administrator</ins>!**
 
 ## Copy Command:
 ```
