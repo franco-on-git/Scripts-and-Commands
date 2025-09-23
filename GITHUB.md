@@ -15,8 +15,8 @@ write-host "triple backticks only visible on edit"
 
 
 # Styling Text<br>
-**This is bold text**<br>
-_This text is italicized_<br>
+**bold**<br>
+_italicized_<br>
 ~~This was mistaken text~~<br>
 **This text is _extremely_ important**<br>
 ***All this text is important***<br>
