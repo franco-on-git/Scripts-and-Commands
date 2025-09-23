@@ -4,7 +4,7 @@
 > **<ins>Administrator</ins> Terminal required!**
 
  
-## Switches
+## Switches:
 | **Switch** | **Description** |
 | :---  | :--- | 
 | /e | Copies all subdirectories, including empty ones. | 
