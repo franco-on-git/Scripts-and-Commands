@@ -1,7 +1,7 @@
 # Query AD OU for **SERVER** objects
 
 > [!WARNING]
-> - Must run query in server running **Active Directory - Directory Services**
+> - Must run query in server with **AD Directory Services**
 
 > [!NOTE]
 > - Queries Active Directory for all server objects in Organizational Unit
