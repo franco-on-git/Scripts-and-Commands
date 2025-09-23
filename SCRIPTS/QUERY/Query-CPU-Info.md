@@ -1,6 +1,6 @@
 # Query System CPU Info
 > [!Note]
-> - No <ins>Admin</ins>! Terminal required**
+> - No <ins>Admin</ins> Terminal required
 
 ## Copy Command:
 ```
