@@ -1,5 +1,5 @@
 # Custom Object Template
-> [!Notes]
+> [!Note]
 > 
         Queries Active Directory for a user or computer's group membership
 
