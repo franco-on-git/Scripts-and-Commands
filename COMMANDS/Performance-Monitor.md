@@ -3,7 +3,7 @@
 > [!NOTE]
 > - Create Data Collector sets for Perfmon using PowerShell
 
-## Collect Everything
+## Collect Everything - Collector Set
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**
 
@@ -24,10 +24,7 @@ Stop Data Collector:
 logman stop  _LOGMAN_ALL_5SEC
 ```
 
-
-
-
-## Collect Process/CPU Only
+## Collect Process/CPU Only - Collector Set
 > [!WARNING]
 > **Always Run Terminal as <ins>Administrator</ins>!**
 
