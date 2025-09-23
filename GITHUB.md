@@ -17,12 +17,14 @@ write-host "triple backticks only visible on edit"
 # Styling Text<br>
 **bold**<br>
 _italicized_<br>
-~~This was mistaken text~~<br>
+<ins>underlined</ins>
+~~strikethrough~~<br>
+<br>
 **This text is _extremely_ important**<br>
 ***All this text is important***<br>
-This is a <sub>subscript</sub> text<br>
-This is a <sup>superscript</sup> text<br>
-This is an <ins>underlined</ins> text<br>
+This is <sub>subscript</sub> text<br>
+This is <sup>superscript</sup> text<br>
+This is  text<br>
 
 
 
