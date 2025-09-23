@@ -23,7 +23,7 @@
 
 
 ## Procedure
-1. Download PSExec from [Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec).
+1. Download PSExec from [Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) and extract ZIP file.
 2. Copy executable to any PATH environment variable directory:
 ```
 C:\Windows\System32\psexec.exe
