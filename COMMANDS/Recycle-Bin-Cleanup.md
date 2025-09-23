@@ -1,4 +1,4 @@
-# Recyble Bin Cleanup
+# Recycle Bin Cleanup
 
 > [!WARNING]
 > **<ins>Administrator</ins>! Terminal required!**
