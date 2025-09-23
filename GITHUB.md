@@ -17,7 +17,7 @@ write-host "triple backticks only visible on edit"
 # Styling Text<br>
 **bold**<br>
 _italicized_<br>
-<ins>underlined</ins>
+<ins>underlined</ins><br>
 ~~strikethrough~~<br>
 <br>
 **This text is _extremely_ important**<br>
