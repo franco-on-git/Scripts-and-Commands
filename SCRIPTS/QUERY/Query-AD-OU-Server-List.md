@@ -1,9 +1,12 @@
 # Query AD OU for **SERVER** objects
 
+> [!WARNING]
+> - Must run query in server running **Active Directory - Directory Services**
+
 > [!NOTE]
 > - Queries Active Directory for all server objects in Organizational Unit
 
-## QUICK QUERY FOR ON-SCREEN COPY
+## Query for quick on-screen results
 ```
 (Get-ADObject -Server domain.com -SearchBase "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" -Filter * -Properties *).CN | Sort-Object 
 ```
