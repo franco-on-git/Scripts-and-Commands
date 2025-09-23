@@ -1,7 +1,7 @@
 # Query User Logon History
 
 > [!WARNING]
-> **<ins>Administrator</ins> Terminal required!**
+> - **<ins>Administrator</ins> Terminal required!**
 
 > [!NOTE]
 > - Query local system for logon history
