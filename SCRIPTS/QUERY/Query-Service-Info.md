@@ -1,7 +1,7 @@
 # Query Service Information
 
 > [!WARNING]
-> - **Terminal: Run as <ins>Administrator</ins> required!**
+> - **<ins>Administrator</ins> Terminal required!**
 
 > [!Note]
 > - Queries service for uptime and status information
