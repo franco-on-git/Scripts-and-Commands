@@ -11,7 +11,7 @@
 > - Source | [StackOverflow](https://stackoverflow.com/questions/4967496/check-if-a-windows-service-exists-and-delete-in-powershell)
 
 ## Command Prompt (CMD)
-Clears C: drive recycle bins
+Clears `C:` drive Recycle Bin
 ```
 rm /s c:\$Recycle.Bin 
 ```
