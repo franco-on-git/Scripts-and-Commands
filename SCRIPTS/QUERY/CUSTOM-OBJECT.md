@@ -1,7 +1,8 @@
 # Custom Object Template
 > [!NOTE]
 > - Queries Active Directory for a user or computer's group membership
-> - Source: https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names
+> - [Source: StackOverflow](https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names)
+
 
 ## Copy Code:
 ```
