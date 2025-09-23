@@ -1,5 +1,5 @@
 > [!WARNING]
-> **Always Run Terminal as <ins>Administrator</ins>!**
+> **<ins>Administrator</ins> Terminal required!**
  
 # Command-Line (CMD)
 
