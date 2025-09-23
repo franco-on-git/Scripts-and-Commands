@@ -1,7 +1,9 @@
-> [!WARNING]
-> **Always Run Terminal as <ins>Administrator</ins>!**
+# Query Syste Boot Time
 
-# PowerShell
+> [!WARNING]
+> - **<ins>Administrator</ins> Terminal required!**
+
+## PowerShell (CIM)
 ```
 Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime 
 ```
