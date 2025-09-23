@@ -1,10 +1,10 @@
 # Query AD OU for **SERVER** objects
 
 > [!WARNING]
-> - Must run query in server with **AD Directory Services**
+> - Must run query in server with **AD Directory Services** installed.
 
 > [!NOTE]
-> - Queries Active Directory for all server objects in Organizational Unit
+> - Queries Active Directory for all server objects in Organizational Unit.
 
 ## Query for quick on-screen results
 ```
