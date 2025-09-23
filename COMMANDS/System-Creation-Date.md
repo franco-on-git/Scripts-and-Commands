@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > - Queries for the creation date (installation) of the Windows OS.
-> - No **Admin terminal** required
+> - No **Admin** terminal required.
 
 ## Windows Native Command
 ```
