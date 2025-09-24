@@ -1,6 +1,8 @@
 # Event Viewer Query
-- Multiple quieries for searching Event Viewer logs.
-- You can switch between <ins>SYSTEM</ins> and <ins>APPLICATION</ins> logs. 
+
+> [!NOTE]
+> - Multiple quieries for searching Event Viewer logs.
+> - You can switch between <ins>SYSTEM</ins> and <ins>APPLICATION</ins> logs. 
 
 ## Query <ins>System Log</ins> for a **STRING**:
 
