@@ -1,11 +1,17 @@
 # Query Installed Applications
 
 
-## Powershell (Get-Package Command-Let)
+## Powershell (Get-Package)
 ```
 Clear-Host
+
 $appsearch = Read-Host "App Name"
-Get-Package -ProviderName Programs -IncludeWindowsInstaller | Where-Object {$_.name -like "*$appsearch*"} | Select-Object name,version | Sort-Object Name | Format-Table -Auto
+
+Get-Package -ProviderName Programs -IncludeWindowsInstaller |
+  Where-Object { $_.Name -like "*$appsearch*" } |
+  Select-Object Name, Version |
+  Sort-Object Name |
+  Format-Table -Auto
 ```
 
 ## PowerShell (Get-ItemProperty Command-let)
