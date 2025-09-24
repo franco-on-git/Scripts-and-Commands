@@ -49,6 +49,13 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
  ```
 
-# ----------------------------------------------------------------------------------
- # Event Viewer: Search for SPECIFIC word in Service Control Manager Provider 
-Get-WinEvent -FilterHashtable @{logname='system'; ProviderName='Service Control Manager'} | Where-Object  { $_.message -like '*vpos*' }  | Select-Object -first 15 | Format-Table -Wrap 
+## Query <ins>System Log</ins> for STRING in Service Control Manager <ins>Provider</ins>.
+```
+Get-WinEvent -FilterHashtable @{
+  LogName      = 'System'
+  ProviderName = 'Service Control Manager'
+} |
+  Where-Object { $_.Message -like '*vpos*' } |
+  Select-Object -First 15 |
+  Format-Table -Wrap
+```
