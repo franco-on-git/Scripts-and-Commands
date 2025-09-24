@@ -1,8 +1,7 @@
 > [!NOTE]
 > - 2-scenario example that uses a variable to see if something is "$true" or not.
-> - Powershell uses the `!` as a logical `-not` operator.
-> - If used next to a variable, it would mean not `$TRUE` or non-existent.
-
+> - Powershell uses the `!` as a shorthand operator instead of the `-not` keyword.
+> - It flips `$true` to `$false` when used next to a variable, and vice versa.
 
 ## If Exists:
 ```
