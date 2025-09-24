@@ -1,9 +1,9 @@
-<img width="669" height="37" alt="image" src="https://github.com/user-attachments/assets/c4c9df0d-b599-4ae5-9899-d500773da068" /># Event Viewer Query
+# Event Viewer Query
 
 > [!NOTE]
 > Multiple quieries for searching Event Viewer logs.
 
-## Query <ins>System Log</ins> for a **STRING**
+## Query <ins>System Log</ins> for a **STRING**:
 
 > [!NOTE]
 > - Queries the **System** Event Log for specific set of words (string):
