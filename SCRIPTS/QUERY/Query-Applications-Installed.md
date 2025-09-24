@@ -47,7 +47,7 @@ Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uni
 ```
 
 
-## Query using ARRAY
+## Query <ins>Server List</ins> using ARRAY
 
 > [!NOTE]
 > - Query a list of servers for application\s using an array.
