@@ -1,6 +1,6 @@
-# Installed Application
+# Query Installed Applications
 
-# Query __ALL__ applications on system
+## Query __ALL__ applications on system
 Get-Package -ProviderName Programs -IncludeWindowsInstaller | Select-Object name,version | Sort-Object Name | Format-Table -Auto
 
 
