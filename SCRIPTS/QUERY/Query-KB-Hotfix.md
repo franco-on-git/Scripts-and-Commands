@@ -1,10 +1,16 @@
-# ----------------------------------------------------------------------------------
-# Get All hot fixes from newest to oldest 
+KB Patches / HotFix Search
+
+> [!NOTE]
+> - 2 optional scripts to query for installed hotfixes
+> - No <ins>Admin</ins> console required.
+
+## Get <ins>All</ins> installed Hot Fixes:
+```
 Get-HotFix | Sort-Object InstalledOn -Descending 
+```
 
-
-# ----------------------------------------------------------------------------------
-# Search for any (LIKE) patch\KB matching string
+## Search patch\KB <ins>MATCHING</ins> string:
+```
 $hotfixID = Read-Host "KB Number"   # ..Change me
 
 # Query for matching hotfix
@@ -28,3 +34,4 @@ if ($HotFixQuery) {
 else {
     Write-Host "$hotfixID Not Found" -ForegroundColor Yellow
 }
+```
