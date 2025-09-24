@@ -21,7 +21,7 @@ if (-not $cpus) {
     $cpus = Get-WmiObject Win32_Processor
 }
 
-# Determine if virtual or physical
+# Determine environment (virtual or physical)
 # ---------------------------------------------------------------------------------
 $model = (Get-CimInstance Win32_ComputerSystem).Model
 $platform = if ($model -match "Virtual|VMware|Hyper-V|VirtualBox") {
