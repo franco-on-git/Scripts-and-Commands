@@ -35,3 +35,24 @@ foreach ($server in $servers) {$arraylist += Get-Package -ProviderName Programs 
 
 $arraylist 
 ```
+
+## Query using **Get-ItemProperty** Command-let
+
+>[!NOTE]
+>Use the `*` to get a full list of programs.
+
+```
+$appsearch = Read-Host "App Name"
+
+Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*, HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |
+  Where-Object { $_.DisplayName -like "*$appsearch*" } |
+  Select-Object DisplayName, DisplayVersion, Publisher,
+    @{Name='InstallDate'; Expression={
+      if ($_.InstallDate -match '^\d{8}$') {
+        [datetime]::ParseExact($_.InstallDate, 'yyyyMMdd', $null).ToString('MM/dd/yyyy')
+      } else {
+        $_.InstallDate
+      }
+    }} |
+  Sort-Object DisplayName
+```
