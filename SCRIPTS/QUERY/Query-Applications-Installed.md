@@ -23,6 +23,7 @@ Get-Package -ProviderName Programs -IncludeWindowsInstaller |
 ## PowerShell (Get-ItemProperty)
 
 > [!NOTE]
+> - No <ins>Admin</ins> console required. 
 > - Queries for install software by seraching the **Uninstall** directories in HKLM registry hive. 
 > - Use the `*` to get a full list of programs.
 
