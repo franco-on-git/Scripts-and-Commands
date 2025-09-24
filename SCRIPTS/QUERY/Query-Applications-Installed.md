@@ -1,16 +1,17 @@
 # Query Installed Applications
 
-## Query __ALL__ applications on system
+## Query <ins>ALL</ins> applications on system
+```
 Get-Package -ProviderName Programs -IncludeWindowsInstaller | Select-Object name,version | Sort-Object Name | Format-Table -Auto
+```
 
-
-# ----------------------------------------------------------------------------------
-# Query for specific application
+## Query for specific application
+```
 Get-Package -ProviderName Programs -IncludeWindowsInstaller | Where-Object {$_.name -like "*nessus*"} | Select-Object name,version | Sort-Object Name | Format-Table -Auto
+```
 
-
-# ----------------------------------------------------------------------------------
-# Query using ARRAY
+## Query using ARRAY
+```
 Function Get-File($initialDirectory) 
 {    
  [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |  Out-Null 
@@ -33,4 +34,4 @@ $arraylist = @()
 foreach ($server in $servers) {$arraylist += Get-Package -ProviderName Programs -IncludeWindowsInstaller | Where-Object {$_.name -like "*nessus*"} | Select-Object name,version | Sort-Object Name | Format-Table -Auto}
 
 $arraylist 
-
+```
