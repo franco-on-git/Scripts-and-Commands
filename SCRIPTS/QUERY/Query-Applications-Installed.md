@@ -4,7 +4,7 @@
 ## PowerShell (Get-Package)
 
 > [!NOTE]
-> > - Queries for install software using the **Get-Package** command-let. 
+> - Queries for install software using the **Get-Package** command-let. 
 > - No <ins>Admin</ins> console required. 
 > - Use the `*` to get a full list of programs.
 
