@@ -36,7 +36,7 @@ foreach ($server in $servers) {$arraylist += Get-Package -ProviderName Programs 
 $arraylist 
 ```
 
-## Query using **Get-ItemProperty** Command-let
+## <ins>Get-ItemProperty</ins> Command-let
 
 >[!NOTE]
 >Use the `*` to get a full list of programs.
