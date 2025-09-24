@@ -1,7 +1,7 @@
 # Query Installed Applications
 
 
-## Powershell (Get-Package)
+## PowerShell (Get-Package)
 ```
 Clear-Host
 
@@ -14,18 +14,21 @@ Get-Package -ProviderName Programs -IncludeWindowsInstaller |
   Format-Table -Auto
 ```
 
-## PowerShell (Get-ItemProperty Command-let)
+## PowerShell (Get-ItemProperty)
 
 >[!NOTE]
 >Use the `*` to get a full list of programs.
 
 ```
+Clear-Host
+
 $appsearch = Read-Host "App Name"
 
-Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*, HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |
+Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*, 
+                 HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |
   Where-Object { $_.DisplayName -like "*$appsearch*" } |
   Select-Object DisplayName, DisplayVersion, Publisher,
-    @{Name='InstallDate'; Expression={
+    @{Name = 'InstallDate'; Expression = {
       if ($_.InstallDate -match '^\d{8}$') {
         [datetime]::ParseExact($_.InstallDate, 'yyyyMMdd', $null).ToString('MM/dd/yyyy')
       } else {
