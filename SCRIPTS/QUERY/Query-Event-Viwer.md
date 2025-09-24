@@ -6,7 +6,7 @@
 ## Query <ins>System Log</ins> for a **STRING**:
 
 > [!NOTE]
-> - Queries the **System** Event Log for specific set of words (string)
+> - Queries the **System** Event Log for specific set of words (string).
 
 ```
 Clear-Host
@@ -38,11 +38,18 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-# ----------------------------------------------------------------------------------
-# Event Viewer: Reboot\Restarts in Past day (ISE) 
-$Yesterday = (Get-Date) - (New-TimeSpan -Day 1) 
-Get-WinEvent -FilterHashtable @{logname='system'} | Where-Object  {$_.id -match '1074|6006|6005|1076|6008' -or $_.id -eq '41' -and $_.TimeCreated -ge $Yesterday  } | Select-Object timecreated,id,message | Out-GridView 
- 
+## Query <ins>System Log</ins> for **SHUTDOWNS/RESTARTS** in past 24hrs.
+```
+$Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
+
+Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
+  Where-Object {
+    $_.Id -match '1074|6006|6005|1076|6008' -or
+    ($_.Id -eq 41 -and $_.TimeCreated -ge $Yesterday)
+  } |
+  Select-Object TimeCreated, Id, Message |
+  Out-GridView
+ ```
 
 # ----------------------------------------------------------------------------------
  # Event Viewer: Search for SPECIFIC word in Service Control Manager Provider 
