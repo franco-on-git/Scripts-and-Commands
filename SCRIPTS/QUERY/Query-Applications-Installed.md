@@ -4,7 +4,7 @@
 ## PowerShell (Get-Package)
 
 >[!NOTE]
->Use the `*` to get a full list of programs.
+> - Use the `*` to get a full list of programs.
 
 ```
 Clear-Host
@@ -21,7 +21,7 @@ Get-Package -ProviderName Programs -IncludeWindowsInstaller |
 ## PowerShell (Get-ItemProperty)
 
 >[!NOTE]
->Use the `*` to get a full list of programs.
+> - Use the `*` to get a full list of programs.
 
 ```
 Clear-Host
