@@ -6,27 +6,36 @@
 ## Query <ins>System Log</ins> for a **STRING**:
 
 > [!NOTE]
-> - Queries the **System** Event Log for specific set of words (string):
+> - Queries the **System** Event Log for specific set of words (string)
 
 ```
-$StringName = read-host "String"
-Get-WinEvent -FilterHashtable @{logname='system'} | Where-Object  { $_.message -like '*$stringname*' } |  Select-Object -first 25 | Out-GridView
+Clear-Host
+
+$StringName = Read-Host "String"
+
+Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
+  Where-Object { $_.Message -like "*$StringName*" } |
+  Select-Object -First 25 |
+  Out-GridView
 ```
 
 ## Query <ins>System Log</ins> for **SHUTDOWN\RESTARTS** Event ID:
 
 ```
-cleart-host
+Clear-Host
 
-write-host "1074: Process “X” has initiated a restart/shutdown"
-write-host "6006: The event log service was stopped (Last service to go down before reboot)"
-write-host "6005: The event log service was started (One of the first services to come up after startup)"
-write-host "1076: Reason supplied by user “X” for last Unexpected sutdown"
-write-host "6008: The previous system shutdown was unexpected"
-write-host "41: System rebooted withtou clearly shutting down first"
-Write-host ""
+Write-Host "1074: Process 'X' has initiated a restart/shutdown"
+Write-Host "6006: The event log service was stopped (Last service to go down before reboot)"
+Write-Host "6005: The event log service was started (One of the first services to come up after startup)"
+Write-Host "1076: Reason supplied by user 'X' for last unexpected shutdown"
+Write-Host "6008: The previous system shutdown was unexpected"
+Write-Host "41: System rebooted without clearly shutting down first"
+Write-Host ""
 
-Get-WinEvent -FilterHashtable @{logname='system'} | Where-Object  {$_.id -match '1074|6006|6005|1076|6008' -or $_.id -eq '41' } | Select-Object timecreated,id,message | Out-GridView 
+Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
+  Where-Object { $_.Id -match '1074|6006|6005|1076|6008' -or $_.Id -eq 41 } |
+  Select-Object TimeCreated, Id, Message |
+  Out-GridView
 ```
 
 # ----------------------------------------------------------------------------------
