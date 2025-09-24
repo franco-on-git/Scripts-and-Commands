@@ -3,7 +3,8 @@
 
 ## PowerShell (Get-Package)
 
->[!NOTE]
+> [!NOTE]
+> - Queries for install software using the **Get-Package** command-let. 
 > - Use the `*` to get a full list of programs.
 
 ```
@@ -20,7 +21,8 @@ Get-Package -ProviderName Programs -IncludeWindowsInstaller |
 
 ## PowerShell (Get-ItemProperty)
 
->[!NOTE]
+> [!NOTE]
+> - Queries for install software by seraching the **Uninstall** directories in HKLM registry hive. 
 > - Use the `*` to get a full list of programs.
 
 ```
