@@ -1,5 +1,5 @@
 # Event Viewer Query
- Multiple quieries for searching Event Viewer logs.
+- Multiple quieries for searching Event Viewer logs.
 
 ## Query <ins>System Log</ins> for a **STRING**:
 
