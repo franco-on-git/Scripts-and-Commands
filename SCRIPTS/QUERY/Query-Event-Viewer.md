@@ -6,9 +6,6 @@
 
 ## Query <ins>System Log</ins> for a **STRING**:
 
-> [!NOTE]
-> - Queries the **System** Event Log for specific set of words (string).
-
 ```
 Clear-Host
 
