@@ -48,6 +48,11 @@ Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uni
 
 
 ## Query using ARRAY
+
+> [!NOTE]
+> - Query a list of servers for application\s using an array.
+> - > - Use the `*` to get a full list of programs.
+
 ```
 Function Get-File($initialDirectory) 
 {    
@@ -59,6 +64,10 @@ Function Get-File($initialDirectory)
  $OpenFileDialog.filename 
 } 
 
+Clear-Host
+
+$appsearch = Read-Host "App Name"
+
 # variable pointing to new object
 $ServerList = Get-File
 
@@ -68,7 +77,7 @@ $servers = Get-Content $ServerList
 # array with contents from file selected
 $arraylist = @()
 
-foreach ($server in $servers) {$arraylist += Get-Package -ProviderName Programs -IncludeWindowsInstaller | Where-Object {$_.name -like "*nessus*"} | Select-Object name,version | Sort-Object Name | Format-Table -Auto}
+foreach ($server in $servers) {$arraylist += Get-Package -ProviderName Programs -IncludeWindowsInstaller | Where-Object {$_.name -like "*$appsearch*"} | Select-Object name,version | Sort-Object Name | Format-Table -Auto}
 
 $arraylist 
 ```
