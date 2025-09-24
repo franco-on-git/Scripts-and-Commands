@@ -18,6 +18,7 @@ write-host "triple backticks only visible on edit"
 
 
 # Styling Text<br>
+```
 **bold**<br>
 _italicized_<br>
 <ins>underlined</ins><br>
@@ -28,7 +29,7 @@ _italicized_<br>
 This is <sub>subscript</sub> text<br>
 This is <sup>superscript</sup> text<br>
 This is  text<br>
-
+```
 
 
 # Number List
