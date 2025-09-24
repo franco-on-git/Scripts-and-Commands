@@ -2,6 +2,10 @@
 
 
 ## PowerShell (Get-Package)
+
+>[!NOTE]
+>Use the `*` to get a full list of programs.
+
 ```
 Clear-Host
 
