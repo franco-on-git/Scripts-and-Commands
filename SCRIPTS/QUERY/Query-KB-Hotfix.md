@@ -1,4 +1,4 @@
-KB Patches / HotFix Search
+# KB Patches / HotFix Search
 
 > [!NOTE]
 > - 2 optional scripts to query for installed hotfixes
