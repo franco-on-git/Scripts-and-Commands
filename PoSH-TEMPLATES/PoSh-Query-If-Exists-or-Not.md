@@ -1,6 +1,6 @@
 > [!NOTE]
 > - 2-scenario example that uses a variable to see if something is "$true" or not.
-> - Powershell uses the `!` as a logical `not` operator.
+> - Powershell uses the `!` as a logical `-not` operator.
 > - If used next to a variable, it would mean not `$TRUE` or non-existent.
 
 
