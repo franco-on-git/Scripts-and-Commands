@@ -9,6 +9,14 @@
 > - Groups them by user.
 > - Bottom script shows all individual login events along with name and type.
 
+## All Logins:
+```
+clear-host
+Get-WinEvent -LogName Security -FilterXPath '*/System/EventID=4624' |
+Sort-Object -Property TimeCreated -Descending |
+Select-Object -First 500 -Property @{Name='User';Expression={$_.Properties[5].Value}}, TimeCreated, @{Name='LogonType';Expression={$_.Properties[8].Value}} |
+Format-Table -AutoSize
+```
 
 ## Recent 20 Logins:
 ```
@@ -51,11 +59,4 @@ $uniqueUsers | Sort-Object TimeCreated -Descending | Select-Object -First 20 | F
 
 ```
 
-## All Logins in Log:
-```
-clear-host
-Get-WinEvent -LogName Security -FilterXPath '*/System/EventID=4624' |
-Sort-Object -Property TimeCreated -Descending |
-Select-Object -First 500 -Property @{Name='User';Expression={$_.Properties[5].Value}}, TimeCreated, @{Name='LogonType';Expression={$_.Properties[8].Value}} |
-Format-Table -AutoSize
-```
+
