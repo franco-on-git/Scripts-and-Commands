@@ -13,10 +13,19 @@
 
 ## Query and Export to CSV:
 ```
-$OUPath = "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" 
-$ExportPath = "C:\temp\OU_Export.csv" 
+# Define paths
+$OUPath      = "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com"
+$ExportPath  = "C:\temp\OU_Export.csv"
 
-Get-ADObject -Server domain.com -SearchBase $OUPath -Filter * -Properties * | Select-Object CN | Export-Csv $ExportPath -NoTypeInformation -Force
+# Query AD and export CNs to CSV
+Get-ADObject -Server domain.com `
+             -SearchBase $OUPath `
+             -Filter * `
+             -Properties CN |
+    Select-Object -ExpandProperty CN |
+    Sort-Object |
+    Export-Csv -Path $ExportPath -NoTypeInformation -Force
 
+# Open the exported file
 Invoke-Item $ExportPath
 ```
