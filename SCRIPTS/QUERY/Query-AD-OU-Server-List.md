@@ -8,7 +8,7 @@
 
 ## Query for quick on-screen results:
 ```
-(Get-ADObject -Server domain.com -SearchBase "OU=Name,OU=Name,DC=Domain,DC=Domain,DC=com" -Filter * -Properties *).CN | Sort-Object 
+(Get-ADObject -Server domain.com -SearchBase "OU=Name,OU=Name,DC=Domain,DC=com" -Filter * -Properties *).CN 
 ```
 
 ## Query and Export to CSV:
