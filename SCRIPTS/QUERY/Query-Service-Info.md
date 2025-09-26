@@ -2,6 +2,7 @@
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**
+> - **Remove any spaces when pasting text**
 
 > [!Note]
 > - Queries service for uptime and status information
