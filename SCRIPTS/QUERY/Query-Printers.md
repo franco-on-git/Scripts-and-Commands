@@ -7,21 +7,14 @@
 ```
 Clear-Host
 
-# Save all local printers to a variable, excluding XPS and PDF ones
+# Save all local printers to variable, excluding xps, pdf, fax, and onenote
 $Printers = Get-Printer | Where-Object {
-    $_.Type -eq 'Local' -and
-    $_.Name -notlike '*xps*' -and
-    $_.Name -notlike '*pdf*'
+    $_.Type -eq 'Local' -and 
+    $_.Name -notmatch 'xps|pdf|fax|onenote'
 }
 
 # Check if any printers were found and display appropriate result
-if ($Printers) {
-    Write-Host "Printer Mappings Found:`n"
+if ($Printers) {$Printers | Format-Table Name, DriverName, PortName -AutoSize}
 
-    # Display printer info in a readable table format
-    $Printers | Format-Table Name, DriverName, PortName -AutoSize
-}
-else {
-    Write-Host "No printers found."
-}
+else {Write-Host "No printers found."}
 ```
