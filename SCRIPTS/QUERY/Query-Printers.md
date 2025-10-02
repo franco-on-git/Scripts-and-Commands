@@ -17,3 +17,17 @@ $Printers = Get-Printer | Where-Object {
 if ($Printers) {$Printers | Format-Table Name, DriverName, PortName -AutoSize}
 else {Write-Host "No printers found."}
 ```
+
+## Printer (Local/Network)
+```
+Clear-Host
+
+# Save all local printers to variable, excluding xps, pdf, fax, and onenote
+$Printers = Get-Printer | Where-Object {
+    $_.Name -notmatch 'xps|pdf|fax|onenote'
+}
+
+# Check if any printers were found and display appropriate result
+if ($Printers) {$Printers | Format-Table Name, DriverName, PortName -AutoSize}
+else {Write-Host "No printers found."}
+```
