@@ -2,8 +2,9 @@
 
 > [!NOTE]
 > - Query system for locally installed and/or network printers.
+> - Scripts <ins>excludes</ins> XPS, PDF, FAX, and OneNote printers
 
-## Printers (Local Only and excluding XPS/PDF)
+## Printers (Local Only)
 ```
 Clear-Host
 
@@ -18,7 +19,7 @@ if ($Printers) {$Printers | Format-Table Name, DriverName, PortName -AutoSize}
 else {Write-Host "No printers found."}
 ```
 
-## Printer (Local/Network)
+## Printer (Local & Network)
 ```
 Clear-Host
 
