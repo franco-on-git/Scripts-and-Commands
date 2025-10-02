@@ -15,6 +15,5 @@ $Printers = Get-Printer | Where-Object {
 
 # Check if any printers were found and display appropriate result
 if ($Printers) {$Printers | Format-Table Name, DriverName, PortName -AutoSize}
-
 else {Write-Host "No printers found."}
 ```
