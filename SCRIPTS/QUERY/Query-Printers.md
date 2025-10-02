@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > - Query system for locally installed and/or network printers.
-> - Scripts <ins>excludes</ins> XPS, PDF, FAX, and OneNote printers
+> - Scripts <ins>exclude XPS, PDF, FAX, and OneNote</ins> printers
 
 ## Printers (Local Only)
 ```
