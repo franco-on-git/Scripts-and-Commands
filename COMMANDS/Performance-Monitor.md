@@ -1,8 +1,5 @@
 # Performance Monitor (perfmon.exe) Data Collector Sets
 
-> [!NOTE]
-> - Create Data Collector sets for Perfmon using PowerShell
-
 ## Collect Everything - Collector Set
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**
