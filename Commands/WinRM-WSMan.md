@@ -4,6 +4,7 @@
 - WS-Man replaced legacy DCOM for remote management
 - Provides a common way to access and exchange management information across servers, devices, and applications.
 - Microsoft implements it as **WinRM** (Windows Remote Management).
+      - dfs
       - To check the status of the service, run the following:
       ```
       Get-Service -name WinRM
