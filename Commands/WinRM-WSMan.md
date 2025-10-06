@@ -36,4 +36,7 @@ winrm quickconfig
       - Enabling a firewall exception for WS-Management communications.
 - It focuses on the core WinRM service configuration.
 
+<br>
+<br>
+
 # Enable-PSRemoting
