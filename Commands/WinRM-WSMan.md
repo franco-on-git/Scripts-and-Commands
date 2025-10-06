@@ -21,6 +21,8 @@ Reference Source: [Querying Management Information by using CIM and WMI](https:/
 
 ![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/WSMan.png)
 
+<br>
+<br>
 
 # WinRM QuickConfig
 
