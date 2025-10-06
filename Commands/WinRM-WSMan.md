@@ -1,6 +1,4 @@
-# WinRM and WS-Man Configuration Commands
-
-### What is WS-Man?
+# What is WS-Man?
 **Web Services for Management**
 - An open standard protocol (SOAP-based) for remote management of systems.
 - WS-Man replaced legacy DCOM for remote management
