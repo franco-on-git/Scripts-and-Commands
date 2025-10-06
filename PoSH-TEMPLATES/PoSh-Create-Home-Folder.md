@@ -8,7 +8,7 @@
 ## PowerShell
 ```
 # SCRIPTNAME
-$ScriptName = "Name Me Please"
+$ScriptName = Read-Host "Name Me Please"
 
 
 # AM OR PM TIME INDICATOR FOR FILE AND FOLDER NAMING PURPOSES
