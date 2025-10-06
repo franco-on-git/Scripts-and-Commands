@@ -5,3 +5,4 @@
 ```
 get-service winrm | ft -AutoSize
 ```
+!(https://github.com/franco-on-git/Images/tree/main/Scripts-and-Commands/GitHub_AutoSize.jpg?raw=true)
