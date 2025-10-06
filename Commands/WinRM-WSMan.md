@@ -23,10 +23,6 @@ Reference Source: [Querying Management Information by using CIM and WMI](https:/
 
 # WinRM QuickConfig
 
-### Copy Code:
-```
-winrm quickconfig
-```
 
 - This is a command-line utility used to quickly configure the WinRM service.
 - It performs the basic steps necessary to enable WinRM, including:
@@ -35,14 +31,16 @@ winrm quickconfig
     - Enabling a firewall exception for WS-Management communications.
 - It focuses on the core WinRM service configuration.
 
+### Copy Code:
+```
+winrm quickconfig
+```
+
+
 <br>
 
 # Enable-PSRemoting
 
-### Copy Code:
-```
-Enable-PSRemoting
-```
 - This is a PowerShell cmdlet designed specifically for enabling PowerShell Remoting.
 - It performs all the actions of winrm quickconfig and then adds further PowerShell-specific configurations, including:
     - Creating the necessary session endpoint configurations for PowerShell remoting.
@@ -50,4 +48,9 @@ Enable-PSRemoting
     - Modifying the security descriptor of session configurations to allow remote access.
     - Restarting the WinRM service to apply all changes.
 - It provides a more comprehensive setup for PowerShell remoting, ensuring that all necessary PowerShell-related components are correctly configured.
+
+### Copy Code:
+```
+Enable-PSRemoting
+```
 
