@@ -40,3 +40,16 @@ winrm quickconfig
 <br>
 
 # Enable-PSRemoting
+
+### Copy Code:
+```
+Enable-PSRemoting
+```
+- This is a PowerShell cmdlet designed specifically for enabling PowerShell Remoting.
+- It performs all the actions of winrm quickconfig and then adds further PowerShell-specific configurations, including:
+    - Creating the necessary session endpoint configurations for PowerShell remoting.
+    - Enabling all session configurations.
+    - Modifying the security descriptor of session configurations to allow remote access.
+    - Restarting the WinRM service to apply all changes.
+- It provides a more comprehensive setup for PowerShell remoting, ensuring that all necessary PowerShell-related components are correctly configured.
+
