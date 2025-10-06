@@ -17,5 +17,5 @@
     - HTTP: 5985
     - HTTPS: 5986
 
-    ![Source](https://infosec.co.il/querying-information-by-cim-and-wmi/)
+    [Source](https://infosec.co.il/querying-information-by-cim-and-wmi/)
 
