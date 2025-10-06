@@ -23,7 +23,7 @@ Reference Source: [Querying Management Information by using CIM and WMI](https:/
 
 # Test Connectivity
 
- To check the status of the service, run the following:
+To check the status of the WinRM service:
   ```
   Get-Service -name WinRM
   ```
