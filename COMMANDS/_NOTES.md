@@ -1,6 +1,6 @@
 # Display Full Text in Terminal
 
-### To display full text in terminal use the `Format-Table -AutoSize` command and switch
+### To display full text in terminal, pipe the result to `Format-Table -AutoSize`.
 
 ```
 get-service winrm | ft -AutoSize
