@@ -10,7 +10,4 @@ Here, you'll find a collection of scripts and resources that I’ve put together
 
 I’m always refining and adding new content, so feel free to star ⭐ the repo to stay updated. Thanks for stopping by!
 
-<p align="center">
-  <img src="VISUALS/google-dino.png">
-  <br/>
-</p>
+![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/NoPlaceLikeHome.png)
