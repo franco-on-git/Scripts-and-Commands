@@ -19,7 +19,7 @@
 
 Reference Source: [Querying Management Information by using CIM and WMI](https://infosec.co.il/querying-information-by-cim-and-wmi/)
 
-![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/WSMan.png =250x250)
+![](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/WSMan.png | =250x250)
 
 <br>
 
