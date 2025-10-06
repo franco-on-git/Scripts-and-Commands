@@ -32,9 +32,9 @@ winrm quickconfig
 
 - This is a command-line utility used to quickly configure the WinRM service.
 - It performs the basic steps necessary to enable WinRM, including:
-      - Starting the WinRM service and setting its startup type to automatic.
-      - Creating a listener to accept requests on any IP address.
-      - Enabling a firewall exception for WS-Management communications.
+    - Starting the WinRM service and setting its startup type to automatic.
+    - Creating a listener to accept requests on any IP address.
+    - Enabling a firewall exception for WS-Management communications.
 - It focuses on the core WinRM service configuration.
 
 <br>
