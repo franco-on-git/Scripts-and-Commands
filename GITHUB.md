@@ -68,6 +68,8 @@ This is  text<br>
 > [!IMPORTANT]
 > - **25 MB**: for files added via the browser.
 > - **100 MB**: for files added via the command line. Pushing a file larger than 50MB will typically result in a warning, while files exceeding 100MB will be blocked.
+
+### From LOCAL REPO:
 ```
 <p align="center">
   <img src="VISUALS/google-dino.png">
@@ -75,6 +77,14 @@ This is  text<br>
 </p>
 ```
 
+### From WEB:
+```
+Code:
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+Example:
+![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/GitHub_AutoSize.jpg)
+```
 
 
 # Alerts
