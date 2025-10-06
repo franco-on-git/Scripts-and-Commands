@@ -75,6 +75,14 @@ This is  text<br>
 </p>
 ```
 
+### From WEB:
+```
+Code:
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+Example:
+![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/GitHub_AutoSize.jpg)
+```
 
 
 # Alerts
