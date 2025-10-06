@@ -4,6 +4,10 @@
 - WS-Man replaced legacy DCOM for remote management
 - Provides a common way to access and exchange management information across servers, devices, and applications.
 - Microsoft implements it as **WinRM** (Windows Remote Management).
+      - To check the status of the service, run the following:
+      ```
+      Get-Service -name WinRM
+      ```
 - It underpins **CIM cmdlets** in PowerShell (`Get-CimInstance`, `Get-CimSession`, etc.)
 - **PowerShell Remoting** commands like `Enter-PSSession` and `Invoke-Command` rely on WS-Man
 - This makes it firewall-friendly and cross-platform.
