@@ -68,6 +68,8 @@ This is  text<br>
 > [!IMPORTANT]
 > - **25 MB**: for files added via the browser.
 > - **100 MB**: for files added via the command line. Pushing a file larger than 50MB will typically result in a warning, while files exceeding 100MB will be blocked.
+
+### From LOCAL REPO:
 ```
 <p align="center">
   <img src="VISUALS/google-dino.png">
