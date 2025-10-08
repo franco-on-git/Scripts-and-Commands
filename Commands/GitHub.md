@@ -1,4 +1,11 @@
 
+# VS Code Shortcuts
+
+`Ctrl + [` - Remove Indentation
+
+`Ctrl + ]` - Add Indentation
+
+
 # Links
 ```
 [Link Name](URL)
