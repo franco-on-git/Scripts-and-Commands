@@ -68,5 +68,3 @@ w32tm /config /manualpeerlist:"ntp_server_1,ntp_server_2" /syncfromflags:manual 
 `/update`
 - Forces the Windows Time service to read the updated settings immediately instead of waiting until the next refresh.
 - Basically applies the changes right away.
-
-
