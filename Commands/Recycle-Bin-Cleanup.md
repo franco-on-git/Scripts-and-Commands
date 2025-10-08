@@ -18,12 +18,12 @@ rm /s c:\$Recycle.Bin
 
 ## PowerShell (cmdlet)
 Clears recycle bin for all drives, no prompt.
-```
+```powershell
 Clear-RecycleBin -Force
 ```
 
 Clears recycle bin for `C:\` drive.
-```
+```powershell
 Clear-RecycleBin -DriveLetter C
 ```
 
