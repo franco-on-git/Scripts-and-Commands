@@ -88,12 +88,13 @@ Example:
 
 # Font Coloring
 
+```html
 <span style="color:red;">This text is red.</span>
 
 <span style="color:#008000;">This text is green using a hex code.</span>
 
 <font color="cyan">This text is Cyan.</font>
-
+```
 
 # Alerts
 > [!NOTE]
