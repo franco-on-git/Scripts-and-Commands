@@ -1,7 +1,7 @@
 # Add Group to Local Administrators Group
 
 ### Copy Code:
-```
+``` Powershell
 Clear-Host
 
 # Prompt for group name
