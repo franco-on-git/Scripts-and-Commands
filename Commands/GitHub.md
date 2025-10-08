@@ -96,6 +96,17 @@ Example:
 <font color="cyan">This text is Cyan.</font>
 ```
 
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+
+- <r>TODO:</r> Important thing to do
+- <o>TODO:</o> Less important thing to do
+- <g>DONE:</g> Breath deeply and improve karma
+
 # Alerts
 > [!NOTE]
 > - Useful information that users should know, even when skimming content.
