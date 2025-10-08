@@ -12,7 +12,7 @@
 
 ## Command-Line (CMD)
 Clears `C:\` drive Recycle Bin
-```
+```batch
 rm /s c:\$Recycle.Bin 
 ```
 
