@@ -1,13 +1,8 @@
-<#
-    .NOTES
-        Author: Franco-hq
-        Created: 07/2025
+# Hash Value Checker
 
-    .DESCRIPTION
-        -Compares hash value, from diffrent selectable algorithms, from a selected file to a manually input has value
-#>
+### Copy Code
 
-
+```powershell
 clear-host
 
 # ----------------------------------------------------------------------------------
@@ -110,3 +105,4 @@ if ($hash -eq $Yourhash) {
 } else {
     Write-Host "Hash Values DO NOT MATCH!" -ForegroundColor Red
 }
+```
