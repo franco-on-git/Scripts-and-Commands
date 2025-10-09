@@ -10,7 +10,7 @@
 > - Bottom script shows all individual login events along with name and type.
 
 ## All Logins:
-```
+```powershell
 clear-host
 Get-WinEvent -LogName Security -FilterXPath '*/System/EventID=4624' |
 Sort-Object -Property TimeCreated -Descending |
@@ -19,7 +19,7 @@ Format-Table -AutoSize
 ```
 
 ## Recent 20 Logins:
-```
+```powershell
 Clear-Host
 
 # Define logon event ID and log source
