@@ -7,7 +7,7 @@
         
 ## Copy Code:
 
-```
+```powershell
 clear-host
 
 Add-Type -AssemblyName System.Windows.Forms
