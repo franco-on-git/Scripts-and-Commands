@@ -5,7 +5,7 @@
 > - Scripts <ins>exclude XPS, PDF, FAX, and OneNote</ins> printers
 
 ## Printers (Local Only)
-```
+```powershell
 Clear-Host
 
 # Save all local printers to variable, excluding xps, pdf, fax, and onenote
@@ -20,7 +20,7 @@ else {Write-Host "No printers found."}
 ```
 
 ## Printer (Local & Network)
-```
+```powershell
 Clear-Host
 
 # Save all local printers to variable, excluding xps, pdf, fax, and onenote
