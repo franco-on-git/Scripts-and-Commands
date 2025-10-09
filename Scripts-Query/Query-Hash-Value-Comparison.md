@@ -1,6 +1,6 @@
 # Hash Value Checker
 
-### Copy Code
+### Copy Code:
 
 ```powershell
 clear-host
