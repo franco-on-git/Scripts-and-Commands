@@ -5,12 +5,12 @@
 > - No <ins>Admin</ins> console required.
 
 ## Get <ins>All</ins> installed Hot Fixes:
-```
+```powershell
 Get-HotFix | Sort-Object InstalledOn -Descending 
 ```
 
 ## Search patch\KB <ins>MATCHING</ins> string:
-```
+```powershell
 $hotfixID = Read-Host "KB Number"   # ..Change me
 
 # Query for matching hotfix
