@@ -6,7 +6,7 @@
 
 ## Query <ins>System Log</ins> for a **STRING**:
 
-```
+```powershell
 Clear-Host
 
 $StringName = Read-Host "String"
@@ -19,7 +19,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
 
 ## Query <ins>System Log</ins> for **SHUTDOWN\RESTARTS** Event ID:
 
-```
+```powershell
 Clear-Host
 
 Write-Host "1074: Process 'X' has initiated a restart/shutdown"
@@ -37,7 +37,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
 ```
 
 ## Query <ins>System Log</ins> for **SHUTDOWNS/RESTARTS** in past 24hrs.
-```
+```powershell
 $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
 
 Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
@@ -50,7 +50,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
  ```
 
 ## Query <ins>System Log</ins> for STRING in Service Control Manager <ins>Provider</ins>.
-```
+```powershell
 Get-WinEvent -FilterHashtable @{
   LogName      = 'System'
   ProviderName = 'Service Control Manager'
