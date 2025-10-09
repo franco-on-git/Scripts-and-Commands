@@ -8,7 +8,7 @@
 > - Queries service for uptime and status information
 
 ## Copy Code:
-```
+```powershell
 Clear-Host
 
 $Process2Query = Read-Host "Process Name"
