@@ -1,4 +1,4 @@
-# Display Full Text in Terminal
+# Powershell: Display full terminal text
 
 To display full text in terminal, pipe the result to `Format-Table -AutoSize`.
 
