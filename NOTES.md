@@ -20,3 +20,13 @@ User Profile:
 ```powershell
 $env:USERPROFILE
 ```
+
+Startup Folder (User):
+```powershell
+shell:startup
+```
+
+Startup Directory (All Users):
+```powershell
+shell:common startup
+```
