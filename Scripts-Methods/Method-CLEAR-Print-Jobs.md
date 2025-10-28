@@ -1,6 +1,9 @@
-# !!! Must run Powershell ISE as ADMINISTRATOR !!!
+> [!WARNING]
+> Must run Powershell ISE as <ins>ADMINISTRATOR</ins>!
 
+<br>
 
+```powershell
 $spooldirectory = "C:\Windows\System32\spool\PRINTERS"
 
 # stop print spooler
@@ -38,3 +41,4 @@ If ($spoolerstatuspost -eq "stopped") {Write-Host "Spooler service Successfully 
 
 
 Else {write-host "Print Spooler Failed to Stop, manual intervention required.." -ForegroundColor Red }
+```
