@@ -25,15 +25,17 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
 ```
 <br>
 
-## shell: startup 
+## Startup: User
+Directory: C:\Users\fpere47\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup 
 ```
-C:\Users\fpere47\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup 
+shell:startup
 ```
 <br>
 
-## shell: common startup 
+## Startup: Common
+Directory: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
  ```
-C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 
+shell:common startup
 ```
 <br>
 
