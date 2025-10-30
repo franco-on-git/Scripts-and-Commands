@@ -44,7 +44,9 @@ C:\Windows\System32\drivers\etc\hosts
 <br>
 
 Windows Update SoftwareDistribution 
-> [!CAUTION] The Windows operating system uses it to store temporary files and information about Windows Updates. It's essential for downloading, storing, and managing updates for your Windows operating system.
+> [!CAUTION] 
+> - The Windows operating system uses it to store temporary files and information about Windows Updates.
+> - It's essential for downloading, storing, and managing updates for your Windows operating system.
 ```
 C:\Windows\SoftwareDistribution
 ```
