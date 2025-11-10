@@ -6,7 +6,7 @@
 > - `$AmOrPM` variable used to determine the time of day and will be added to directory name.
 
 ## PowerShell
-```
+```powershell
 # SCRIPTNAME
 $ScriptName = Read-Host "Name Me Please"
 
