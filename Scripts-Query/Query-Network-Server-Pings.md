@@ -1,9 +1,13 @@
 
+> [!NOTE]
+> - Pings servers with 2 ICMP packets then posts results on screen
+> - Exports results to local temp directory: **"C:\Temp\ServerStatusReport.txt"**
+> - <ins>NO ADMIN</ins> terminal needed
 
 
 
 ```powershell
-lear-Host
+clear-Host
 
 # Function for pop-up window to select a file
 Function Get-FileName($initialDirectory)

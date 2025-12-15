@@ -1,23 +1,18 @@
+
 > [!NOTE]
 > - Pings servers with 2 ICMP packets then posts results on screen
 > - Exports results to local temp directory: **"C:\Temp\ServerStatusReport.txt"**
 > - <ins>NO ADMIN</ins> terminal needed
 
 
-```Powershell
-#AM OR PM TIME INDICATOR
-$AmOrPm = Get-Date -UFormat %p
-If ($AmOrPm -eq 'AM') {$AmPM = "am"}
-ElseIf ($AmOrPm -eq 'PM') {$AmPM = "pm"}
 
+```powershell
+clear-Host
 
-#SCRIPT HOME DIRECTORY
-$ScriptName = "ServerPings - $(Get-Date -f MM_dd_yyyy_hhmm)$AmPM"
-$ScriptFolder = "$env:userprofile\desktop\WINDOWS SUPPORT\$ScriptName"
-If (!($scripfolder)) {New-Item -Path $ScriptFolder -ItemType directory | Out-Null}
+Write-Host "Server List File:" -ForegroundColor Cyan
+write-Host ""
 
-
-#FUNCTION FOR EXPLORER POP-UP BOX TO SELECT FILE
+# Function for pop-up window to select a file
 Function Get-FileName($initialDirectory)
 {   
  [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |
@@ -30,59 +25,59 @@ Function Get-FileName($initialDirectory)
  $OpenFileDialog.filename
 }
 
-
-# SCRIPT BANNER------------------------------------------------------------------------
-# ASCII Test site = http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=GetHotFix
-# ASCII Text Font = Slant
-# -------------------------------------------------------------------------------------
-write-host " "
-Start-Sleep -m 250 
-Write-host "|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>|"
-Write-host "|   _____                           ____  _                  |" 
-Write-host "|  / ___/___  ______   _____  _____/ __ \(_)___  ____ ______ |"
-Write-host "|  \__ \/ _ \/ ___/ | / / _ \/ ___/ /_/ / / __ \/ __ `/ ___/  |"
-Write-host "| ___/ /  __/ /   | |/ /  __/ /  / ____/ / / / / /_/ (__  )  |"
-Write-host "|/____/\___/_/    |___/\___/_/  /_/   /_/_/ /_/\__, /____/   |"
-Write-Host "|                                             /____/         |"
-Write-host "|<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|"
-Start-Sleep -m 250
-Write-Host " "
-
-
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-# POPUP TO SELECT SERVER LIST FROM FILE, GET IT'S CONTENTS AND PUT IT INTO A VARIABLE
-Write-Host "Select Server List ("".txt"" or "".csv"")..." -ForegroundColor White
-Start-Sleep 1
-Write-Host
-
+# Variable to get contents from Get-File function
 $ServerList = Get-FileName
-$servers = Get-Content $ServerList
 
+# Output file selection
+$ServerList
 
-$collection = $()
-foreach ($server in $servers) {}
-{
-    $status = @{ "ServerName" = $server}
-    if (Test-Connection $server -Count 2 -ea 0 -Quiet)
-    { 
-        $status["Results"] = "Up"
-    } 
-    else 
-    { 
-        $status["Results"] = "Down" 
+Write-Host ""
+
+# Define the path to the text file containing your server names
+$ServerListFile = Get-Content $ServerList
+# Optional: Define an output file path for a log/report
+$OutputFile = "C:\Temp\ServerStatusReport.txt"
+
+# Clear previous output file if it exists and write header
+Clear-Content -Path $OutputFile
+Add-Content -Path $OutputFile -Value "Server Status Report - $(Get-Date)"
+Add-Content -Path $OutputFile -Value "---------------------------------------"
+
+# Import the server list from the file, one name per line
+$Servers = Get-Content -Path $ServerList
+
+Write-Host "Starting connectivity test..." -ForegroundColor Cyan
+Write-Host "" -ForegroundColor Cyan
+
+# Loop through each server in the list
+foreach ($Server in $Servers) {
+    # Remove leading/trailing white space
+    $Server = $Server.Trim()
+
+    # Skip empty lines in the text file
+    if ($Server) {
+        Write-Host "Testing $Server :" -NoNewline
+
+        # Test the connection; -Count 2 sends a two ICMP packet
+        if (Test-Connection -ComputerName $Server -Count 2 -ErrorAction SilentlyContinue) {
+            $StatusMessage = "$Server is UP"
+            Write-Host " UP" -ForegroundColor Green
+        } else {
+            $StatusMessage = "$Server is DOWN"
+            Write-Host " DOWN" -ForegroundColor Red
+        }
+        
+        # Append the status message to the output report file
+        Add-Content -Path $OutputFile -Value $StatusMessage
     }
-    New-Object -TypeName PSObject -Property $status -OutVariable serverStatus
-    $collection += $serverStatus
+}
 
-    }
+write-host ""
+Write-Host "---------------------------------------" -ForegroundColor Cyan
+Write-Host "Testing complete. Results saved to $OutputFile" -ForegroundColor Cyan
 
-$collection | Export-Csv "$ScriptFolder\$ScriptName.csv"
+sleep 2
 
-(Get-Content "$ScriptFolder\$ScriptName.csv" | Select-Object -Skip 1) | Set-Content "$ScriptFolder\$ScriptName.csv"
-
-Invoke-Item "$ScriptFolder\$ScriptName.csv"
+# Open explorted results TXT file
+Invoke-Item $OutputFile
 ```
