@@ -1,3 +1,6 @@
+
+
+```Powershell
 #AM OR PM TIME INDICATOR
 $AmOrPm = Get-Date -UFormat %p
 If ($AmOrPm -eq 'AM') {$AmPM = "am"}
@@ -78,3 +81,4 @@ $collection | Export-Csv "$ScriptFolder\$ScriptName.csv"
 (Get-Content "$ScriptFolder\$ScriptName.csv" | Select-Object -Skip 1) | Set-Content "$ScriptFolder\$ScriptName.csv"
 
 Invoke-Item "$ScriptFolder\$ScriptName.csv"
+```
