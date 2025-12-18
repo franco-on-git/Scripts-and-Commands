@@ -1,10 +1,10 @@
-# Event Viewer Query
+# Event Viewer Queries
 
 > [!NOTE]
 > - Multiple quieries for searching Event Viewer logs.
 > - You can switch between <ins>SYSTEM</ins> and <ins>APPLICATION</ins> logs. 
 
-## Query <ins>System Log</ins> for a **STRING**:
+## <ins>SYSTEM Log</ins> - Any **STRING**:
 
 ```powershell
 Clear-Host
@@ -17,7 +17,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-## Query <ins>System Log</ins> for **SHUTDOWN\RESTARTS** Event ID:
+## <ins>SYSTEM Log</ins> - **Shutdowns/Restarts**:
 
 ```powershell
 Clear-Host
@@ -36,7 +36,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-## Query <ins>System Log</ins> for **SHUTDOWNS/RESTARTS** in past 24hrs.
+## <ins>System Log</ins> -  **Shutdowns/Restarts** (Past 24hrs):
 ```powershell
 $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
 
@@ -49,13 +49,64 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
  ```
 
-## Query <ins>System Log</ins> for STRING in Service Control Manager <ins>Provider</ins>.
+
+# APPLICATION / SYSTEM - Single Query:
 ```powershell
+cls
+
+
+write-host "  _____   _____ _____ ___ __  __ "   -ForegroundColor Magenta
+write-host " / __\ \ / / __|_   _| __|  \/  |"  -ForegroundColor Magenta
+write-host " \__ \\ V /\__ \ | | | _|| |\/| |"  -ForegroundColor Magenta
+write-host " |___/ |_| |___/ |_| |___|_|  |_|"  -ForegroundColor Magenta
+write-host ""
+Write-Host ""
+ 
+
+write-host "== CRITICAL ==" -ForegroundColor Cyan
 Get-WinEvent -FilterHashtable @{
-  LogName      = 'System'
-  ProviderName = 'Service Control Manager'
-} |
-  Where-Object { $_.Message -like '*vpos*' } |
-  Select-Object -First 15 |
-  Format-Table -Wrap
+    LogName = 'System'
+    Level   = 1
+} -MaxEvents 10 | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
+
+
+write-host "== ERROR ==" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    Level   = 2
+} -MaxEvents 10 | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
+
+
+write-host "== WARNING Events ==" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    Level   = 3
+} -MaxEvents 10 | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
+
+
+write-host ""
+write-host "    _   ___ ___ _    ___ ___   _ _____ ___ ___  _  _ " -ForegroundColor Magenta
+write-host "   /_\ | _ \ _ \ |  |_ _/ __| /_\_   _|_ _/ _ \| \| |" -ForegroundColor Magenta
+write-host "  / _ \|  _/  _/ |__ | | (__ / _ \| |  | | (_) | .` |" -ForegroundColor Magenta
+write-host " /_/ \_\_| |_| |____|___\___/_/ \_\_| |___\___/|_|\_|" -ForegroundColor Magenta
+                                 
+write-host "== CRITICAL ==" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Application'
+    Level   = 1
+} -MaxEvents 10  -ErrorAction SilentlyContinue | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
+
+
+write-host "== ERROR ==" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Application'
+    Level   = 2
+} -MaxEvents 10 | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize
+
+
+write-host "== WARNING Events ==" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Application'
+    Level   = 3
+} -MaxEvents 20 |  Format-Table -AutoSize                    
 ```
