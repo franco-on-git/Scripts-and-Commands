@@ -9,6 +9,19 @@
 > - Groups them by user.
 > - Bottom script shows all individual login events along with name and type.
 
+
+## Users Folder Modification (Login):
+```powershell
+clear-host
+
+# Get all files in C:\Users including subdirectories
+$files = Get-ChildItem -Path "C:\Users" -ErrorAction SilentlyContinue
+
+# Sort by LastWriteTime (latest first) and select the top 10
+$files | Sort-Object LastWriteTime -Descending | Select-Object -First 15 -Property Name, LastWriteTime, FullName
+```
+
+
 ## All Logins:
 ```powershell
 clear-host
