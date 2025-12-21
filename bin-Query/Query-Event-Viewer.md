@@ -12,7 +12,21 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-## <ins>SYSTEM</ins> - Shutdowns & Restarts:
+## <ins>SYSTEM</ins> - Shutdowns & Restarts (Past 24hrs):
+```powershell
+$Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
+
+Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
+  Where-Object {
+    $_.Id -match '1074|6006|6005|1076|6008' -or
+    ($_.Id -eq 41 -and $_.TimeCreated -ge $Yesterday)
+  } |
+  Select-Object TimeCreated, Id, Message |
+  Out-GridView
+ ```
+
+
+## <ins>SYSTEM</ins> - Shutdowns & Restarts (ALL):
 
 ```powershell
 Clear-Host
@@ -31,18 +45,6 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-## <ins>System</ins> - Shutdowns & Restarts (Past 24hrs):
-```powershell
-$Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
-
-Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
-  Where-Object {
-    $_.Id -match '1074|6006|6005|1076|6008' -or
-    ($_.Id -eq 41 -and $_.TimeCreated -ge $Yesterday)
-  } |
-  Select-Object TimeCreated, Id, Message |
-  Out-GridView
- ```
 
 
 ## <ins>APPLICATION & SYSTEM</ins> - Critial, Error, and Warning (Latest 10):
