@@ -1,8 +1,5 @@
 
-## SSD/HDD Disks Only:
-> [!Note]
-> - Only queries for "Type 3" disks that are SSD\HDD Only.
-
+## SSD/HDD Disks Only (Type 3):
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk |
     Where-Object { $_.DriveType -eq 3 } |
@@ -17,10 +14,9 @@ Get-WmiObject -Class Win32_LogicalDisk |
     ) 
 ```
 
-## <ins>All</ins> Locally Attached Disks:
-> [!Note]
-> - Results will include all disk types like USB, Network Drives, and Media drives.
+<br>
 
+## <ins>All</ins> Locally Attached Disks (USB | Network Drives | Media drives):
 ```powershell
 $DiskType = @{
     2 = "USB"
