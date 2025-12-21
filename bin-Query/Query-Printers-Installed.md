@@ -1,4 +1,3 @@
-# Query Printers
 
 > [!NOTE]
 > - Query system for locally installed and/or network printers.

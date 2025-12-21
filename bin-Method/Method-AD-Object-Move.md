@@ -1,4 +1,6 @@
 
+```powershell
+
 Write-Host "Enter Server Name:" -ForegroundColor Yellow
 $moveme = Read-Host
 
@@ -15,3 +17,4 @@ Get-ADComputer $moveme | Move-ADObject -TargetPath 'OU=CCTV Servers,OU=Servers,D
 Write-Host ""
 Write-Host "New location..." -ForegroundColor Yellow
 (Get-ADComputer $moveme).distinguishedname
+```

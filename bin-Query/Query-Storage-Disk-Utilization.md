@@ -1,11 +1,7 @@
-# Query Disk Utilization
-
-> [!Note]
-> - No <ins>Administrator</ins> console required. 
 
 ## SSD/HDD Disks Only:
 > [!Note]
-> - Only queries for Type 3 disks that are SSD\HDD Only.
+> - Only queries for "Type 3" disks that are SSD\HDD Only.
 
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk |

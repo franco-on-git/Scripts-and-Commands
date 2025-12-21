@@ -1,8 +1,6 @@
-# Query RAM Total
 
 > [!NOTE]
 > - Queries amount of memory and how much it's being used.
-> - No <ins>Admin</ins> terminal required. 
 
 ### Copy Code:
 ```powershell
