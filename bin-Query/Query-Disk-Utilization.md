@@ -14,8 +14,7 @@ Get-WmiObject -Class Win32_LogicalDisk |
         @{L = "(%)Used";      E = { [math]::Round((($_.Size - $_.FreeSpace) / $_.Size) * 100, 2) }},
         @{L = "Free(GB)";     E = { [math]::Round($_.FreeSpace / 1GB, 2) }},
         @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }}
-    ) |
-    Out-GridView
+    ) 
 ```
 
 ## <ins>All</ins> Locally Attached Disks:
@@ -40,6 +39,5 @@ Get-WmiObject -Class Win32_LogicalDisk |
         @{L = "(%)Used";      E = { [math]::Round((($_.Size - $_.FreeSpace) / $_.Size) * 100, 2) }},
         @{L = "Free(GB)";     E = { [math]::Round($_.FreeSpace / 1GB, 2) }},
         @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }} 
-        ) |
-    Out-GridView
+        )
 ```
