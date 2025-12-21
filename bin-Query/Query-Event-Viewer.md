@@ -1,10 +1,5 @@
-# Event Viewer Queries
 
-> [!NOTE]
-> - Multiple quieries for searching Event Viewer logs.
-> - You can switch between <ins>SYSTEM</ins> and <ins>APPLICATION</ins> logs. 
-
-## <ins>SYSTEM Log</ins> - Any **STRING**:
+## <ins>SYSTEM</ins> - Any string:
 
 ```powershell
 Clear-Host
@@ -17,7 +12,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-## <ins>SYSTEM Log</ins> - **Shutdowns/Restarts**:
+## <ins>SYSTEM</ins> - Shutdowns & Restarts:
 
 ```powershell
 Clear-Host
@@ -36,7 +31,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
   Out-GridView
 ```
 
-## <ins>System Log</ins> -  **Shutdowns/Restarts** (Past 24hrs):
+## <ins>System</ins> - Shutdowns & Restarts (Past 24hrs):
 ```powershell
 $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
 
@@ -50,7 +45,7 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
  ```
 
 
-# APPLICATION / SYSTEM - Single Query:
+## <ins>APPLICATION & SYSTEM</ins> - Critial, Error, and Warning (Latest 10):
 ```powershell
 cls
 
