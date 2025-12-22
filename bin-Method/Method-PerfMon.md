@@ -45,6 +45,7 @@ logman start _CPU_PROCESS_ONLY_5SEC
 logman stop  _CPU_PROCESS_ONLY_5SEC
 ```
 
+<br>
 
-## PAL2 PerfMon Capture Analysis Tool
+# PAL2 PerfMon Capture Analysis Tool
 [PAL2 Tool Link](https://github.com/clinthuffman/PAL) 
