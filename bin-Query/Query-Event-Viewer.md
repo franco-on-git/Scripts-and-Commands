@@ -4,12 +4,23 @@
 ```powershell
 Clear-Host
 
-$StringName = Read-Host "String"
+$StringName = Read-Host "Enter Search String"
 
-Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
-  Where-Object { $_.Message -like "*$StringName*" } |
-  Select-Object -First 25 |
-  Out-GridView
+# Search both logs and store results in a variable
+# FilterHashtable accepts an array of strings for LogName
+$Events = Get-WinEvent -FilterHashtable @{ LogName = 'System', 'Application' } -ErrorAction SilentlyContinue |
+    Where-Object { $_.Message -like "*$StringName*" } |
+    Select-Object -First 25 |
+    Select-Object LogName, TimeCreated, Id, LevelDisplayName, Message
+
+# Check if any events were found
+if ($Events) {
+    $Events | Format-Table -AutoSize
+}
+else {
+    Write-Host "No events Found!" -ForegroundColor Yellow
+}
+
 ```
 
 ## <ins>SYSTEM</ins> - Shutdowns & Restarts (Past 24hrs):
@@ -47,12 +58,23 @@ Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
 
 
 
-## <ins>APPLICATION & SYSTEM</ins> - Critial, Error, and Warning (Latest 10):
+## <ins>SHUTDOWNS/REBOOTS, APPLICATION & SYSTEM</ins> - Critial, Error, and Warning (Latest 10):
 ```powershell
 cls
 
 
-write-host "  _____   _____ _____ ___ __  __ "   -ForegroundColor Magenta
+write-host " ___  _____      _____ ___      _____   _____ _    ___ "  -ForegroundColor Magenta
+write-host "| _ \/ _ \ \    / / __| _ \___ / __\ \ / / __| |  | __|"  -ForegroundColor Magenta
+write-host "|  _/ (_) \ \/\/ /| _||   /___| (__ \ V / (__| |__| _| "  -ForegroundColor Magenta
+write-host "|_|  \___/ \_/\_/ |___|_|_\    \___| |_| \___|____|___|"  -ForegroundColor Magenta
+                                                                                                                            
+
+Get-WinEvent -FilterHashtable @{ LogName = 'System' } |
+  Where-Object { $_.Id -match '1074|6006|6005|1076|6008' -or $_.Id -eq 41 } |
+  Select-Object TimeCreated, Id, Message
+
+
+write-host "  _____   _____ _____ ___ __  __ "  -ForegroundColor Magenta
 write-host " / __\ \ / / __|_   _| __|  \/  |"  -ForegroundColor Magenta
 write-host " \__ \\ V /\__ \ | | | _|| |\/| |"  -ForegroundColor Magenta
 write-host " |___/ |_| |___/ |_| |___|_|  |_|"  -ForegroundColor Magenta
