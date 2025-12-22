@@ -20,9 +20,11 @@ logman start _LOGMAN_ALL_5SEC
 logman stop  _LOGMAN_ALL_5SEC
 ```
 
+<br>
+
 # PERFMON - Collect Process/CPU Only
 > [!WARNING]
-> **Always Run Terminal as <ins>Administrator</ins>!**
+> - **<ins>Administrator</ins> Terminal required!**
 
 > [!NOTE]
 > - 5 Second Interval sampling
