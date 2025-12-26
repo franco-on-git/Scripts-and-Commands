@@ -1,7 +1,7 @@
 # Method: DHCP Backup Scopes
 
 > [!IMPORTANT]
-> - Must have **DHCP Server Tool** installed for `backup-dhcpserver` cmdlet to work.
+> - Must have **DHCP Server Tools** installed for `backup-dhcpserver` cmdlet to work.
 
 ```powershell
 clear-host
