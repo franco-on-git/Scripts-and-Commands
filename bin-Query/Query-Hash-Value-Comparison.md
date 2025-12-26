@@ -29,7 +29,7 @@ $okButton.Location = New-Object System.Drawing.Point(100,80)
 $okButton.Add_Click({ $form.Close() })
 $form.Controls.Add($okButton)
 
-$form.ShowDialog() | Out-Null
+$null = $form.ShowDialog()
 
 $AlgorithmOption = $listbox.SelectedItem
 
@@ -55,7 +55,7 @@ Write-Host ""
 Start-Sleep 2
 
 Function Get-File($initialDirectory) {
-    [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") | Out-Null 
+    $null = [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms")
     $OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog 
     $OpenFileDialog.initialDirectory = $initialDirectory 
     $OpenFileDialog.filter = "All files (*.*)| *.*" 
