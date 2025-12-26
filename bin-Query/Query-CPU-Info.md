@@ -1,4 +1,4 @@
-# Query System CPU Info
+# Query: CPU Info
 > [!Note]
 > - No <ins>Admin</ins> Terminal required
 

@@ -1,4 +1,4 @@
-# Compare 2 Directories for Contents
+# Query: Compare Directories for Contents
 
 > [!NOTE]
 > - Compare 2 diffrent directories for object (File/Folder) diffrences.

@@ -1,4 +1,4 @@
-
+# Query: Disk Information
 ## SSD/HDD Disks Only (Type 3):
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk |

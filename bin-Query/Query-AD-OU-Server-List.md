@@ -1,4 +1,4 @@
-# Query AD OU for **SERVER** objects
+# Query: AD OU for **SERVER** objects
 
 > [!WARNING]
 > - Must run query in server with **AD Directory Services** installed.

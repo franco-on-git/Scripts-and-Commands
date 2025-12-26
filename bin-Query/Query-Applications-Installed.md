@@ -1,4 +1,4 @@
-# Query Installed Applications
+# Query: Installed Applications
 
 
 ## PowerShell (Get-Package)
