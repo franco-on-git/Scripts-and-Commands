@@ -1,4 +1,4 @@
-# Query Service Information
+# Query: Service Information
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**

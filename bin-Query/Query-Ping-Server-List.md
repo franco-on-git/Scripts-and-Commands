@@ -1,4 +1,4 @@
-
+Query: Ping Server List
 > [!NOTE]
 > - Pings servers with 2 ICMP packets then posts results on screen
 > - Exports results to local temp directory: **"C:\Temp\ServerStatusReport.txt"**

@@ -1,5 +1,6 @@
+# Query: Group Membership
 
-# USER Memebership (Active Directory)
+## USER Memebership (Active Directory)
 > [!NOTE]
 > - Security groups that a <ins>user</ins> is part of.
 
@@ -9,7 +10,7 @@ Get-ADPrincipalGroupMembership userLDAP | sort-object | Select-Object name
 
 <br>
 
-# COMPUTER Membership (Active Directory)
+## COMPUTER Membership (Active Directory)
 > [!NOTE]
 > - Security membership that a <ins>computer</ins> object is part of.
 
@@ -19,7 +20,7 @@ Get-ADPrincipalGroupMembership (Get-ADComputer computername).DistinguishedName |
 
 <br>
 
-# Network Folder Membership
+## Network Folder Membership
 > [!NOTE]
 > - Who is part of local Administrators Group
 
@@ -30,7 +31,7 @@ $TargetFolder = "\\folder\directory"
 
 <br>
 
-# Local Administrators Group Membership
+## Local Administrators Group Membership
 > [!NOTE]
 > - Who is part of local Administrators Group
 ```powershell

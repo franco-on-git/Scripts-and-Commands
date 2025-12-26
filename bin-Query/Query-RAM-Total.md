@@ -1,4 +1,4 @@
-
+# Query: RAM Total
 > [!NOTE]
 > - Queries for total amount of system memory, total used and free memory, and does an 30-average utilization.
 

@@ -1,4 +1,4 @@
-# Hash Value Checker
+# Query: Hash Value Checker
 
 ### Copy Code:
 

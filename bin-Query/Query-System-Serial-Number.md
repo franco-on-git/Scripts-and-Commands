@@ -1,4 +1,4 @@
-# Query for Serial Number
+# Query: System Serial Number
 
 > [!NOTE]
 > - Query system for hardware serial number.

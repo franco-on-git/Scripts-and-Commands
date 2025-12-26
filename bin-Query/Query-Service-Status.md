@@ -1,4 +1,4 @@
-# Query System Service Status
+# Query: System Service Status
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**

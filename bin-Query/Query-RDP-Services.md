@@ -1,4 +1,4 @@
-
+# Query: RDP Service
 > [!NOTE]
 > - **Remote Procedure Call (RPC):** Enables communication between software components on different computers or processes, allowing one to execute code remotely as if it were local.
 > -  **Remote Desktop Configuration:** Manages settings and policies for Remote Desktop Services, including session limits, licensing, and user access.

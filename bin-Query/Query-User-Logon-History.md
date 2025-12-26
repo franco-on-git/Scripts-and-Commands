@@ -1,4 +1,4 @@
-# Query User Logon History
+# Query: User Logon History
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**

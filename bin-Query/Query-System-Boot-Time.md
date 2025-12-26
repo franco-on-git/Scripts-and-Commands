@@ -1,4 +1,4 @@
-# Query Syste Boot Time
+# Query: System Boot Time
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**

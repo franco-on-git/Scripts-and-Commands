@@ -1,4 +1,4 @@
-# Machine Creation Date
+# Query: Machine Creation Date
 
 > [!NOTE]
 > - Queries for the creation date (installation) of the Windows OS.

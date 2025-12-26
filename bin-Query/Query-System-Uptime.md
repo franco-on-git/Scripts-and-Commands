@@ -1,3 +1,5 @@
+# Query: System Uptime
+
 
 ```powershell
 Clear-Host

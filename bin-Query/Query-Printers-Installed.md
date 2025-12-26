@@ -1,4 +1,4 @@
-
+# Query: Printers Installed
 > [!NOTE]
 > - Query system for locally installed and/or network printers.
 > - Scripts <ins>exclude XPS, PDF, FAX, and OneNote</ins> printers
