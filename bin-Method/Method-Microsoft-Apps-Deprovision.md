@@ -8,7 +8,7 @@ Get-AppxProvisionedPackage -Online | Format-Table displayname,packagename
 ```
 
 ## Package removal (Single)
-> [!IMPORTANT]
+> [!WARNING]
 > - <ins>Administrator</ins> terminal required!>
 
 ### Remove package from current/existing users:
