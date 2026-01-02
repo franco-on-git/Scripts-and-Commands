@@ -25,33 +25,62 @@ Remove-AppxProvisionedPackage -Online -PackageName "PackageName"
 ```powershell
 Clear-Host
 
+# ==========================================
+# LOGIC BLOCK 1: Discovery & Input
+# ==========================================
+
 # Get list of provisioned packages
-Get-AppxProvisionedPackage -Online | Format-Table displayname,packagename
+Get-AppxProvisionedPackage -Online | Format-Table displayname, packagename
 
 Write-Host ""
 
 $packageyeet = Read-Host "Package to remove"
 
-# Check if package exists
-$packageexist = Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -eq $packageyeet}
+# Check if package exists based on input
+$packageexist = Get-AppxProvisionedPackage -Online | Where-Object { $_.PackageName -eq $packageyeet }
 
-If ($packageexist) {Write-Host "Package Exists: $($packageexist.displayname)" -ForegroundColor Cyan
-                    write-host ""
-                    Write-Host "Removing package from future users..." -ForegroundColor Yellow
-                    $null = Remove-AppxProvisionedPackage -Online -PackageName $packageexist.PackageName
-                    Write-Host ""
-                    Write-Host "Removing pacakage from current/existing users..." -ForegroundColor Yellow
-                    $null = Get-AppxPackage -AllUsers -Name $packageexist.PackageName | Remove-AppxPackage -AllUsers
+# ==========================================
+# LOGIC BLOCK 2: Execution Flow
+# ==========================================
 
-                    Write-Host ""
-                    Write-Host "Verifying package is no longer active..." -ForegroundColor Yellow
-                    $packagefollowup = Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -eq $packageyeet}
-                        If (!$packagefollowup) {Write-Host ""
-                                                Write-Host "Package successufully removed!" -ForegroundColor Cyan}
-                        Else {Write-Host ""
-                              Write-Host "Package $($packagefollowup.displayname) still exists!"-ForegroundColor Yellow} 
-                    }
-Else {Write-Host "Package does not exist!" -ForegroundColor Yellow}
+If ($packageexist) {
+    # Notify user of confirmation
+    Write-Host "Package Exists: $($packageexist.displayname)" -ForegroundColor Cyan
+    Write-Host ""
+
+    # Step A: Remove from Provisioned (Future Users)
+    Write-Host "Removing package from future users..." -ForegroundColor Yellow
+    $null = Remove-AppxProvisionedPackage -Online -PackageName $packageexist.PackageName
+    
+    Write-Host ""
+
+    # Step B: Remove from Appx (Current Users)
+    # Note: Retained original string value including spelling
+    Write-Host "Removing pacakage from current/existing users..." -ForegroundColor Yellow
+    $null = Get-AppxPackage -AllUsers -Name $packageexist.PackageName | Remove-AppxPackage -AllUsers
+
+    Write-Host ""
+
+    # ==========================================
+    # LOGIC BLOCK 3: Verification
+    # ==========================================
+    
+    Write-Host "Verifying package is no longer active..." -ForegroundColor Yellow
+    $packagefollowup = Get-AppxProvisionedPackage -Online | Where-Object { $_.PackageName -eq $packageyeet }
+
+    If (!$packagefollowup) {
+        Write-Host ""
+        Write-Host "Package successufully removed!" -ForegroundColor Cyan
+    }
+    Else {
+        Write-Host ""
+        Write-Host "Package $($packagefollowup.displayname) still exists!" -ForegroundColor Yellow
+    } 
+}
+Else {
+    # Fallback if initial input provided no matches
+    Write-Host "Package does not exist!" -ForegroundColor Yellow
+}
 ```
 
 
