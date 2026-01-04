@@ -1,7 +1,7 @@
 # Recycle Bin Cleanup
 
 > [!WARNING]
-> **<ins>Administrator</ins>! Terminal required!**
+> **<ins>Administrator</ins> Terminal Required!**
 
 > [!NOTE]
 > - Cleans up drive reycle bin
