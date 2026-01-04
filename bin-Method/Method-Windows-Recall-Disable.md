@@ -1,7 +1,7 @@
 # Disable Windows Recall Feature
 
 > [!WARNING]
-> - <ins>Administrator</ins> Terminal required!
+> <ins>Administrator</ins> Terminal required!
 
 ## Informational
 - Windows Recall is an AI-powered search tool for Copilot+ PCs designed to act as a "photographic memory" for your computer activity. 
