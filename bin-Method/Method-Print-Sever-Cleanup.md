@@ -1,5 +1,5 @@
 > [!WARNING]
-> <ins>ADMINISTRATOR</ins> Terminal Required!
+> <ins>Administrator</ins> Terminal Required!
 
 <br>
 
