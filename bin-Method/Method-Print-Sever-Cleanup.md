@@ -1,5 +1,5 @@
 > [!WARNING]
-> Must run Powershell ISE as <ins>ADMINISTRATOR</ins>!
+> <ins>ADMINISTRATOR</ins> Terminal Required!
 
 <br>
 
