@@ -22,7 +22,7 @@ DISM /Online /Get-FeatureInfo /FeatureName:Recall
 ```
 
 ### Uninstall the feature completely:
-> [!WARNING]
+> [!CAUTION]
 > - <ins>Reboot required!</ins>
 ```powershell
 DISM /Online /Disable-Feature /FeatureName:Recall /Remove
