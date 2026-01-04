@@ -1,7 +1,7 @@
 
 # Method: New DHCP Scope
 > [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
+> <ins>Administrator</ins> Terminal required!
 
 
 ```powershell
