@@ -1,13 +1,13 @@
 # REFERENCE: https://mailtrap.io/blog/powershell-send-email/
 
-# ----------------------------------------------------------------------------------
 # QUICK SEND EXAMPLE 
-send-mailmessage -to rguilliman@imperium.com -from emperor.mankind@imperium.com -Subject "Primarch Regent" -Body "You need to take over, son" -smtpserver mailrouter.imperium.com 
-
-
 ```powershell
-# EXPLICIT SEND EXAMPLE 
-# modify variable strings
+send-mailmessage -to rguilliman@imperium.com -from emperor.mankind@imperium.com -Subject "Primarch Regent" -Body "You need to take over, son" -smtpserver mailrouter.imperium.com 
+```
+
+## Send example, modify variable strings
+```powershell
+
 $From = "user@contoso.com"
 $To = "user2@contoso.com", "jorah-mormont@contoso.com"
 $CC = "<any cc>"
