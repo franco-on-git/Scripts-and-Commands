@@ -1,6 +1,6 @@
 # REFERENCE: https://mailtrap.io/blog/powershell-send-email/
 
-# QUICK SEND EXAMPLE 
+## QUICK SEND EXAMPLE 
 ```powershell
 send-mailmessage -to rguilliman@imperium.com -from emperor.mankind@imperium.com -Subject "Primarch Regent" -Body "You need to take over, son" -smtpserver mailrouter.imperium.com 
 ```
