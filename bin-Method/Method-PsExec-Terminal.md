@@ -24,7 +24,7 @@
 
 ## Procedure
 > [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
+> **<ins>Administrator</ins> Terminal required!**
 
 1. Download PSExec from [Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) and extract ZIP file.
 2. Copy executable to any PATH environment variable directory:
