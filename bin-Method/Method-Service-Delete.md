@@ -1,7 +1,7 @@
 # Service Delete
 
 > [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
+> **<ins>Administrator</ins> Terminal required!**
  
 ## Command-Line (CMD)
 
