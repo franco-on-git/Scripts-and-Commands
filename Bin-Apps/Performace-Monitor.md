@@ -24,7 +24,7 @@ logman stop  _LOGMAN_ALL_5SEC
 
 # PERFMON - Collect Process/CPU Only
 > [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
+> <ins>Administrator</ins> Terminal required!
 
 > [!NOTE]
 > - 5 Second Interval sampling
