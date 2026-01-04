@@ -5,7 +5,7 @@
 send-mailmessage -to rguilliman@imperium.com -from emperor.mankind@imperium.com -Subject "Primarch Regent" -Body "You need to take over, son" -smtpserver mailrouter.imperium.com 
 
 
-# ----------------------------------------------------------------------------------
+```powershell
 # EXPLICIT SEND EXAMPLE 
 # modify variable strings
 $From = "user@contoso.com"
@@ -19,3 +19,4 @@ $Attachment = "C:\Temp\contoso.jpg"
 
 # Send message with variables
 Send-MailMessage -From $From -to $To -Cc $CC -Subject $Subject -Body $Body -BodyAsHtml -SmtpServer $SMTPServer -Attachments $Attachment
+```
