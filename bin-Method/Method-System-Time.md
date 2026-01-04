@@ -1,5 +1,5 @@
 > [!WARNING]
-> **Always Run Terminal as <ins>Administrator</ins>!**
+> <ins>Administrator</ins> Terminal Required!
 
 # Service Status
 Verify the `w32time` service is up and running
