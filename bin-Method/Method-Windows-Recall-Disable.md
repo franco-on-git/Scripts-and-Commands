@@ -1,4 +1,4 @@
-# Disable Windows Recall Feture
+# Disable Windows Recall Feature
 
 > [!WARNING]
 > - <ins>Administrator</ins> Terminal required!
