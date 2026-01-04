@@ -9,7 +9,7 @@ Get-AppxProvisionedPackage -Online | Format-Table displayname,packagename
 
 ## Package removal (Single)
 > [!WARNING]
-> - <ins>Administrator</ins> terminal required!>
+> <ins>Administrator</ins> terminal required!>
 
 ### Remove package from current/existing users:
 ```powershell
