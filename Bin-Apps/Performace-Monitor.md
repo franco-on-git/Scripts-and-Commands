@@ -1,7 +1,7 @@
 
 # PERFMON - Collect Everything
 > [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
+> <ins>Administrator</ins> Terminal required!
 
 > [!NOTE]
 > - 5 Second Interval sampling
