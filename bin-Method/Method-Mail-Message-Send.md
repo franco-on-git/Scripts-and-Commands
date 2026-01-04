@@ -2,7 +2,7 @@
 Source: [https://mailtrap.io/blog/powershell-send-email/](https://mailtrap.io/blog/powershell-send-email/)
 
 
-## QUICK SEND EXAMPLE 
+## Quick Send Example
 ```powershell
 send-mailmessage -to rguilliman@imperium.com -from emperor.mankind@imperium.com -Subject "Primarch Regent" -Body "You need to take over, son" -smtpserver mailrouter.imperium.com 
 ```
