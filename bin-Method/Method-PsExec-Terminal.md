@@ -5,11 +5,11 @@
 > - **Mistakes like `rm`-style deletions, registry edits, or driver installs can easily brick a machine.**
 
 
-### Informational
+## Informational
 - Command starts a new interactive Command Prompt running under the Windows **NT AUTHORITY\SYSTEM** account.
 - This is the highest local system privilege and the most powerful way to run commands with super-elevated privileges on the local machine.
 
-### Why Use This?
+# Why Use This?
 - System-Level Access: Running as SYSTEM gives you access beyond even Administrator privileges.
 - Interactive Session: Useful for debugging, testing elevated permissions, or accessing protected resources.
 - Local Execution: Although PsExec is often used for remote execution, this command runs locally.
