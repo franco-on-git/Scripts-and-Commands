@@ -7,7 +7,6 @@
 ```powershell
 Clear-Host
 
-
 # New scope variables
 $scopename  = Read-Host "Scope Name"
 $startrange = Read-host "Start Range"
