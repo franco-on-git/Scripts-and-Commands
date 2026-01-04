@@ -10,4 +10,4 @@ Here, you'll find a collection of scripts and resources that I’ve put together
 
 I’m always refining and adding new content, so feel free to star ⭐ the repo to stay updated. Thanks for stopping by!
 
-![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/NoPlaceLikeHome.png)
+![Sample](https://github.com/franco-on-git/Images/blob/main/master-repo/NoPlaceLikeHome.png)
