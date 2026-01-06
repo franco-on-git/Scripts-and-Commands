@@ -4,7 +4,7 @@
 ```powershell
 Clear-Host
 
-$searchString = Read-Host "DHCP String Search"
+$searchString = Read-Host "DHCP Scope String Search"
 
 # Added -ComputerName for remote targeting
 Get-DhcpServerv4Scope | 
