@@ -17,6 +17,8 @@ Get-DhcpServerv4Scope |
 
 ## High-Utilizaiton Scopes
 ```powershell
+Clear-Host
+
 Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 98 } | ForEach-Object {
     $ScopeDetails = Get-DhcpServerv4Scope -ScopeId $_.ScopeId
     
@@ -39,6 +41,8 @@ Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 98 } | F
 - Use hyphens (`-`) rather than colons (`:`) in the MAC address for this query.
 
 ```powershell
+Clear-Host
+
 # Read user entry
 $userInput = Read-Host "Enter your string"
 
