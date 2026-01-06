@@ -6,43 +6,43 @@
 ```powershell
 Clear-Host
 
-$spooldirectory = "C:\Windows\System32\spool\PRINTERS"
+# --- Configuration ---
+$SpoolDirectory = "C:\Windows\System32\spool\PRINTERS"
 
-# Stop print spooler
-write-host "Stopping Print Spooler Service..." -ForegroundColor Yellow
-
+# --- Stop Print Spooler ---
+Write-Host "Stopping Print Spooler Service..." -ForegroundColor Yellow
 Stop-Service -Name Spooler -Force
-Start-Sleep 5
+Start-Sleep -Seconds 5
 
-# Remove contents of PRINTERS directory and restart service
-$spoolerstatuspost = (Get-Service -Name spooler).Status
+# --- Verify Stop and Execute Cleanup ---
+$SpoolerStatusPost = (Get-Service -Name Spooler).Status
 
-If ($spoolerstatuspost -eq "stopped") {
+if ($SpoolerStatusPost -eq "Stopped") {
     Write-Host "Done!" -ForegroundColor Green
-    
-    Write-Host "Deleting contents of $($spooldirectory)..." -ForegroundColor Yellow
-    
-    Get-ChildItem -Path $spooldirectory -Include *.* -File -Recurse | ForEach-Object { $_.Delete() }
-    Start-Sleep 5
+
+    # Delete Spool Files
+    Write-Host "Deleting contents of $($SpoolDirectory)..." -ForegroundColor Yellow
+    Get-ChildItem -Path $SpoolDirectory -Include *.* -File -Recurse | ForEach-Object { $_.Delete() }
+    Start-Sleep -Seconds 5
     Write-Host "Done" -ForegroundColor Green
     
-    write-host "Restarting Spooler Service..." -ForegroundColor Yellow
-    Start-Service Spooler
-    start-sleep 5
-
-    $spoolerstatuspost2 = (Get-Service -Name spooler).Status
-
-    If ($spoolerstatuspost2 -eq "running") {
+    # Restart Spooler Service
+    Write-Host "Restarting Spooler Service..." -ForegroundColor Yellow
+    Start-Service -Name Spooler
+    Start-Sleep -Seconds 5
+    
+    # Final Status Check
+    $SpoolerStatusPost2 = (Get-Service -Name Spooler).Status
+    if ($SpoolerStatusPost2 -eq "Running") {
         Write-Host "Done" -ForegroundColor Green
-
-        write-host ""
+        Write-Host ""
         Write-Host "Script Complete." -ForegroundColor Cyan
     }
-    Else {
-        write-host "Spooler Service failed to start, manual check required" -ForegroundColor Red
+    else {
+        Write-Host "Spooler Service failed to start, manual check required" -ForegroundColor Red
     }
 }
-Else {
-    write-host "Print Spooler Failed to Stop, manual intervention required.." -ForegroundColor Red
+else {
+    Write-Host "Print Spooler Failed to Stop, manual intervention required.." -ForegroundColor Red
 }
 ```
