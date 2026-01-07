@@ -70,7 +70,7 @@
 5. Convert file
     ```powershell
     # Wireshark format
-    pktmon etl2pcap C:\Temp\pktmon_capture.etl -out C:\Temp\pktmon_capture.pcapng
+    pktmon etl2pcap C:\Temp\pktmon_capture.etl --out C:\Temp\pktmon_capture.pcapng
 
     # Text format (human-readable)
     pktmon etl2txt C:\Temp\pktmon_capture.etl --out C:\Temp\pktmon_capture.txt
@@ -104,5 +104,5 @@
     pktmon etl2pcap C:\Temp\pktmon_capture.etl --out C:\Temp\pktmon_capture.pcapng
 
     # Text format (human-readable)
-    pktmon etl2txt C:\Temp\pktmon_capture.etl -out C:\Temp\pktmon_capture.txt
+    pktmon etl2txt C:\Temp\pktmon_capture.etl --out C:\Temp\pktmon_capture.txt
     ```
