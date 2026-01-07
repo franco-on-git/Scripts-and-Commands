@@ -5,6 +5,7 @@
 
 `Ctrl + ]` - Add Indentation
 
+<br>
 
 # Links
 ```
@@ -12,6 +13,7 @@
 ```
 [GitHub - Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+<br>
 
 # Code Blocks
 - You can create fenced code blocks by placing triple backticks ``` before and after the code block.
@@ -22,7 +24,7 @@ write-host "This is a code block"
 write-host "triple backticks only visible on edit"
 ```
 
-
+<br>
 
 # Styling Text<br>
 **bold**<br>
@@ -36,7 +38,7 @@ This is <sub>subscript</sub> text<br>
 This is <sup>superscript</sup> text<br>
 This is  text<br>
 
-
+<br>
 
 # Number List
 - Start each list item with a number followed by a period and a space.
@@ -48,6 +50,8 @@ This is  text<br>
 2. Second item
 3. Third item
 ```
+
+<br>
 
 # Table Formatting
 - You can create tables with pipes `|` and hyphens `-`.
@@ -68,7 +72,7 @@ This is  text<br>
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 
-
+<br>
 
 # Images
 > [!IMPORTANT]
@@ -76,10 +80,13 @@ This is  text<br>
 > - **100 MB**: for files added via the command line. Pushing a file larger than 50MB will typically result in a warning, while files exceeding 100MB will be blocked.
 
 ### From LOCAL REPO:
+
+```powershell
 <p align="center">
   <img src="VISUALS/google-dino.png">
   <br/>
 </p>
+```
 
 ### From WEB:
 ```
@@ -90,7 +97,15 @@ Example:
 ![Sample](https://github.com/franco-on-git/Images/blob/main/Scripts-and-Commands/GitHub_AutoSize.jpg)
 ```
 
+<br> 
+
 # Font Coloring
+
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
 
 ```html
 <span style="color:red;">This text is red.</span>
@@ -100,16 +115,14 @@ Example:
 <font color="cyan">This text is Cyan.</font>
 ```
 
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
+
 
 
 - <r>TODO:</r> Important thing to do
 - <o>TODO:</o> Less important thing to do
 - <g>DONE:</g> Breath deeply and improve karma
+
+<br>
 
 # Alerts
 > [!NOTE]
