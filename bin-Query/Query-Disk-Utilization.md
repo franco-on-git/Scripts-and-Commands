@@ -1,4 +1,52 @@
 # Query: Disk Information
+
+## Disk Utilization
+```powershell
+Clear-Host
+
+$DriveletterInput = Read-Host "Enter Drive Letter"
+$Driveletter = "$($DriveletterInput.Trim().ToUpper()):"
+
+# 1. GET DATA ONCE
+$DriveSearch = Get-CimInstance Win32_LogicalDisk -Filter "DeviceID = '$Driveletter'"
+
+if ($DriveSearch) {
+    # 2. CALCULATE DATA locally
+    $UsedGB = [math]::Round(($DriveSearch.Size - $DriveSearch.FreeSpace) / 1GB, 2)
+    $SizeGB = [math]::Round($DriveSearch.Size / 1GB, 2)
+    $PercentUsed = [math]::Round(($UsedGB / $SizeGB) * 100, 2)
+
+    # 3. DISPLAY TABLE
+    Write-Host "`nDrive utilization is below 80% threshold:" -ForegroundColor Green
+    $DriveSearch | Select-Object @(
+        @{L = "Hostname";     E = { $env:COMPUTERNAME }},
+        @{L = "Drive";        E = { $_.DeviceID }},
+        @{L = "Capacity(GB)"; E = { $SizeGB }},
+        @{L = "Used(GB)";     E = { $UsedGB }},
+        @{L = "(%)Used";      E = { $PercentUsed }},
+        @{L = "Free(GB)";     E = { [math]::Round($_.FreeSpace / 1GB, 2) }},
+        @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }}
+    ) | Format-List
+
+    # 4. THRESHOLD CHECK
+    if ($PercentUsed -gt 80) {
+        Write-Host "WARNING: Used space is greater than 80% ($PercentUsed%)!" -ForegroundColor Red
+        $DriveSearch | Select-Object @(
+        @{L = "Hostname";     E = { $env:COMPUTERNAME }},
+        @{L = "Drive";        E = { $_.DeviceID }},
+        @{L = "Capacity(GB)"; E = { $SizeGB }},
+        @{L = "Used(GB)";     E = { $UsedGB }},
+        @{L = "(%)Used";      E = { $PercentUsed }}
+    ) | Format-List
+    }
+
+} else {
+    Write-Host "Drive '$($Driveletter)' not found!" -ForegroundColor Yellow
+}
+```
+
+<br> 
+
 ## SSD/HDD Disks Only (Type 3):
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk |
