@@ -9,7 +9,7 @@
 | `--install` | Installs WSL feature |
 | `--update` | Updates the WSL kernel and components to latest version |
 | `--List`  | List of Linux distributions installed on your machine |
-| `--list -online` | List of the Linux distributions available from store |
+| `--list --online` | List of the Linux distributions available from store |
 | `--options` | Lists available installations for 'wsl --install'|
 
 <br>
