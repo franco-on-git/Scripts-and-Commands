@@ -17,9 +17,9 @@
     ```
 2. List distro installation options:
     ```powershell
-    wsl -l -o
+    wsl.exe -l -o
     ```
 3. Install Specific Distribution (Defualt is **Ubuntu**):
     ```powershell
-    wsl --install --distribution "DistroName" 
+    wsl.exe --install --distribution "DistroName" 
     ```
