@@ -55,7 +55,7 @@ wsl.exe --shutdown
 
 <br>
 
-## Uninstal/Unregister   WSL
+## Uninstall/Unregister   WSL
 
 > [!CAUTION]
 > - Once unregistered, all data, settings, and software associated with that distribution will be permanently lost. 
