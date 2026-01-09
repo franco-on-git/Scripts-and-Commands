@@ -1,27 +1,25 @@
+# Windows Sub-system for Linux (WSL)
 
+## Switches
 | Command | Description |
 | --- | --- |
-| `-l` or `--List`  | Lists distributions available from Online |
+| `-i` or `--install` | Installs WSL feature, <ins>no distro!</ins> |
+| `-l` or `--List`  | Lists distributions available from Online. |
 | `-o` or `--options` | Lists available installations for 'wsl --install'|
 
 <br>
 
-| Name | Friendly Name |
-| --- | --- |
-| * Ubuntu  | Ubuntu |
-| Debian | Debian GNU/Linux |
-| Kali-Linux | Kali Linux Rolling |
-| OracleLinux_9_1 | Oracle Linux 9.1 |
-| openSUSE-Leap-15.6 | openSUSE Leap 15.6|
-|openSUSE-Tumbleweed | openSUSE Tumbleweed |
+## Installation
 
-<br>
-
-# List distro installation options
-```powershell
-wsl -l -o
-```
-# Install Specific Distribution
-```powershell
-wsl --install --distribution DistroName 
-```
+1. Install WSL (No distro.. yet):
+    ```powershell
+    wsl.exe --install
+    ```
+2. List distro installation options:
+    ```powershell
+    wsl -l -o
+    ```
+3. Install Specific Distribution (Defualt is **Ubuntu**):
+    ```powershell
+    wsl --install --distribution "DistroName" 
+    ```
