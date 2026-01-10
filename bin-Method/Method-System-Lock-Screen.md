@@ -6,7 +6,7 @@
 ##  Procedure:
 1. Open notepad
 2. Paste command
-```
-rundll32.exe user32.dll,LockWorkStation
-```
+  ```
+  rundll32.exe user32.dll,LockWorkStation
+  ```
 3. Save as "**LockMe.bat**"
