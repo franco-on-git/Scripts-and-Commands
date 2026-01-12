@@ -1,6 +1,6 @@
 # Query: Event Viewer
 
-## <ins>SYSTEM</ins> - Any string:
+## <ins>System/Application</ins>: Custom String Search
 - Modify `$StartTime` variable days for lenth of time.
 - Modify or ommit `Select-Object` switch for data capture size.
 
@@ -32,7 +32,7 @@ if ($Events) {
 
 <br>
 
-## <ins>SYSTEM</ins> - Shutdowns & Restarts (Past 24hrs):
+## <ins>System</ins>: Shutdowns & Restarts (<24hrs):
 ```powershell
 Clear-Host
 
@@ -54,7 +54,7 @@ else {Write-Host "No Events Found!" -ForegroundColor Cyan}
 
 <br>
 
-## <ins>SYSTEM</ins> - Shutdowns & Restarts (ALL):
+## <ins>System</ins>: Shutdowns & Restarts (ALL):
 
 ```powershell
 Clear-Host
