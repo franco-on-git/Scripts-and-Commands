@@ -6,17 +6,20 @@ Clear-Host
 
 $DriveletterInput = Read-Host "Enter Drive Letter"
 $Driveletter = "$($DriveletterInput.Trim().ToUpper()):"
+write-host ""
 
 # 1. GET DATA ONCE
 $DriveSearch = Get-CimInstance Win32_LogicalDisk -Filter "DeviceID = '$Driveletter'"
 
-if ($DriveSearch) {
-    # 2. CALCULATE DATA locally
+ # 2. CALCULATE DATA locally
     $UsedGB = [math]::Round(($DriveSearch.Size - $DriveSearch.FreeSpace) / 1GB, 2)
     $SizeGB = [math]::Round($DriveSearch.Size / 1GB, 2)
     $PercentUsed = [math]::Round(($UsedGB / $SizeGB) * 100, 2)
 
+if ($DriveSearch) {
+   
     # 3. DISPLAY TABLE
+     if ($PercentUsed -lt 80) {
     Write-Host "`nDrive utilization is below 80% threshold:" -ForegroundColor Green
     $DriveSearch | Select-Object @(
         @{L = "Hostname";     E = { $env:COMPUTERNAME }},
@@ -27,9 +30,10 @@ if ($DriveSearch) {
         @{L = "Free(GB)";     E = { [math]::Round($_.FreeSpace / 1GB, 2) }},
         @{L = "(%)Free";      E = { [math]::Round(($_.FreeSpace / $_.Size) * 100, 2) }}
     ) | Format-List
+    }
 
     # 4. THRESHOLD CHECK
-    if ($PercentUsed -gt 80) {
+    elseif ($PercentUsed -gt 80) {
         Write-Host "WARNING: Used space is greater than 80% ($PercentUsed%)!" -ForegroundColor Red
         $DriveSearch | Select-Object @(
         @{L = "Hostname";     E = { $env:COMPUTERNAME }},
