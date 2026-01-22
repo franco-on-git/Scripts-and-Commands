@@ -21,7 +21,7 @@ if ($DriveSearch) {
    
     # 3. DISPLAY TABLE
      if ($PercentUsed -lt 80) {
-    Write-Host "`nDrive utilization is BELOW the 80% threshold:" -ForegroundColor Green
+    Write-Host "`nDrive utilization is BELOW the 80% threshold ($PercentUsed%):" -ForegroundColor Green
     $DriveSearch | Select-Object @(
         @{L = "Hostname";     E = { $env:COMPUTERNAME }},
         @{L = "Drive";        E = { $_.DeviceID }},
