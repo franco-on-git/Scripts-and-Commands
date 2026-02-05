@@ -66,7 +66,7 @@ Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 90 } | F
         Free            = $_.Free      
         'InUse (%)' = [int]$_.PercentageInUse
     } 
-} | Sort-Object -Property 'InUse (%)' -Descending | Format-Table -AutoSize
+} | Sort-Object -Property 'InUse (%)' -Descending |Format-Table -AutoSize
 ```
 
 <br>
