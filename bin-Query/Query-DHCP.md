@@ -51,7 +51,7 @@ else {
 
 <br>
 
-## High-Utilization Scopes
+## High-Utilization Scopes (>95%)
 ```powershell
 Clear-Host
 
