@@ -30,7 +30,7 @@ Get-DhcpServerv4Scope |
 
 <br>
 
-## High-Utilizaiton Scopes
+## High-Utilization Scopes
 ```powershell
 Clear-Host
 
