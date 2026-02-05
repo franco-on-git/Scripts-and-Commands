@@ -1,6 +1,6 @@
 # DHCP Queries
 
-## Scope Name String-Based Search (Nested Objects!)
+## Scope Name String Search (Nested Objects!)
 ```powershell
 Clear-Host
 
