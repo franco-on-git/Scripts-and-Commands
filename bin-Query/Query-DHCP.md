@@ -51,11 +51,11 @@ else {
 
 <br>
 
-## High-Utilization Scopes (>95%)
+## High-Utilization Scopes (>90%)
 ```powershell
 Clear-Host
 
-Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 95 } | ForEach-Object {
+Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 90 } | ForEach-Object {
     $ScopeDetails = Get-DhcpServerv4Scope -ScopeId $_.ScopeId
     
     [PSCustomObject]@{
@@ -63,11 +63,11 @@ Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 95 } | F
         ScopeId         = $_.ScopeId
         TotalUsableIPs  = $_.InUse + $_.Free
         InUse           = $_.InUse 
-        Reserved        = $_.Reserved 
         Free            = $_.Free      
         'InUse (%)' = [int]$_.PercentageInUse
     } 
 } | Sort-Object -Property 'InUse (%)' -Descending | Format-Table -AutoSize
+
 ```
 
 <br>
