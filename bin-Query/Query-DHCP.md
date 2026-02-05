@@ -6,10 +6,18 @@ Clear-Host
 
 $searchString = Read-Host "DHCP Scope String Search"
 
-Get-DhcpServerv4Scope | 
-    Where-Object { $_.Name -like "*$searchString*" } | 
-    ForEach-Object {
-        # Fetch the stats for this specific scope
+# 1. Update filter to check both Name AND ScopeID
+$scopes = Get-DhcpServerv4Scope | Where-Object { 
+    $_.Name -match "$searchString" -or $_.ScopeId -match "$searchString" 
+}
+
+# 2. Check if the variable contains any data
+if ($null -eq $scopes) {
+    Write-Host "`n$($searchstring) Not Found!" -ForegroundColor Red
+}
+else {
+    # 3. Process the scopes if they exist
+    $scopes | ForEach-Object {
         $stats = Get-DhcpServerv4ScopeStatistics -ScopeId $_.ScopeId
         
         [PSCustomObject]@{
@@ -21,11 +29,18 @@ Get-DhcpServerv4Scope |
             EndRange     = $_.EndRange
             IPsReserved  = $stats.Reserved
             IPsAvailable = $stats.Free
-            'InUse (%)'  = [math]::Round($stats.PercentageInUse, 2)
+            'InUse (%)'  = [math]::Round($stats.PercentageInUse)
         }
     } | 
-    Sort-Object ScopeID | 
+    Sort-Object { [version] $_.ScopeID.IPAddressToString } | 
     Format-Table -AutoSize
+}
+
+<#
+    - The Conversion: $_.ScopeID.IPAddressToString turns the complex IP object into a simple text format like "10.33.49.0".
+    - The [version] Cast: By wrapping that string in [version], PowerShell treats it as a four-part number (Major.Minor.Build.Revision), ensuring 10.33.49.0 correctly ranks before 10.33.222.0.
+    - Result: You get a perfectly ordered list by IP address without any "string-based" sorting errors. 
+#>
 ```
 
 <br>
