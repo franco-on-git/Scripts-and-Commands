@@ -55,19 +55,19 @@ else {
 ```powershell
 Clear-Host
 
-Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 98 } | ForEach-Object {
+Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 95 } | ForEach-Object {
     $ScopeDetails = Get-DhcpServerv4Scope -ScopeId $_.ScopeId
     
     [PSCustomObject]@{
-        ScopeName      = $ScopeDetails.Name
-        ScopeId        = $_.ScopeId
-        SubnetMask     = $ScopeDetails.SubnetMask
-        Free           = $_.Free
-        InUse          = $_.InUse
-        'PercentInUse(%)' = [int]$_.PercentageInUse
-        Reserved       = $_.Reserved
-    }
-} | Format-Table -AutoSize
+        ScopeName       = $ScopeDetails.Name
+        ScopeId         = $_.ScopeId
+        TotalUsableIPs  = $_.InUse + $_.Free
+        InUse           = $_.InUse 
+        Reserved        = $_.Reserved 
+        Free            = $_.Free      
+        'InUse (%)' = [int]$_.PercentageInUse
+    } 
+} | Sort-Object -Property 'InUse (%)' -Descending | Format-Table -AutoSize
 ```
 
 <br>
