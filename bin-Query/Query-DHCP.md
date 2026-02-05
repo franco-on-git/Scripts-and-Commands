@@ -1,16 +1,33 @@
 # DHCP Queries
 
-## Scope Name String-Based Search
+## Scope Name String-Based Search (Nested Objects!)
 ```powershell
 Clear-Host
 
 $searchString = Read-Host "DHCP Scope String Search"
 
-# Added -ComputerName for remote targeting
 Get-DhcpServerv4Scope | 
     Where-Object { $_.Name -like "*$searchString*" } | 
+    ForEach-Object {
+        # Fetch live stats for the current scope
+        $stats = Get-DhcpServerv4ScopeStatistics -ScopeId $_.ScopeId
+        
+        [PSCustomObject]@{
+            ScopeID      = $_.ScopeId
+            SubnetMask   = $_.SubnetMask
+            Name         = $_.Name
+            State        = $_.State
+            StartRange   = $_.StartRange
+            TotalIPs     = $stats.InUse + $stats.Free
+            IPsAvailable = $stats.Free
+            PercentFull  = [math]::Round($stats.PercentageInUse, 2)
+        }
+    } | 
     Sort-Object Name | 
+
+  # Out-GridView -Title $searchString
     Format-Table -AutoSize
+
 ```
 
 <br>
