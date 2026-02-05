@@ -18,16 +18,16 @@ Get-DhcpServerv4Scope |
             Name         = $_.Name
             State        = $_.State
             StartRange   = $_.StartRange
+            EndRange     = $_.EndRange
             TotalIPs     = $stats.InUse + $stats.Free
             IPsAvailable = $stats.Free
-            PercentFull  = [math]::Round($stats.PercentageInUse, 2)
+            "InUse (%)" = [math]::Round($stats.PercentageInUse)
         }
     } | 
     Sort-Object Name | 
 
   # Out-GridView -Title $searchString
     Format-Table -AutoSize
-
 ```
 
 <br>
