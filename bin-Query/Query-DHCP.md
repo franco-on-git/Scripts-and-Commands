@@ -24,9 +24,8 @@ Get-DhcpServerv4Scope |
             'InUse (%)'  = [math]::Round($stats.PercentageInUse, 2)
         }
     } | 
-    Sort-Object Name | 
+    Sort-Object ScopeID | 
     Format-Table -AutoSize
-
 ```
 
 <br>
