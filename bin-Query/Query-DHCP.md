@@ -1,6 +1,6 @@
 # DHCP Queries
 
-## String-Based Search
+## Scope Name String-Based Search
 ```powershell
 Clear-Host
 
