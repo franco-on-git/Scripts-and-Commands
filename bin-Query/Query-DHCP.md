@@ -6,35 +6,41 @@ Clear-Host
 
 $searchString = Read-Host "DHCP Scope String Search"
 
-# 1. Update filter to check both Name AND ScopeID
+# 1. Store the filtered scopes into a variable first
 $scopes = Get-DhcpServerv4Scope | Where-Object { 
     $_.Name -match "$searchString" -or $_.ScopeId -match "$searchString" 
 }
 
 # 2. Check if the variable contains any data
 if ($null -eq $scopes) {
-    Write-Host "`n$($searchstring) Not Found!" -ForegroundColor Red
+    Write-Host "`n$($searchString) Not Found!" -ForegroundColor Red
 }
 else {
     # 3. Process the scopes if they exist
     $scopes | ForEach-Object {
+        # Fetch live stats for the current scope
         $stats = Get-DhcpServerv4ScopeStatistics -ScopeId $_.ScopeId
         
         [PSCustomObject]@{
-            ScopeID      = $_.ScopeId
-            SubnetMask   = $_.SubnetMask
-            Name         = $_.Name
-            State        = $_.State
-            StartRange   = $_.StartRange
-            EndRange     = $_.EndRange
-            IPsReserved  = $stats.Reserved
-            IPsAvailable = $stats.Free
-            'InUse (%)'  = [math]::Round($stats.PercentageInUse)
+            ScopeID        = $_.ScopeId
+            SubnetMask     = $_.SubnetMask
+            Name           = $_.Name
+            State          = $_.State
+            StartRange     = $_.StartRange
+            EndRange       = $_.EndRange
+            TotalUsableIPs = $stats.InUse + $stats.Free
+            Reserved       = $stats.Reserved
+            InUse          = $stats.InUse
+            Free           = $stats.Free
+            'InUse (%)'    = [int][math]::Round($stats.PercentageInUse)
         }
     } | 
-    Sort-Object { [version] $_.ScopeID.IPAddressToString } | 
-    Format-Table -AutoSize
+    Sort-Object { [version]$_.ScopeID.IPAddressToString } | 
+    
+    # Using Format-Table cuts out the last row due to character limitation on screen
+    Out-GridView 
 }
+
 
 <#
     - The Conversion: $_.ScopeID.IPAddressToString turns the complex IP object into a simple text format like "10.33.49.0".
