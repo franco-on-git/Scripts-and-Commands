@@ -9,7 +9,7 @@ $searchString = Read-Host "DHCP Scope String Search"
 Get-DhcpServerv4Scope | 
     Where-Object { $_.Name -like "*$searchString*" } | 
     ForEach-Object {
-        # Fetch live stats for the current scope
+        # Fetch the stats for this specific scope
         $stats = Get-DhcpServerv4ScopeStatistics -ScopeId $_.ScopeId
         
         [PSCustomObject]@{
@@ -19,14 +19,12 @@ Get-DhcpServerv4Scope |
             State        = $_.State
             StartRange   = $_.StartRange
             EndRange     = $_.EndRange
-            TotalIPs     = $stats.InUse + $stats.Free
+            IPsReserved  = $stats.Reserved
             IPsAvailable = $stats.Free
-            "InUse (%)" = [math]::Round($stats.PercentageInUse)
+            PercentFull  = [math]::Round($stats.PercentageInUse, 2)
         }
     } | 
     Sort-Object Name | 
-
-  # Out-GridView -Title $searchString
     Format-Table -AutoSize
 ```
 
