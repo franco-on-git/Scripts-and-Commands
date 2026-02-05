@@ -21,7 +21,7 @@ Get-DhcpServerv4Scope |
             EndRange     = $_.EndRange
             IPsReserved  = $stats.Reserved
             IPsAvailable = $stats.Free
-            PercentFull  = [math]::Round($stats.PercentageInUse, 2)
+            'InUse (%)'  = [math]::Round($stats.PercentageInUse, 2)
         }
     } | 
     Sort-Object Name | 
