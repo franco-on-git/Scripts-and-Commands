@@ -17,6 +17,9 @@ $free  = [math]::round($mem.FreePhysicalMemory / 1MB, 2)
 $used  = [math]::round($total - $free, 2)
 $percentUsed = [math]::round(($used / $total) * 100, 2)
 
+# NEW: percent free
+$percentFree = [math]::round((($free / $total) * 100), 2)
+
 # *****************************************************
 
 # Monitors RAM utilization for 30 seconds (1 sample per second)
@@ -35,8 +38,8 @@ write-host "-------------" -ForegroundColor White
 Write-Host "$env:COMPUTERNAME"
 Write-Host "Total:  $total GB"
 Write-Host "Used:   $used GB ($percentUsed`%)"
-Write-Host "Free:   $free GB"
+Write-Host "Free:   $free GB ($percentFree`%)"
 write-host ""
 Write-Host "Average RAM Utilization over 30 seconds: $([math]::Round($averageUsage, 2))%"
-write-host "" 
+write-host ""
 ```
