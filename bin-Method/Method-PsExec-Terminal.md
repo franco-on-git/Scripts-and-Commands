@@ -34,7 +34,7 @@ C:\Windows\System32\psexec.exe
 3. Start terminal and run command to start a shell as SYSTEM:
 
 ```
-psxec.exe -i -s cmd.exe
+psexec.exe -i -s cmd.exe
 ```
 5. In shell, run command to verify its using SYSTEM:
 ```
