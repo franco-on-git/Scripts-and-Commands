@@ -11,6 +11,8 @@ Get-HotFix | Sort-Object InstalledOn -Descending
 
 ## Search patch\KB <ins>MATCHING</ins> string:
 ```powershell
+cls
+
 $hotfixID = Read-Host "KB Number"   # ..Change me
 
 # Query for matching hotfix
