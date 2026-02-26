@@ -78,7 +78,7 @@
 
 <br>
 
-## Capture **ICMP, DNS, and SSH** specific types
+## Capture <ins>Protocol</ins> or <ins>Port</ins> specific types
 1. Start terminal
 2. Remove old filters:
     ```powershell
