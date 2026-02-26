@@ -119,9 +119,7 @@
     pktmon filter add MyIPFilter -i 10.1.2.3
 4. Start capture:
     ```powershell
-    pktmon start --etw -p 0 --file-name C:\Temp\pktmon_capture.etl
-    - `--etw` logs to ETW (viewable live with `pktmon format`)
-    - `-p 0` disabled packet truncation (full packets).
+    pktmon start --capture --pkt-size 0 --file-name C:\Temp\pktmon_capture.etl
     ```
 5. Reproduce network issue, then stop cature:
     ```powershell
