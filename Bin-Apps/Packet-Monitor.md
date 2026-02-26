@@ -53,7 +53,7 @@
 
 <br>
 
-## COMMAND: Capture All Packets
+## Capture <ins>All</ins> Packets
 1. Start terminal
 2. Remove old filters:
     ```powershell
@@ -78,7 +78,7 @@
 
 <br>
 
-## COMMAND: Capture ICMP, DNS, and SSH specific types
+## Capture **ICMP, DNS, and SSH** specific types
 1. Start terminal
 2. Remove old filters:
     ```powershell
