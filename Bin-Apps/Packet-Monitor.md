@@ -37,7 +37,7 @@
 
 <br>
 
-## COMMAND: Live-View Caputre 
+## <ins>Live-View</ins> Caputre 
 > [!CAUTION]
 > A capture without any filters will generate large log files (~30 Sec = 500MB)
 1. Start terminal
@@ -93,6 +93,35 @@
 4. Start capture:
     ```powershell
     pktmon start --capture --pkt-size 0 --file-name C:\Temp\pktmon_capture.etl
+    ```
+5. Reproduce network issue, then stop cature:
+    ```powershell
+    pktmon stop
+    ```
+7. Convert file
+    ```powershell
+    # Wireshark format
+    pktmon etl2pcap C:\Temp\pktmon_capture.etl --out C:\Temp\pktmon_capture.pcapng
+
+    # Text format (human-readable)
+    pktmon etl2txt C:\Temp\pktmon_capture.etl --out C:\Temp\pktmon_capture.txt
+
+<br>
+
+## Capture <ins>IP Address</ins> specific
+1. Start terminal
+2. Remove old filters:
+    ```powershell
+    pktmon filter remove
+    ```
+3. Add filters:
+    ```powershell
+    pktmon filter add MyIPFilter -i 10.1.2.3
+4. Start capture:
+    ```powershell
+    pktmon start --etw -p 0
+    '--etw' logs to ETW (viewable live with 'pktmon format')
+    - '-p 0' disabled packet truncation (full packets).
     ```
 5. Reproduce network issue, then stop cature:
     ```powershell
