@@ -28,40 +28,34 @@ robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG
 
 `/ZB`
 This is two modes combined:
-- `/Z` (restartable mode):
-- If the copy is interrupted (network blip, disconnect), it can resume where it left off instead of starting over.
+- `/Z` (restartable mode): If the copy is interrupted (network blip, disconnect), it can resume where it left off instead of starting over.
 
-- `/B` (backup mode):
-- If a file is protected or you don’t have normal permission, robocopy tries again using backup privileges (works when running as admin).
+- `/B` (backup mode): If a file is protected or you don’t have normal permission, robocopy tries again using backup privileges (works when running as admin).
 
+- `/ZB` = Try restartable mode first, and if blocked, use backup mode.
 
-/ZB = Try restartable mode first, and if blocked, use backup mode.
+`/R:3`
+- If robocopy hits an error copying a file (like it's locked), it will retry 3 times.
 
-/R:3
-If robocopy hits an error copying a file (like it's locked), it will
-retry 3 times.
+`/W:5`
+- When a retry is needed, robocopy will wait 5 seconds before trying again.
 
-/W:5
-When a retry is needed, robocopy will
-wait 5 seconds before trying again.
+`/MT:32`
+- Use 32 parallel copying threads (like 32 workers).
+- This makes copying much faster, especially for lots of small files.
 
-/MT:32
-Use 32 parallel copying threads (like 32 workers).
-This makes copying much faster, especially for lots of small files.
+`/COPYALL`
+- Copy everything associated with a file:
+  - The file’s data
+  - File attributes
+  - Timestamps
+  - Security permissions
+  - Ownership
+  - Auditing info
 
-/COPYALL
-Copy everything associated with a file:
+- Basically: make an exact clone with all details preserved.
 
-The file’s data
-File attributes
-Timestamps
-Security permissions
-Ownership
-Auditing info
-
-Basically: make an exact clone with all details preserved.
-
-/DCOPY:DAT
+`/DCOPY:DAT`
 Copy directory:
 
 Data
