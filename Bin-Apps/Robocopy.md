@@ -5,14 +5,14 @@
 
 <br>
 
-## One-Time Migration with ACLs Preserverd (recommended):
+## # One-Time Migration with ACLs Preserverd (recommended):
 ```
 robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
 ```
 
 <br>
 
-## Mirror SOURCE to DESTINATION (deletes extra files in destination):
+## # Mirror SOURCE to DESTINATION (deletes extra files in destination):
 ```
 robocopy "source" "destination" /MIR /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
 ```
@@ -24,14 +24,14 @@ robocopy "source" "destination" /MIR /L /NP
 
 <br>
 
-## Copy Data Only (No security/owner/auditing):
+## # Copy Data Only (No security/owner/auditing):
 ```
 robocopy "source" "destination" /E /Z /R:3 /W:5 /MT:32 /COPY:DAT /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL /FFT
 ```
 
 <br>
 
-## Switches:
+## # Switches:
 `/E`
 - Copy every folder, including empty ones.
 - If the folder exists in the source, it will exist in the destination.
