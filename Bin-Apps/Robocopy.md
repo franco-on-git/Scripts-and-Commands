@@ -3,22 +3,9 @@
 > [!WARNING]
 > **<ins>Administrator</ins> Terminal required!**
 
- 
-## Switches:
-| **Switch** | **Description** |
-| :---  | :--- | 
-| /e | Copies all subdirectories, including empty ones. | 
-| /z | Enables restartable mode, useful for large files or network copies. |
-| /r:0 | Sets the number of retries on failed copies to 0 (no retries). |
-| /w:0 | Sets the wait time between retries to 0 seconds. |
-| /MT:16 | Uses multi-threading with `16` threads (speeds up copying), default is `8` and max `128`. |
-| /COPYALL  | Copies all file info: data, attributes, timestamps, security (ACLs), owner, auditing. |
-| /eta | Displays the estimated time of arrival (completion) per file. |
-| /LOG: | Logs output to C:\temp\robocopy.txt. Overwrites if file exists. |
-
 <br>
 
-## One-Time Migration with ACLs Preserverd:
+## One-Time Migration with ACLs Preserverd (recommended):
 ```
 robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
 ```
@@ -56,36 +43,34 @@ This is two modes combined:
 - Basically: make an exact clone with all details preserved.
 
 `/DCOPY:DAT`
-Copy directory:
+- Copy directory:
+  - Data
+  - Attributes
+  - Timestamps
 
-Data
-Attributes
-Timestamps
+- This ensures folders themselves keep their original dates and attributes, not just the files.
 
-This ensures folders themselves keep their original dates and attributes, not just the files.
+`/LOG+:C:\temp\robocopy.txt`
+- Write a log to the path given, but the + means:
+  - Append to the log file
+  - Don’t overwrite it each run
+- This keeps a running history of your robocopy jobs.
 
-/LOG+:C:\temp\robocopy.txt
-Write a log to the path given, but the + means:
+`/NP`
+- No Progress
+- Stops robocopy from showing percentage progress for each file in the log.
+- Makes the log cleaner and smaller.
 
-Append to the log file
-Don’t overwrite it each run
+`/NFL`
+- No File List
+- Robocopy won’t list every single file it copies.
+- This also keeps the log tidy.
 
-This keeps a running history of your robocopy jobs.
+`/NDL`
+- No Directory List
+- Robocopy won’t list directories as it processes them.
+- Makes the log short and focused on important info (errors, summary).
 
-/NP
-No Progress
-Stops robocopy from showing percentage progress for each file in the log.
-Makes the log cleaner and smaller.
-
-/NFL
-No File List
-Robocopy won’t list every single file it copies.
-This also keeps the log tidy.
-
-/NDL
-No Directory List
-Robocopy won’t list directories as it processes them.
-Makes the log short and focused on important info (errors, summary).
 <br>
 
 ## Mirror SOURCE to DESTINATION (deletes extra files in destination)
