@@ -9,6 +9,25 @@
 ```
 robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
 ```
+
+## Mirror SOURCE to DESTINATION (deletes extra files in destination):
+```
+robocopy "source" "destination" /MIR /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
+```
+> [!WARNING]
+> `/MIR` deletes files that don’t exist in source. Consider a dry-run first with `/L` (list only) to see what would be copied/deleted:
+```
+robocopy "source" "destination" /MIR /L /NP
+```
+
+## Copy Data Only (No security/owner/auditing):
+```
+robocopy "source" "destination" /E /Z /R:3 /W:5 /MT:32 /COPY:DAT /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL /FFT
+```
+
+<br>
+
+## Switches:
 `/E`
 - Copy every folder, including empty ones.
 - If the folder exists in the source, it will exist in the destination.
@@ -70,26 +89,6 @@ This is two modes combined:
 - No Directory List
 - Robocopy won’t list directories as it processes them.
 - Makes the log short and focused on important info (errors, summary).
-
-<br>
-
-## Mirror SOURCE to DESTINATION (deletes extra files in destination)
-```
-robocopy "source" "destination" /MIR /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
-```
-> [!WARNING]
-> `/MIR` deletes files that don’t exist in source. Consider a dry-run first with `/L` (list only) to see what would be copied/deleted:
-```
-robocopy "source" "destination" /MIR /L /NP
-```
-
-<br>
-
-## Copy Data Only (No security/owner/auditing)
-```
-robocopy "source" "destination" /E /Z /R:3 /W:5 /MT:32 /COPY:DAT /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL /FFT
-```
-
 
 
 
