@@ -16,6 +16,8 @@
 | /eta | Displays the estimated time of arrival (completion) per file. |
 | /LOG: | Logs output to C:\temp\robocopy.txt. Overwrites if file exists. |
 
+<br>
+
 ## One-Time Migration with ACLs Preserverd:
 ```
 robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
