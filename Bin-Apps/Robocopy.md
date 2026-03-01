@@ -1,4 +1,4 @@
-# Robocopy
+# ROBOCOPY
 
 > [!WARNING]
 > **<ins>Administrator</ins> Terminal required!**
