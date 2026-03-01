@@ -26,16 +26,13 @@ robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG
 - Copy every folder, including empty ones.
 - If the folder exists in the source, it will exist in the destination.
 
-/ZB
+`/ZB`
 This is two modes combined:
+- `/Z` (restartable mode):
+- If the copy is interrupted (network blip, disconnect), it can resume where it left off instead of starting over.
 
-
-/Z (restartable mode):
-If the copy is interrupted (network blip, disconnect), it can resume where it left off instead of starting over.
-
-
-/B (backup mode):
-If a file is protected or you don’t have normal permission, robocopy tries again using backup privileges (works when running as admin).
+- `/B` (backup mode):
+- If a file is protected or you don’t have normal permission, robocopy tries again using backup privileges (works when running as admin).
 
 
 /ZB = Try restartable mode first, and if blocked, use backup mode.
