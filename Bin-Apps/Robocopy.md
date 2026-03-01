@@ -9,7 +9,9 @@
 ```
 robocopy "source" "destination" /E /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
 ```
+
 <br>
+
 ## Mirror SOURCE to DESTINATION (deletes extra files in destination):
 ```
 robocopy "source" "destination" /MIR /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /LOG+:C:\temp\robocopy.txt /NP /NFL /NDL
@@ -19,6 +21,8 @@ robocopy "source" "destination" /MIR /ZB /R:3 /W:5 /MT:32 /COPYALL /DCOPY:DAT /L
 ```
 robocopy "source" "destination" /MIR /L /NP
 ```
+
+<br>
 
 ## Copy Data Only (No security/owner/auditing):
 ```
