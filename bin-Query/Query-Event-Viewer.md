@@ -18,16 +18,15 @@ $Events = Get-WinEvent -FilterHashtable @{
 } -ErrorAction SilentlyContinue |
     Where-Object { $_.Message -like "*$StringName*" } |
     Select-Object -First 25 |
-    Sort-Object TimeCreated |
+    Sort-Object TimeCreated -Descending |
     Select-Object LogName, TimeCreated, Id, LevelDisplayName, Message
    
 
 if ($Events) {
-    $Events | Format-Table -AutoSize
+    $Events | Format-Table -wrap
 } else {
     Write-Host "No events found matching '$StringName' in the last 24 hours." -ForegroundColor Yellow
 }
-
 ```
 
 <br>
