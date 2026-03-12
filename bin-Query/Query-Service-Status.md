@@ -5,7 +5,7 @@
 
 > [!NOTE]
 > - Check services status for single or multiple services from a single server
-> - ex. <ins>vds|alloy|installer</ins> or <ins>windows,virtual,disk</ins>
+> - ex. ``vds|alloy|installer`` or ``windows,virtual,disk``
 
 ```powershell
 Clear-Host
