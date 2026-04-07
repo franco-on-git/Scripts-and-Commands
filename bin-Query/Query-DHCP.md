@@ -97,3 +97,35 @@ if ($sanitized -notlike "*-*") {
 # Query DHCP for MAC string
 Get-DhcpServerv4Scope | Get-DhcpServerv4Lease | Where-Object {$_.ClientId -eq $result}
 ```
+
+<br>
+
+
+## BAD_ADRESS Search (COUNT TOTAL)
+- Use hyphens (`-`) rather than colons (`:`) in the MAC address for this query.
+
+```powershell
+cls
+Get-DhcpServerv4Scope |
+    Get-DhcpServerv4Lease |
+    Where-Object { $_.HostName -eq "BAD_ADDRESS" } |
+    Group-Object ScopeId |
+    Select-Object Name, Count |
+    Sort-Object Name
+```
+
+
+
+br>
+
+
+## BAD_ADRESS Search (ALL)
+- Use hyphens (`-`) rather than colons (`:`) in the MAC address for this query.
+
+```powershell
+ 
+Get-DhcpServerv4Scope | 
+    Get-DhcpServerv4Lease | 
+        ? {$_.hostname -match "BAD_"} | 
+            select scopeid,IPAddress,clientid,hostname| sort scopeid
+```
