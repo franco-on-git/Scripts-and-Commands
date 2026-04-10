@@ -1,7 +1,7 @@
 # Netstat
 
 ### String Search
-- Show Active and Monitor for String value
+- Show active values and monitor for new entries
 ```powershell
 clear-screen
 
