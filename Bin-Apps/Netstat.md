@@ -3,7 +3,7 @@
 ### String Search
 - Show active values and monitor for new entries
 ```powershell
-clear-screen
+clear-host
 
 # Pattern to search for (port, PID, IP, etc.)
 $pattern = Read-Host "Enter String"
