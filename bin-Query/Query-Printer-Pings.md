@@ -1,4 +1,4 @@
-# Query: Printer Pings
+# Query: Printer Pings (active/not active)
 
 
 <b>Copy Script:</b>
