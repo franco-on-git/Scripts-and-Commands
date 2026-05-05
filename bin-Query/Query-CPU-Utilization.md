@@ -1,4 +1,4 @@
-# Query: CPU Utilization
+# Query: CPU Utilization & Process Information
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**
