@@ -9,9 +9,43 @@
 ```
 Clear-Host
 
+# Get process info
+function GetProcessInfo {
+
+write-host ""
+Write-Host "CPU Utilization Top Hitters:" -ForegroundColor Cyan
+
+$cores = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
+
+Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
+    Select-Object -ExpandProperty CounterSamples |
+    Where-Object {
+        $_.Status -eq 0 -and
+        $_.InstanceName -notin "_Total","system"
+    } |
+    Sort-Object CookedValue -Descending |
+    Select-Object -First 20 |
+    ForEach-Object {
+        # Extract base name (chrome#1 → chrome)
+        $base = $_.InstanceName -replace '#\d+$',''
+
+        # Try to match to a real process
+        $proc = Get-Process -Name $base -ErrorAction SilentlyContinue |
+                Sort-Object Id | Select-Object -First 1
+
+        [PSCustomObject]@{
+            Name   = $_.InstanceName
+            'CPU%' = [math]::Round(($_.CookedValue / $cores), 2)
+            Path   = $proc.MainModule.FileName
+        }
+    }
+
+    }
+
+
 # Define monitoring parameters
-$samples = 45
-$interval = 1 # 1 sample per second for 30 seconds
+$samples = 30
+$interval = 1 # 1 sample per second for $samples seconds
 
 Write-Host "Monitoring CPU utilization for $samples seconds..." -ForegroundColor Cyan
 
@@ -33,14 +67,20 @@ Write-Host "---------------------------"
 # Threshold check
 if ($cpuUsage -lt 90) {
     Write-Host "CPU utilization below threshold (<90%)" -ForegroundColor Green
+    Write-Host ""
+    GetProcessInfo
+
 } else {
     Write-Host "Check CPU utilization (>90%)" -ForegroundColor Red
+    write-host ""
+    GetProcessInfo
+
 }
 ```
 
 <br>
 
-# Query: Top CPU Utilization Processes
+# Query: Top CPU Utilization Processes Only
 
 > [!WARNING]
 > - **<ins>Administrator</ins> Terminal required!**
