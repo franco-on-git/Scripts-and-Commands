@@ -18,10 +18,18 @@ if (-not (Test-Path $logDir)) {
     New-Item -Path $logDir -ItemType Directory | Out-Null
 }
 
-# Create log file
-$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$logFile = "$logDir\PrinterPingResults_$timestamp.txt"
-"Printer Connectivity Test - $timestamp" | Out-File $logFile
+# Set am/pm stamp
+$AmOrPm = Get-Date -UFormat %p
+If ($AmOrPm -eq 'AM') {$AmPM = "am"}
+ElseIf ($AmOrPm -eq 'PM') {$AmPM = "pm"}
+
+# Create $log file
+$timestamp = "PrinterPingResults - $(Get-Date -f MM_dd_yyyy_hhmm)$AmOrPm"
+$logfile = "$logdir\$timestamp.txt"
+
+
+# *********************************************************************
+
 
 # Get printers
 $printers = Get-Printer | Where-Object {$_.name -notlike "*xps*" -and $_.name -notlike "*pdf*"}
@@ -82,4 +90,5 @@ $final += $notReachable
 $final | Set-Content $logFile
 
 Invoke-Item $logFile
+
 ```
