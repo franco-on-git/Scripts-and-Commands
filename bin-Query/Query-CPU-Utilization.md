@@ -55,7 +55,10 @@ $cores = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
 
 Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
     Select-Object -ExpandProperty CounterSamples |
-    Where-Object { $_.Status -eq 0 -and $_.InstanceName -notin "_Total","Idle","System Idle Process" } |
+    Where-Object {
+        $_.Status -eq 0 -and
+        $_.InstanceName -notin "_Total","Idle","System Idle Process","System"
+    } |
     Sort-Object CookedValue -Descending |
     Select-Object -First 10 |
     ForEach-Object {
