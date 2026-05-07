@@ -5,11 +5,6 @@
 <br>
 
 ```powershell
-<# 
-    Check-Printers.ps1
-    Retrieves all printers, extracts IP addresses from port objects,
-    tests connectivity, and logs results to C:\Install.
-#>
 
 clear-host
 
