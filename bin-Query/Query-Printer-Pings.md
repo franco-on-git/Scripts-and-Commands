@@ -1,7 +1,7 @@
 # Query: Printer Pings (active/not active)
 
-
-<b>Copy Script:</b>
+> [!WARNING]
+> <ins>Administrator</ins> terminal required!
 
 ```powershell
 <# 
