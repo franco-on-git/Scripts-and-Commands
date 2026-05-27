@@ -20,12 +20,25 @@ If ($AmOrPm -eq 'AM') {$AmPM = "am"}
 ElseIf ($AmOrPm -eq 'PM') {$AmPM = "pm"}
 
 # Create $log file
-$timestamp = "PrinterPingResults - $(Get-Date -f MM_dd_yyyy_hhmm)$AmOrPm"
+$timestamp = "Printer_Ping_Results - $(Get-Date -f "MM_dd_yyyy_hhmm")$AmOrPm"
 $logfile = "$logdir\$timestamp.txt"
+
+# Create new empty file
+# Delete if exists
+if (Test-Path $logfile) {
+    Remove-Item $logfile -Force
+}
+
+# Create new empty file
+New-Item -Path $logfile -ItemType File | Out-Null
+
+
 
 
 # *********************************************************************
 
+$env:COMPUTERNAME | Out-File $logfile -Append
+$timestamp | Out-File $logfile -Append
 
 # Get printers
 $printers = Get-Printer | Where-Object {$_.name -notlike "*xps*" -and $_.name -notlike "*pdf*"}
@@ -70,21 +83,24 @@ Write-Host "Results saved to $logFile"
 # Read the log file
 $lines = Get-Content $logFile
 
-# Extract lines that START with "Reachable"
-$reachable = $lines | Where-Object { $_ -match '^Reachable' }
+# Extract header (first 2 lines)
+$header = $lines[0..1]
 
-# Extract lines that START with "NOT Reachable"
-$notReachable = $lines | Where-Object { $_ -match '^NOT Reachable' }
+# Extract reachable and not reachable
+$reachable    = $lines | Where-Object { $_ -imatch '^Reachable' }
+$notReachable = $lines | Where-Object { $_ -imatch '^NOT reachable' }
 
-# Rebuild the file: Reachable first, blank line, then NOT Reachable
+# Rebuild file with header preserved
 $final = @()
+$final += $header
+$final += ""
 $final += $reachable
-$final += ""          # blank line separator
+$final += ""
 $final += $notReachable
 
 # Write back to the same file
 $final | Set-Content $logFile
 
-Invoke-Item $logFile
+Invoke-Item $logfile
 
 ```
