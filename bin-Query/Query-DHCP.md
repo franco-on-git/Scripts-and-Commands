@@ -117,11 +117,42 @@ br>
 - Use hyphens (`-`) rather than colons (`:`) in the MAC address for this query.
 
 ```powershell
- 
-Get-DhcpServerv4Scope | 
-    Get-DhcpServerv4Lease | 
-        ? {$_.hostname -match "BAD_"} | 
-            select scopeid,IPAddress,clientid,hostname| sort scopeid
+ #Requires -Module DhcpServer
+
+<#
+.SYNOPSIS
+    Retrieves DHCP leases where the hostname contains the prefix "BAD_".
+
+.DESCRIPTION
+    Clears the host console, then queries all DHCPv4 scopes on the local DHCP
+    server, retrieves all active leases, and filters for any lease whose hostname
+    matches the pattern "BAD_". Results are sorted by Name and displayed with
+    Format-Table -AutoSize for easy review.
+
+.OUTPUTS
+    PSCustomObject with properties: Name, ScopeId, IPAddress, ClientId, HostName
+
+.NOTES
+    Author      : Systems Administration
+    Version     : 1.2.0
+    Requires    : DhcpServer PowerShell module (RSAT or Windows Server role)
+    Permissions : Must be run with DHCP Administrator or equivalent privileges
+#>
+
+Clear-Host
+
+$scopes = Get-DhcpServerv4Scope
+
+$scopes |
+    Get-DhcpServerv4Lease |
+    Where-Object -FilterScript { $_.HostName -match 'BAD_' } |
+    Select-Object -Property @{ Name = 'Name'; Expression = { ($scopes | Where-Object ScopeId -EQ $_.ScopeId).Name } },
+                            ScopeId,
+                            IPAddress,
+                            ClientId,
+                            HostName |
+    Sort-Object -Property Name |
+    Format-Table -AutoSize
 ```
 
 
