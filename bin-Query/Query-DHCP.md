@@ -53,20 +53,32 @@ else {
 
 ## High-Utilization Scopes (>90%)
 ```powershell
+# Clear the console for a clean output view
 Clear-Host
 
-Get-DhcpServerv4ScopeStatistics | Where-Object { $_.PercentageInUse -ge 90 } | ForEach-Object {
-    $ScopeDetails = Get-DhcpServerv4Scope -ScopeId $_.ScopeId
-    
-    [PSCustomObject]@{
-        ScopeName       = $ScopeDetails.Name
-        ScopeId         = $_.ScopeId
-        TotalUsableIPs  = $_.InUse + $_.Free
-        InUse           = $_.InUse 
-        Free            = $_.Free      
-        'InUse (%)' = [int]$_.PercentageInUse
-    } 
-} | Sort-Object -Property 'InUse (%)' -Descending |Format-Table -AutoSize
+# Retrieve DHCP scope statistics and filter scopes at or above 90% utilization
+Get-DhcpServerv4ScopeStatistics |
+    Where-Object { $_.PercentageInUse -ge 90 } |
+    ForEach-Object {
+
+        # Fetch full scope details (e.g., name) using the current scope ID
+        $ScopeDetails = Get-DhcpServerv4Scope -ScopeId $_.ScopeId
+
+        # Construct a structured output object for each qualifying scope
+        [PSCustomObject]@{
+            ScopeName      = $ScopeDetails.Name
+            ScopeId        = $_.ScopeId
+            TotalUsableIPs = $_.InUse + $_.Free
+            InUse          = $_.InUse
+            Free           = $_.Free
+            'InUse (%)'    = [int]$_.PercentageInUse
+        }
+
+    } |
+    # Sort results by utilization percentage, highest first
+    Sort-Object -Property 'InUse (%)' -Descending |
+    # Display the final results in a formatted, auto-sized table
+    Format-Table -AutoSize
 ```
 
 <br>
