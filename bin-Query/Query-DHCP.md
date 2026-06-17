@@ -88,26 +88,42 @@ Get-DhcpServerv4ScopeStatistics |
 - Use hyphens (`-`) rather than colons (`:`) in the MAC address for this query.
 
 ```powershell
+#Requires -Module DhcpServer
+
+<#
+.SYNOPSIS
+    Retrieves DHCP leases where the hostname contains the prefix "BAD_".
+
+.DESCRIPTION
+    Clears the host console, then queries all DHCPv4 scopes on the local DHCP
+    server, retrieves all active leases, and filters for any lease whose hostname
+    matches the pattern "BAD_". Results are sorted by Name and displayed with
+    Format-Table -AutoSize for easy review.
+
+.OUTPUTS
+    PSCustomObject with properties: Name, ScopeId, IPAddress, ClientId, HostName
+
+.NOTES
+    Author      : Systems Administration
+    Version     : 1.2.0
+    Requires    : DhcpServer PowerShell module (RSAT or Windows Server role)
+    Permissions : Must be run with DHCP Administrator or equivalent privileges
+#>
+
 Clear-Host
 
-# Read user entry
-$userInput = Read-Host "Enter your string"
+$scopes = Get-DhcpServerv4Scope
 
-# Remove any ":" or spaces
-# We use a regex character class [ : ] to find both colons and spaces
-$sanitized = $userInput -replace '[: ]', ''
-
-# Logic: If no "-" exists, add a hyphen every 2 characters
-if ($sanitized -notlike "*-*") {
-    # Match any 2 characters and append a hyphen
-    # .TrimEnd('-') ensures no hyphen is left at the very end
-    $result = ($sanitized -replace '(.{2})', '$1-').TrimEnd('-')
-} else {
-    $result = $sanitized
-}
-
-# Query DHCP for MAC string
-Get-DhcpServerv4Scope | Get-DhcpServerv4Lease | Where-Object {$_.ClientId -eq $result}
+$scopes |
+    Get-DhcpServerv4Lease |
+    Where-Object -FilterScript { $_.HostName -match 'BAD_' } |
+    Select-Object -Property @{ Name = 'Name'; Expression = { ($scopes | Where-Object ScopeId -EQ $_.ScopeId).Name } },
+                            ScopeId,
+                            IPAddress,
+                            ClientId,
+                            HostName |
+    Sort-Object -Property Name |
+    Format-Table -AutoSize
 ```
 
 br>
