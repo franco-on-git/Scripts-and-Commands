@@ -6,7 +6,7 @@
 > [!NOTE]
 > - Queries CPU load over a 30 second time interval. 
 
-```
+```powershell
 Clear-Host
 
 # Get process info
