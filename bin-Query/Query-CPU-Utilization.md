@@ -104,8 +104,8 @@ if ($cpuUsage -lt 90) {
     Write-Host "Check CPU utilization (>90%)" -ForegroundColor Red
     write-host ""
     GetProcessInfo
-
-}```
+}
+```
 
 <br>
 
