@@ -3,7 +3,8 @@
 > - No <ins>Admin</ins> Terminal required
 
 ## Copy Command:
-```
+
+```powershell
 Clear-Host
 
 # Title
