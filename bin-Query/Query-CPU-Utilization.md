@@ -7,6 +7,37 @@
 > - Queries CPU load over a 30 second time interval. 
 
 ```powershell
+#Requires -Version 5.1
+
+<#
+.SYNOPSIS
+    Monitors CPU utilization on the local system and reports top CPU-consuming processes.
+
+.DESCRIPTION
+    Get-CpuMonitor collects CPU utilization samples over a 30-second span using
+    performance counters, calculates the average processor time, and compares it
+    against a 90% threshold. If the threshold is exceeded, or as a standard report,
+    it displays the top 20 CPU-consuming processes with their utilization percentage
+    and executable path.
+
+.PARAMETER None
+    This script does not accept parameters. Monitoring duration and interval are
+    defined as internal variables ($samples and $interval).
+
+.EXAMPLE
+    .\Get-CpuMonitor.ps1
+    Runs CPU monitoring on the local machine for 30 seconds and displays results.
+
+.NOTES
+    Author:  Franco-On-Git
+    Version: 1.2.0
+
+    Changelog:
+        1.2.0 - Added #Requires directive and standardized comment-based help block.
+        1.1.0 - Added top-hitter process breakdown via GetProcessInfo function.
+        1.0.0 - Initial release with basic average CPU utilization reporting.
+#>
+
 Clear-Host
 
 # Get process info
@@ -42,7 +73,6 @@ Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
 
     }
 
-
 # Define monitoring parameters
 $samples = 30
 $interval = 1 # 1 sample per second for $samples seconds
@@ -75,8 +105,7 @@ if ($cpuUsage -lt 90) {
     write-host ""
     GetProcessInfo
 
-}
-```
+}```
 
 <br>
 
