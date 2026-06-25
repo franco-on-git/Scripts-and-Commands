@@ -45,7 +45,7 @@ Clear-Host
 function GetProcessInfo {
 
 write-host ""
-Write-Host "CPU Utilization Top Hitters (>10%):" -ForegroundColor Cyan
+Write-Host "CPU Utilization Top Hitters (>8%):" -ForegroundColor Cyan
 
 $cores = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
 
@@ -56,7 +56,7 @@ Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
         $_.InstanceName -notin "_Total","system"
     } |
     Sort-Object CookedValue -Descending |
-    Where-Object { ($_.CookedValue / $cores) -gt 10 } |
+    Where-Object { ($_.CookedValue / $cores) -gt 8 } |
     Select-Object -First 20 |
     ForEach-Object {
         # Extract base name (chrome#1 → chrome)
@@ -79,7 +79,7 @@ Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
     }
 
 # Define monitoring parameters
-$samples = 30
+$samples = 15
 $interval = 1 # 1 sample per second for $samples seconds
 
 Write-Host "Monitoring CPU utilization for $samples seconds..." -ForegroundColor Cyan
