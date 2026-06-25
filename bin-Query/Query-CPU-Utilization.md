@@ -67,6 +67,9 @@ Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
         [PSCustomObject]@{
             Name   = $_.InstanceName
             'CPU%' = [math]::Round(($_.CookedValue / $cores), 2)
+            Owner  = (Get-CimInstance Win32_Process -Filter "ProcessId = $($proc.Id)" -ErrorAction SilentlyContinue |
+                      Invoke-CimMethod -MethodName GetOwner -ErrorAction SilentlyContinue |
+                      ForEach-Object { "$($_.Domain)\$($_.User)" })
             Path   = $proc.MainModule.FileName
         }
     }
