@@ -1,11 +1,11 @@
 # Query: CPU Utilization & Process Information
 
-> [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
-
 > [!NOTE]
 > - Queries CPU load over a 30 second time interval.
 > - Identifies top hitters for CPU utilization (>10%)
+
+> [!WARNING]
+> - **<ins>Administrator</ins> Terminal required!**
 
 ```powershell
 #Requires -Version 5.1
