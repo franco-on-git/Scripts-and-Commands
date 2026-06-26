@@ -5,7 +5,7 @@
 
 
 ## Copy Code:
-```
+```powershell
 # Define new object variable objects
 $os = Get-WmiObject –class Win32_OperatingSystem –comp localhost 
 
