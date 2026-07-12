@@ -66,10 +66,10 @@ foreach ($p in $printers) {
 
     if (Test-Connection -ComputerName $ip -Count 1 -Quiet) {
         Write-Host "  ✔ Reachable" -ForegroundColor Green
-        "Reachable | Printer: $name | IP: $ip " | Out-File $logFile -Append
+        "Reachable | IP: $ip |  Printer: $name " | Out-File $logFile -Append
     } else {
         Write-Host "  ✖ NOT reachable" -ForegroundColor Red
-        "NOT reachable | Printer: $name | IP: $ip " | Out-File $logFile -Append
+        "NOT reachable | IP: $ip |  Printer: $name " | Out-File $logFile -Append
     }
 
     Write-Host ""
