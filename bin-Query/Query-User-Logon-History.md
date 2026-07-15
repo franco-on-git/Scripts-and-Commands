@@ -33,7 +33,7 @@ Format-Table -AutoSize
 
 ## Recent 20 Logins:
 
-### Read and Modify the exclusions in the '-match' filter
+### Read and Modify the exclusions in the `-match` filter
 
 ```powershell
 #Requires -Version 5.1
