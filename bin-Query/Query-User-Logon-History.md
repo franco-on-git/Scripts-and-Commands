@@ -21,6 +21,7 @@ $files = Get-ChildItem -Path "C:\Users" -ErrorAction SilentlyContinue
 $files | Sort-Object LastWriteTime -Descending | Select-Object -First 15 -Property Name, LastWriteTime, FullName
 ```
 
+<br>
 
 ## All Logins:
 ```powershell
@@ -30,6 +31,8 @@ Sort-Object -Property TimeCreated -Descending |
 Select-Object -First 500 -Property @{Name='User';Expression={$_.Properties[5].Value}}, TimeCreated, @{Name='LogonType';Expression={$_.Properties[8].Value}} |
 Format-Table -AutoSize
 ```
+
+<br>
 
 ## Recent 20 Logins:
 
