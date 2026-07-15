@@ -10,7 +10,7 @@
 > - Bottom script shows all individual login events along with name and type.
 
 
-## Users Folder Modification (Login):
+## # Users Folder Modification (Login):
 ```powershell
 clear-host
 
@@ -23,7 +23,7 @@ $files | Sort-Object LastWriteTime -Descending | Select-Object -First 15 -Proper
 
 <br>
 
-## All Logins:
+## # All Logins:
 ```powershell
 clear-host
 Get-WinEvent -LogName Security -FilterXPath '*/System/EventID=4624' |
@@ -34,7 +34,7 @@ Format-Table -AutoSize
 
 <br>
 
-## Recent 20 Logins:
+## # Recent 20 Logins:
 
 ### Read and Modify the exclusions in the `-match` filter
 
