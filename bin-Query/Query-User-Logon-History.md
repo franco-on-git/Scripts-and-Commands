@@ -32,7 +32,26 @@ Format-Table -AutoSize
 ```
 
 ## Recent 20 Logins:
+
+### Read and Modify the exclusions in the '-match' filter
+
 ```powershell
+#Requires -Version 5.1
+
+<#
+.SYNOPSIS
+    Audits recent Windows logon events from the Security event log.
+
+.DESCRIPTION
+    Retrieves recent logon events (Event ID 4624) from the Security log,
+    filters out system/service/virtual accounts, and displays the most
+    recent logon per unique user along with a reference table of logon types.
+
+.NOTES
+    Author  : Franco-On-Git
+    Version : 1.2.0
+#>
+
 Clear-Host
 
 # Define logon event ID and log source
@@ -42,8 +61,8 @@ $logSource = 'Security'
 # Get recent logon events (filtering out system/service accounts)
 $events = Get-WinEvent -FilterHashtable @{LogName=$logSource; ID=$logonEventId} -MaxEvents 1000 |
     Where-Object {
-        $user = $_.Properties[5].Value
-        $user -and $user -notmatch '^\$' -and $user -notmatch '^ANONYMOUS LOGON$' -and $user -notmatch '^SYSTEM$' 
+        $user = $_.Properties[5].Value 
+        $user -and $user -notmatch '\$|ANONYMOUS|SYSTEM|DWm|UMFD|LOCAL|NETWORK'
     } |
     Select-Object @{Name='User';Expression={$_.Properties[5].Value}}, TimeCreated,  @{Name='LogonType';Expression={$_.Properties[8].Value}}
 
@@ -61,7 +80,7 @@ write-host "3 - Network - Resource Access via network (i.e. Mapped drives, share
 Write-Host "4 - Batch - Used by scheduled tasks or batch jobs, task scheduler"
 write-host "5 - Service - Services logging in to run under specific accounts"
 write-host "7 - Unlock - User unlocks a previously locked session"
-write-host "8 - Network Cleartext - Logon with creds sent via clear text, usually for IIS basic authentication" 
+write-host "8 - Network Cleartext - Logon with creds sent via clear text, usually for IIS basic authentication"
 write-host "10 - Remote Desktop - Remote Desktop or Terminal Services session"
 write-host ""
 
