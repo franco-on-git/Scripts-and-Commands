@@ -1,14 +1,11 @@
 # Packet Monitor (pktmon)
 
-> [!WARNING]
-> - <ins>Administrator</ins> Terminal Required!
-> 
 ## Informational
 - built-in network diagnostic tool for Windows (+Server 2019 / +Windows 10 v1809) that captures traffic across the networking stack.
 - It allows for detailed packet inspection, drop detection, and conversion to Wireshark-compatible (PCAPNG) formats. 
 - Unlike traditional tools that might only see traffic at the network adapter level, Pktmon can intercept packets at multiple points (components) within the stack, such as filter drivers, virtual switches, and protocol drivers
 
-<br>
+
 
 ## Key Features
 - **Multi-Layer Capture**: Captures packets at different layers (Ethernet, Wi-Fi, mobile broadband) and locations within the OS kernel.
@@ -17,7 +14,6 @@
 - **Real-Time Monitoring**: Can display packet counters and events in real-time on the console.
 - **Wireshark Compatibility**: Natively converts its proprietary ETL logs into PCAPNG format for analysis in Wireshark. 
 
-<br>
 
 ## Switches
 | Switch | Description |
@@ -32,14 +28,16 @@
 | `pktmon start --capture --pkt-size 0 --file-name C:\temp\pktmon.etl` | Start the capture <br> `--capture`: Enables packet logging (otherwise it only counts) <br> `--pkt-size 0`: Captures the full packet (0 = no truncation) <br> `f C:\temp`: Log file director.
 | `pktmon stop` | Stop the capture and release file lock |
 
-> [!NOTE]
-> To isolate only the dropped packets (useful for debugging drops), add the `--drop-only` switch to `pktmon etl2pcap`.
+> [!TIP] To isolate only the dropped packets (useful for debugging drops), add the `--drop-only` switch to `pktmon etl2pcap`.
 
 <br>
 
-## <ins>Live-View</ins> Caputre 
-> [!CAUTION]
-> A capture without any filters will generate large log files (~30 Sec = 500MB)
+# Live-View Capture 
+> [!CAUTION] A capture without any filters will generate large log files (~30 Sec = 500MB)
+
+> [!WARNING] Administrator Terminal Required!
+
+
 1. Start terminal
 2. Start capture:
     ```powershell
@@ -49,11 +47,14 @@
     ```powershell
     Ctrl + C
     ```
-5. File saved to `C:\Windows\System32\pktmon.etl`
+5. Target File directory:  
+   `C:\Windows\System32\pktmon.etl`
 
 <br>
 
-## Capture <ins>All</ins> Packets
+# Capture <ins>All</ins> Packets
+> [!WARNING] Administrator Terminal Required!
+
 1. Start terminal
 2. Remove old filters:
     ```powershell
@@ -78,7 +79,10 @@
 
 <br>
 
-## Capture <ins>Protocol</ins> or <ins>Port</ins> specific types
+# Capture <ins>Protocol</ins> or <ins>Port</ins> specific types
+
+> [!WARNING] Administrator Terminal Required!
+>
 1. Start terminal
 2. Remove old filters:
     ```powershell
@@ -108,7 +112,10 @@
 
 <br>
 
-## Capture <ins>IP Address</ins> specific
+# Capture <ins>IP Address</ins> specific
+
+> [!WARNING] Administrator Terminal Required!
+
 1. Start terminal
 2. Remove old filters:
     ```powershell

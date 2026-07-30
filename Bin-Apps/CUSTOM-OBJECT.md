@@ -1,10 +1,12 @@
 # Custom Object Template
-> [!NOTE]
-> - Creates custom object from a combination of diffrent objects.
-> - [Source: StackOverflow](https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names)
+
+## Informational
+
+ - Creates custom object from a combination of diffrent objects.
+ - [Source: StackOverflow](https://stackoverflow.com/questions/62110520/how-can-i-get-my-function-to-run-the-custom-object-for-the-computer-names)
 
 
-## Copy Code:
+## Code Block
 ```powershell
 # Define new object variable objects
 $os = Get-WmiObject –class Win32_OperatingSystem –comp localhost 

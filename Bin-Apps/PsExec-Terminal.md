@@ -1,6 +1,6 @@
 # PSEXEC Elevated Terminal
 
-> [!CAUTION]
+> [!CAUTION] !! CAUTION !!
 > - **Running commands as SYSTEM essentially bypasses user-level restrictions and grants almost unfettered access.**
 > - **Mistakes like `rm`-style deletions, registry edits, or driver installs can easily brick a machine.**
 
@@ -22,28 +22,26 @@
 
 
 
-## Procedure
-> [!WARNING]
-> **<ins>Administrator</ins> Terminal required!**
+## Code Block
+> [!WARNING] Administrator Terminal Required!
 
 1. Download PSExec from [Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) and extract ZIP file.
 2. Copy executable to any PATH environment variable directory:
-```
-C:\Windows\System32\psexec.exe
-```
+    ```
+   C:\Windows\System32\psexec.exe
+   ```
 3. Start terminal and run command to start a shell as SYSTEM:
-
-```
-psexec.exe -i -s cmd.exe
-```
+    ```
+    psexec.exe -i -s cmd.exe
+    ```
 5. In shell, run command to verify its using SYSTEM:
-```
-whoami
-```
-  It should return:
-```
-NT AUTHORITY\SYSTEM
-```
+    ```
+    whoami
+    ```
+    It should return...
+    ```
+    NT AUTHORITY\SYSTEM
+    ```
 
 
 
