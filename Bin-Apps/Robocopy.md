@@ -1,9 +1,8 @@
 # ROBOCOPY
 
-> [!WARNING]
-> **<ins>Administrator</ins> Terminal required!**
+> [!WARNING] <ins>Administrator</ins> Terminal required!**
 
-<br>
+
 
 ## # One-Time Migration with ACLs Preserverd (recommended):
 ```
