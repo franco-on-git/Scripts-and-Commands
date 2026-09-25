@@ -4,42 +4,63 @@
 
 ### Copy Code:
 ```powershell
-clear-host
+Clear-Host
 
-# Get memory stats
+# Get total physical memory
 $mem = Get-CimInstance -ClassName Win32_OperatingSystem
 
-# Calculate usage
-$total = [math]::round($mem.TotalVisibleMemorySize / 1MB, 2)
-$free  = [math]::round($mem.FreePhysicalMemory / 1MB, 2)
+$total = [math]::Round($mem.TotalVisibleMemorySize / 1MB, 2)
+$free  = [math]::Round($mem.FreePhysicalMemory / 1MB, 2)
+$used  = [math]::Round($total - $free, 2)
 
-# Wrap the subtraction in round to ensure 2 decimal points
-$used  = [math]::round($total - $free, 2)
-$percentUsed = [math]::round(($used / $total) * 100, 2)
-
-# NEW: percent free
-$percentFree = [math]::round((($free / $total) * 100), 2)
+$percentUsed = [math]::Round(($used / $total) * 100, 2)
+$percentFree = [math]::Round(($free / $total) * 100, 2)
 
 # *****************************************************
 
-# Monitors RAM utilization for 30 seconds (1 sample per second)
-write-host "Monitoring RAM utilization (30-Second Average)..." -ForegroundColor Cyan
-Write-host "" 
-$samples = Get-Counter -Counter "\Memory\% Committed Bytes In Use" -SampleInterval 1 -MaxSamples 30
+# Monitor physical RAM utilization for 30 seconds
+Write-Host "Monitoring RAM utilization (30-Second Average)..." -ForegroundColor Cyan
+Write-Host ""
 
-# Calculate the average from the gathered samples
-$averageUsage = ($samples.CounterSamples.CookedValue | Measure-Object -Average).Average
+$usageSamples = @()
+
+1..30 | ForEach-Object {
+
+    $memSample = Get-CimInstance -ClassName Win32_OperatingSystem
+
+    $sampleFree = $memSample.FreePhysicalMemory / 1MB
+    $sampleUsedPercent = (($total - $sampleFree) / $total) * 100
+
+    $usageSamples += $sampleUsedPercent
+
+    Start-Sleep -Seconds 1
+}
+
+$averageUsage = ($usageSamples | Measure-Object -Average).Average
 
 # *****************************************************
+
+# Refresh memory stats for final output
+$mem = Get-CimInstance -ClassName Win32_OperatingSystem
+
+$free = [math]::Round($mem.FreePhysicalMemory / 1MB, 2)
+$used = [math]::Round($total - $free, 2)
+
+$percentUsed = [math]::Round(($used / $total) * 100, 2)
+$percentFree = [math]::Round(($free / $total) * 100, 2)
 
 # Output
 Write-Host "Memory Usage:" -ForegroundColor White
-write-host "-------------" -ForegroundColor White
+Write-Host "-------------" -ForegroundColor White
 Write-Host "$env:COMPUTERNAME"
 Write-Host "Total:  $total GB"
 Write-Host "Used:   $used GB ($percentUsed`%)"
 Write-Host "Free:   $free GB ($percentFree`%)"
-write-host ""
-Write-Host "Average RAM Utilization over 30 seconds: $([math]::Round($averageUsage, 2))%"
-write-host ""
+Write-Host ""
+
+$ramutilavg = "$([math]::Round($averageUsage, 2))%"
+
+
+if ($ramutilavg -gt 80) { Write-Host "Average RAM Utilization HIGH ($([math]::Round($averageUsage, 2))%)" -ForegroundColor Red }
+else {Write-Host "Average RAM Utilization below threshold ($([math]::Round($averageUsage, 2))%)" -ForegroundColor green }
 ```
