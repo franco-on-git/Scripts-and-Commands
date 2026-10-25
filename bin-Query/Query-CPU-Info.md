@@ -7,15 +7,6 @@
 ```powershell
 Clear-Host
 
-#Requires -Version 5.1
-
-<#
-.SYNOPSIS
-    Collects processor and platform inventory information from the local system.
-#>
-
-Clear-Host
-
 # Title
 # ---------------------------------------------------------------------------------
 Write-Host "`nPROCESSORS" -ForegroundColor Yellow
