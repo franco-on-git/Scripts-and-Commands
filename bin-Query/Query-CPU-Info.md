@@ -12,36 +12,6 @@ Clear-Host
 <#
 .SYNOPSIS
     Collects processor and platform inventory information from the local system.
-
-.DESCRIPTION
-    Invoke-PlatformInventory gathers detailed processor and platform information
-    using WMI/CIM queries. It retrieves CPU name, number of cores, logical
-    processors, total physical memory, and operating system details, then
-    outputs a structured inventory object.
-
-.PARAMETER ComputerName
-    The name of the computer to query. Defaults to the local machine.
-
-.PARAMETER OutputPath
-    Optional path to export the inventory results as a JSON file.
-
-.EXAMPLE
-    .\Invoke-PlatformInventory.ps1
-    Runs the inventory against the local machine and displays results.
-
-.EXAMPLE
-    .\Invoke-PlatformInventory.ps1 -ComputerName "Server01" -OutputPath "C:\Inventory\Server01.json"
-    Runs the inventory against Server01 and exports results to a JSON file.
-
-.NOTES
-    Author:  Franco-On-Git
-    Version: 1.2.0
-
-    Changelog:
-        1.2.0 - Added #Requires directive, standardized comment-based help block,
-                fixed $cpuName casing inconsistency.
-        1.1.0 - Added memory and OS inventory sections.
-        1.0.0 - Initial release with basic CPU inventory.
 #>
 
 Clear-Host
