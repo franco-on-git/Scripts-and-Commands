@@ -1,6 +1,6 @@
 # CPU Information
 
-## Informational
+
 Primarily queries for system's CPU information and environment setup. 
 
 

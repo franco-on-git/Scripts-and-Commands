@@ -1,8 +1,7 @@
 # CPU Utilization & Process Information
 
-## Informational
 Queries for CPU (%) utilization and processes taking up most of the resource. <br>
-Helps quickly identify which processes are contributing most to CPU usage on the server
+Helps quickly identify which processes are contributing most to CPU usage on the server.
 
 ## Tasks
 ✅ Monitors overall CPU usage over a short period and calculates the average utilization.<br>
