@@ -135,17 +135,42 @@ g { color: Green }
 > [!NOTE]
 > - Useful information that users should know, even when skimming content.
 
+```powershell
+> [!NOTE]
+> - text
+```
+
 > [!TIP]
 > - Helpful advice for doing things better or more easily.
+
+```powershell
+> [!TIP]
+> - text
+```
 
 > [!IMPORTANT]
 > - Key information users need to know to achieve their goal.
 
+```powershell
+> [!IMPORTANT]
+> - text
+```
+
 > [!WARNING]
 > - Urgent info that needs immediate user attention to avoid problems.
 
+```powershell
+> [!WARNING]
+> - text
+```
+
 > [!CAUTION]
 > - Advises about risks or negative outcomes of certain actions.
+
+```powershell
+> [!CAUTION]
+> - text
+```
 
 
 

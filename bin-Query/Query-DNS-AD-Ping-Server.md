@@ -1,10 +1,21 @@
 # Query DNS, AD, and Ping for Server Status
 
 ## Informational
+
+### Description
 - Query DNS for A (IPv4) Record
 - Query Active Directory for server object
 - Ping FQDN from DNS query
 - Ping IP from DNS query
+
+### Security Context
+- Standard User (Non-Administrative)
+
+### Prerequisites
+> [!IMPORTANT] 
+> Prerequisites
+> Acrive Directory Module Required!
+
 
 ## Script Block
 ```powershell
