@@ -3,7 +3,7 @@
 Queries for CPU (%) utilization and processes taking up most of the resource. <br>
 Helps quickly identify which processes are contributing most to CPU usage on the server.
 
-## Tasks
+## Script Tasks
 ✅ Monitors overall CPU usage over a short period and calculates the average utilization.<br>
 ✅ Displays the server name and average CPU utilization percentage.<br>
 ✅ Compares the average CPU utilization against a 90% threshold.<br>
@@ -13,8 +13,8 @@ Helps quickly identify which processes are contributing most to CPU usage on the
 ✅ Displays the process name, CPU utilization, process owner, and executable path.<br>
 
 
-## Permissions 
-🔴 <ins>Administrator</ins> Terminal Required!</span> 
+## Script Access
+🔴 <ins>Administrator</ins> Terminal Required</span> 
 
 ## Code Block
 
