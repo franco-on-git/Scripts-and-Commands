@@ -1,12 +1,22 @@
-# Query: CPU Utilization & Process Information
+# CPU Utilization & Process Information
 
-> [!NOTE]
-> - Queries CPU load over a 30 second time interval.
-> - Identifies top hitters for CPU utilization (>10%)
+## Informational
+Queries for CPU (%) utilization and processes taking up most of the resource. <br>
+Helps quickly identify which processes are contributing most to CPU usage on the server
 
-> [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
+## Tasks
+✅ Monitors overall CPU usage over a short period and calculates the average utilization.<br>
+✅ Displays the server name and average CPU utilization percentage.<br>
+✅ Compares the average CPU utilization against a 90% threshold.<br>
+✅ Indicates whether CPU utilization is within normal limits or requires attention.<br>
+✅ Identifies the top processes consuming the most CPU resources.<br>
+✅ Filters the results to show only processes exceeding 8% CPU utilization.<br>
+✅ Displays the process name, CPU utilization, process owner, and executable path.<br>
 
+
+## Code Block
+
+🔴 <ins>Administrator</ins> Terminal Required!</span> 🔴
 ```powershell
 
 Clear-Host

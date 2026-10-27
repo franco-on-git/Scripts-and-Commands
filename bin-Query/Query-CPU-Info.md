@@ -1,4 +1,7 @@
-# Query: CPU Info
+# CPU Information
+
+## Informational
+Primarily queries for system's CPU information and environment setup. 
 
 
 ## Tasks
@@ -6,8 +9,6 @@
 ✅ Attempts to identify the hosting platform (Azure, VMware, Google Cloud, or physical hardware).<br>
 ✅ Collects processor details from Windows.<br>
 ✅ Displays the total number of CPU sockets, cores, and logical processors (threads).<br>
-
-<br>
 
 ## Code Block
 
