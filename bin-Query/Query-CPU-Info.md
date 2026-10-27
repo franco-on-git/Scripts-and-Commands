@@ -1,8 +1,15 @@
 # Query: CPU Info
-> [!Note]
-> - No <ins>Admin</ins> Terminal required
 
-## Copy Command:
+
+## Tasks
+✅ Determines whether the system is running on a **physical server** or a **virtual machine**.<br>
+✅ Attempts to identify the hosting platform (Azure, VMware, Google Cloud, or physical hardware).<br>
+✅ Collects processor details from Windows.<br>
+✅ Displays the total number of CPU sockets, cores, and logical processors (threads).<br>
+
+<br>
+
+## Code Block
 
 ```powershell
 Clear-Host
