@@ -11,7 +11,7 @@ Primarily queries for system's CPU information and environment setup.
 ✅ Displays the total number of CPU sockets, cores, and logical processors (threads).<br>
 
 ## Permissions 
-🔵 Standard access
+🔵 Standard access allowed. 
 
 
 
