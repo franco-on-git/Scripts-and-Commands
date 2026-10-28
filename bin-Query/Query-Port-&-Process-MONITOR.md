@@ -1,30 +1,67 @@
 # Port & Process Monitor (STRING)
 
-Actively query network processes based on string entry.
-
-
-! [Sample](vector-img/port_process_monitoring_active.png)
-
+Actively query network processes based on text entered from string. 
+Refreshes results every 1 second, but can be modified 
 
 <p align="left">
-  <img src="Scripts-and-Commands/vector-img/port_process_monitoring_active.png">
+  <img src="../vector-img/port_process_monitoring_active.png">
   <br/>
 </p>
 
 
 ## Script Tasks
-✅ Monitors overall CPU usage over a short period and calculates the average utilization.<br>
-✅ Displays the server name and average CPU utilization percentage.<br>
-✅ Compares the average CPU utilization against a 90% threshold.<br>
-✅ Indicates whether CPU utilization is within normal limits or requires attention.<br>
-✅ Identifies the top processes consuming the most CPU resources.<br>
-✅ Filters the results to show only processes exceeding 8% CPU utilization.<br>
-✅ Displays the process name, CPU utilization, process owner, and executable path.<br>
+✅ Prompts for a search string and filters active connections based on text value (port, IP address, PID, or process name).<br>
+✅ Displays matching network connections along with the associated process name and PID.<br>
+✅ Continuously refreshes the display every 250 milliseconds to provide near real-time monitoring.<br>
+✅ Shows the hostname, date, and time while updating the screen until manually stopped (Ctrl+C).
 
-
-## Script Access
-🔴 <ins>Administrator</ins> Terminal Required</span> 
+## Script Permissions
+🔵 Standard non-admin access
 
 ## Code Block
 
 ```powershell
+Clear-Host
+
+$Search = Read-Host "Search String"
+$HostName = $env:COMPUTERNAME
+
+while ($true) {
+
+    $results = @()
+
+    netstat -ano |
+        ForEach-Object {
+            $line = $_.ToString().Trim()
+
+            if ($line -match '^(TCP|UDP)') {
+
+                $ProcessId = ($line -split '\s+')[-1]
+                $processName = (Get-Process -Id $ProcessId -ErrorAction SilentlyContinue).ProcessName
+
+                if (
+                    $line -like "*$Search*" -or
+                    $processName -like "*$Search*"
+                ) {
+                    $results += "$line  [$processName]"
+                }
+            }
+        }
+
+    if ($results.Count -gt 0) {
+
+        $Header = "$HostName - $(Get-Date -Format 'MM/dd/yyyy') - $(Get-Date -Format 'hh:mm:ss tt')"
+
+        Clear-Host
+
+        Write-Host "`n$Header" -ForegroundColor Cyan
+        Write-Host "---------------------------------------------------------------------------------------------------------------" -ForegroundColor Cyan
+        Write-Host "T/U    Local Address          Foreign Address        State           PID   Process" -ForegroundColor Yellow
+
+
+        $results | ForEach-Object { Write-Host $_ }
+    }
+
+    Start-Sleep -Milliseconds 250
+}
+```

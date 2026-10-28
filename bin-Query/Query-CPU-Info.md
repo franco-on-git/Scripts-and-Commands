@@ -10,8 +10,8 @@ Primarily queries for system's CPU information and environment setup.
 ✅ Collects processor details from Windows.<br>
 ✅ Displays the total number of CPU sockets, cores, and logical processors (threads).<br>
 
-## Script Access
-🔵 Standard access allowed
+## Script Permissions
+🔵 Standard non-admin access
 
 
 

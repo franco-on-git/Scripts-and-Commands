@@ -13,8 +13,8 @@ Helps quickly identify which processes are contributing most to CPU usage on the
 ✅ Displays the process name, CPU utilization, process owner, and executable path.<br>
 
 
-## Script Access
-🔴 <ins>Administrator</ins> Terminal Required</span> 
+## Script Permissions
+🔴 <ins>Administrator</ins> Terminal Required!</span> 
 
 ## Code Block
 
