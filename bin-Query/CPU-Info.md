@@ -1,8 +1,10 @@
 # CPU Information
 
-
-Primarily queries for system's CPU information and environment setup. 
-
+Primarily queries for system's CPU information and physical/virtual environment setup. 
+<p align="left">
+  <img src="../vector-img/cpu-information.png">
+  <br/>
+</p>
 
 ## Script Tasks
 ✅ Determines whether the system is running on a **physical server** or a **virtual machine**.<br>
