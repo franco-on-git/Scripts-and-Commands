@@ -1,7 +1,7 @@
 # Port & Process Monitor (STRING)
 
-Actively query network processes based on text entered from string. 
-Refreshes results every 1 second, but can be modified 
+Actively query network processes based on text entered from string.<br>
+Refreshes results every 1 second, but can be modified by changing the `start-sleep` setting. 
 
 <p align="left">
   <img src="../vector-img/port_process_monitoring_active.png">
@@ -10,7 +10,7 @@ Refreshes results every 1 second, but can be modified
 
 
 ## Script Tasks
-✅ Prompts for a search string and filters active connections based on text value (port, IP address, PID, or process name).<br>
+✅ Prompts for a search string and filters active connections based on textvalue (port, IP address, PID, or process name).<br>
 ✅ Displays matching network connections along with the associated process name and PID.<br>
 ✅ Continuously refreshes the display every 250 milliseconds to provide near real-time monitoring.<br>
 ✅ Shows the hostname, date, and time while updating the screen until manually stopped (Ctrl+C).
