@@ -7,7 +7,7 @@ Actively query network processes based on string entry.
 
 
 <p align="left">
-  <img src="vector-img/port_process_monitoring_active.png">
+  <img src="Scripts-and-Commands/vector-img/port_process_monitoring_active.png">
   <br/>
 </p>
 
