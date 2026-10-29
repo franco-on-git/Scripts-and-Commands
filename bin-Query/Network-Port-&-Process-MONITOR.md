@@ -4,7 +4,7 @@ Actively query network processes based on text entered from string.<br>
 Refreshes results every 250ms, but can be modified by changing the `start-sleep` setting. 
 
 <p align="left">
-  <img src="../vector-img/port_process_monitoring_active.png">
+  <img src="../vector-img/port-process-monitoring-active.png">
   <br/>
 </p>
 

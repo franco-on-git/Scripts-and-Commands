@@ -1,8 +1,9 @@
 # CPU Information
 
 Primarily queries for system's CPU information and physical/virtual environment setup. 
+
 <p align="left">
-  <img src="../vector-img/cpu-information.png">
+  <img src="../vector-img/cpu-info.png">
   <br/>
 </p>
 

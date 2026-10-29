@@ -1,8 +1,24 @@
-# Query: Printer Pings (active/not active)
+# Printer Pings
 
-> [!WARNING]
-> <ins>Administrator</ins> terminal required!
-<br>
+Pings locally-installed network printers and sorts them into "Reachable" and "Not Reachable". 
+
+<p align="left">
+  <img src="../vector-img/Printer-Pings.png">
+  <br/>
+</p>
+
+## Script Tasks
+✅ Creates a printer connectivity report log file in C:\Install, automatically generating the folder if it does not already exist.<br>
+✅ Collects all installed printers (excluding XPS and PDF printers) and retrieves each printer's associated port and IP address.<br>
+✅ Tests each printer's IP address for network ping, then records the results as either "Reachable" or NOT "Reachable" in the log file.<br>
+✅ Identifies printers that do not have a detectable IP address, and logs them separately for easier troubleshooting.<br>
+✅ Organizes the final report by listing reachable printers first, then all unreachable printers.
+
+
+## Script Access
+🔴 <ins>Administrator</ins> Terminal Required!</span> 
+
+## Script Block
 
 ```powershell
 
