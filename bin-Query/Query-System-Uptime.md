@@ -1,5 +1,26 @@
-# Query: System Uptime
+# System Uptime
 
+Primarily queries for system's CPU information and physical/virtual environment setup. 
+
+<p align="left">
+  <img src="../vector-img/system-uptime.png">
+  <br/>
+</p>
+
+## Script Tasks
+✅ One-liner for a quick grab of uptime information.<br>
+✅ Long-script creates a custom object to gather the uptime information
+
+## Script Permissions
+🔵 Standard non-admin access
+
+### # One-Liner
+
+```powershell
+$os = Gcim Win32_OperatingSystem; [pscustomobject]@{LastBootUpTime=$os.LastBootUpTime; Uptime="{0} days, {1} hours, {2} minutes" -f ((Get-Date)-$os.LastBootUpTime).Days, ((Get-Date)-$os.LastBootUpTime).Hours, ((Get-Date)-$os.LastBootUpTime).Minutes} 
+```
+
+### # Long Script
 
 ```powershell
 Clear-Host
