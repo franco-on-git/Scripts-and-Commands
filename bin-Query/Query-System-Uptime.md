@@ -9,10 +9,13 @@ Primarily queries for system's CPU information and physical/virtual environment 
 
 ## Script Tasks
 ✅ One-liner for a quick grab of uptime information.<br>
-✅ Long-script creates a custom object to gather the uptime information
+✅ Long-script creates a custom object to gather the uptime information.
 
 ## Script Permissions
 🔵 Standard non-admin access
+
+
+## Script Block
 
 ### # One-Liner
 
@@ -20,7 +23,7 @@ Primarily queries for system's CPU information and physical/virtual environment 
 $os = Gcim Win32_OperatingSystem; [pscustomobject]@{LastBootUpTime=$os.LastBootUpTime; Uptime="{0} days, {1} hours, {2} minutes" -f ((Get-Date)-$os.LastBootUpTime).Days, ((Get-Date)-$os.LastBootUpTime).Hours, ((Get-Date)-$os.LastBootUpTime).Minutes} 
 ```
 
-### # Long Script
+### # Long-Script
 
 ```powershell
 Clear-Host
