@@ -94,38 +94,3 @@ if ($cpuUsage -lt 90) {
     GetProcessInfo
 }
 ```
-
-<br>
-
-# Query: Top CPU Utilization Processes Only
-
-> [!WARNING]
-> - **<ins>Administrator</ins> Terminal required!**
-
-> [!NOTE]
-> - Queries for high CPU utilization and identifies top hitters.
-
-```powershell
-Clear-Host
-
-$cores = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
-
-Get-Counter '\Process(*)\% Processor Time' -ErrorAction SilentlyContinue |
-    Select-Object -ExpandProperty CounterSamples |
-    Where-Object {
-        $_.Status -eq 0 -and
-        $_.InstanceName -notin "_Total","Idle","System Idle Process","System"
-    } |
-    Sort-Object CookedValue -Descending |
-    Select-Object -First 10 |
-    ForEach-Object {
-        $proc = Get-Process -Name $_.InstanceName -ErrorAction SilentlyContinue
-        [PSCustomObject]@{
-            Name   = $_.InstanceName
-            'CPU%' = [math]::Round(($_.CookedValue / $cores), 2)
-            Path   = $proc.MainModule.FileName
-        }
-    }
-```
-
-
