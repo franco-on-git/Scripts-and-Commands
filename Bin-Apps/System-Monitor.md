@@ -13,7 +13,7 @@
 
 2. Run `SysMon` with <ins>Administrator</ins> terminal
     ```powershell
-    Sysmon64.exe -accepteula -i sysmonconfig-export.xml
+    .\Sysmon64.exe -accepteula -i sysmonconfig-export.xml
     ```
 
 3. Analyze the `SysMon` log in **Event Viewer**, export log if needed.
@@ -21,5 +21,5 @@
 4. Uninstall `SysMon` from system:
     > [!CAUTION]Uninstalling SysMon will remove the Event Viewer log capture.
    ```Powershell
-   Sysmon64.exe -u
+   .\Sysmon64.exe -u
    ```
