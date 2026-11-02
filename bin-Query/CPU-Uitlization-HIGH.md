@@ -13,7 +13,7 @@ Continuously monitors for high CPU utilization (<90%) and writes data to log fil
 ✅ Continuously logs high CPU events for later review and troubleshooting.<br>
 
 ## Script Permissions
-🔴 <ins>Administrator</ins> Terminal Required!</span> 
+🔴 <ins>Administrator</ins> Terminal Required!</span> 🔴
 
 ## Code Block
 
