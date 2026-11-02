@@ -18,7 +18,7 @@ Pings locally-installed network printers and sorts them into "Reachable" and "No
 ## Script Access
 🔴 <ins>Administrator</ins> Terminal Required!</span> 
 
-## Script Block
+## Code Block
 
 ```powershell
 

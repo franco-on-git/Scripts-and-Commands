@@ -15,7 +15,7 @@ Primarily queries for system's CPU information and physical/virtual environment 
 🔵 Standard non-admin access
 
 
-## Script Block
+## Code Block
 
 ### # One-Liner
 
