@@ -16,7 +16,7 @@ Refreshes results every 250ms, but can be modified by changing the `start-sleep`
 ✅ Shows the hostname, date, and time while updating the screen until manually stopped (Ctrl+C).
 
 ## Script Permissions
-🔵 Standard non-admin access
+🔵 Standard non-admin access 🔵
 
 ## Code Block
 

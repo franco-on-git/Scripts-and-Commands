@@ -14,9 +14,7 @@ Primarily queries for system's CPU information and physical/virtual environment 
 ✅ Displays the total number of CPU sockets, cores, and logical processors (threads).<br>
 
 ## Script Permissions
-🔵 Standard non-admin access
-
-
+🔵 Standard non-admin access 🔵
 
 ## Code Block
 

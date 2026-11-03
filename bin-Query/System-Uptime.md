@@ -12,7 +12,7 @@ Primarily queries for system's CPU information and physical/virtual environment 
 ✅ Long-script creates a custom object to gather the uptime information.
 
 ## Script Permissions
-🔵 Standard non-admin access
+🔵 Standard non-admin access 🔵
 
 
 ## Code Block

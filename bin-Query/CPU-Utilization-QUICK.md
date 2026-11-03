@@ -16,7 +16,7 @@ Helps quickly identify which processes are contributing most to CPU usage on the
 
 
 ## Script Permissions
-🔴 <ins>Administrator</ins> Terminal Required!</span> 
+🔴 <ins>Administrator</ins> Terminal Required!</span> 🔴
 
 ## Code Block
 
