@@ -1,4 +1,4 @@
-# DHCP String Search
+# DHCP String Search (Scopes Only!)
 
 Text-based search for DHCP scopes.<br>
 In this example, the search is for "Boise Wireless" with the following results:
