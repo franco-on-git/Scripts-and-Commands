@@ -1,4 +1,4 @@
-# CPU Utilization HIGH (>90%)
+# CPU Utilization HIGH (>90%) + Email Notification
 
 Continuously monitors for high CPU utilization (<90%) and writes data to log file and sends email alert with the following information:
 
