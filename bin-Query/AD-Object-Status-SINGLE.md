@@ -11,7 +11,7 @@
 ✅ Saves a TXT copy of the screen output and a CSV (including a **LastCheckin** "N Days" column) to `Desktop\PsHOME\`
 
 ## Script:
-```
+```powershell
 Clear-Host
 
 $thresholdDays = 30   # age text turns orange when older than this many days

@@ -10,7 +10,7 @@
 > - Output is saved to `Desktop\PsHOME\` as a TXT (screen copy) and a CSV (one row per server, including a **LastCheckin** column with days since last logon).
 
 ## Script:
-```
+```powershell
 Clear-Host
 
 $thresholdDays = 30   # age text turns orange when older than this many days
