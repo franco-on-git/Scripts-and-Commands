@@ -3,13 +3,13 @@
 > [!WARNING]
 > - Must run in a session with the **ActiveDirectory** PowerShell module (RSAT / AD DS tools) installed.
 
-> [!NOTE]
-> - Checks the Active Directory status of **multiple servers** in one run.
-> - Reads the server list from `Desktop\server_list.txt` (one hostname per line).
-> - For each server, queries every DC in its domain and shows Enabled, Operating system, Last logon, LastLogonTimestamp and PwdLastSet.
-> - Output is saved to `Desktop\PsHOME\` as a TXT (screen copy) and a CSV (one row per server, including a **LastCheckin** column with days since last logon).
 
-## Script:
+> ✅ Checks the Active Directory status of **multiple servers** in one run.<br>
+> ✅ Reads the server list from `Desktop\server_list.txt` (one hostname per line).<br>
+> ✅ For each server, queries every DC in its domain and shows Enabled, Operating system, Last logon, LastLogonTimestamp and PwdLastSet.<br>
+> ✅ Output is saved to `Desktop\PsHOME\` as a TXT (screen copy) and a CSV (one row per server, including a **LastCheckin** column with days since last logon).
+
+## Code Block
 ```powershell
 Clear-Host
 
