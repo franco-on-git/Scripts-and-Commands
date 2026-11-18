@@ -82,7 +82,7 @@ function Write-Cell($d, $width = 26, [switch]$Last) {
 function Write-Orange($text, [switch]$NoNewline) {
     if ($Host.UI.SupportsVirtualTerminal -and $Host.Name -eq 'ConsoleHost') {
         $esc = [char]27
-        Write-Host "$esc[38;5;208m$text$esc[0m" -NoNewline:$NoNewline
+        Write-Host "$esc[93m$text$esc[0m" -NoNewline:$NoNewline
     } else {
         Write-Host $text -ForegroundColor Yellow -NoNewline:$NoNewline
     }
@@ -103,7 +103,7 @@ function Show-Line($label, $prop) {
         # Age text: default color within the threshold, orange if older
         $age = "($days days ago, from $($r.DC))"
         if ($days -le $thresholdDays) {
-            Write-Host $age
+            Write-Host $age -ForegroundColor Green
         } else {
             Write-Orange $age
         }
@@ -234,7 +234,15 @@ foreach ($obj in $found) {
     if (-not $newest -or ((Get-Date) - $newest).TotalDays -gt $thresholdDays) {
         Write-Host "Last check-in >30days... Recommend Decommission" -ForegroundColor Magenta
     } else {
-        Write-Host "Server last check in <30-days" -ForegroundColor Green
+        # Days since Last logon (same rounding as the summary line), rounded up to the next whole day
+        $llNewest = (Get-Newest 'LastLogon').LastLogon
+        if (-not $llNewest) { $llNewest = $newest }
+        $llDays = [math]::Round(((Get-Date) - $llNewest).TotalDays, 1)
+        if ($llDays -le 0) {
+            Write-Host "Server Last Check-In Today!" -ForegroundColor Green
+        } else {
+            Write-Host "Server Last Check-In < $([math]::Ceiling($llDays)) days ago" -ForegroundColor Green
+        }
     }
 }
 
