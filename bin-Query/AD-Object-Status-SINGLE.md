@@ -1,12 +1,14 @@
 # Active Directory Object Status (Server List)
 
-> [!WARNING]
-> - Must run in a session with the **ActiveDirectory** PowerShell module (RSAT / AD DS tools) installed.
+<p align="left">
+  <img src="../vector-img/ad-object-status-single.png">
+  <br/>
+</p>
 
-> [!NOTE]
-> - Reads the server list from ` $env:USERPROFILE\Desktop\server_list.txt` (one hostname per line). Edit the path at the top of the script if needed.
-> - For each server, queries every DC in its domain and prints **only the Summary section** (Enabled, Operating system, Last logon, LastLogonTimestamp, PwdLastSet).
-> - Output is saved to `Desktop\PsHOME\` as a TXT (screen copy) and a CSV (one row per server).
+✅ Reads a list of server names from `server_list.txt` on your Desktop<br>
+✅ Looks each server up in Active Directory and checks every domain controller for its Last logon, LastLogonTimestamp and PwdLastSet<br>
+✅ Shows Enabled status, operating system and how many days ago each date was, with age text turned orange after 30 days<br>
+✅ Saves a TXT copy of the screen output and a CSV (including a **LastCheckin** "N Days" column) to `Desktop\PsHOME\`
 
 ## Script:
 ```
